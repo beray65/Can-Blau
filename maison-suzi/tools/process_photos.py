@@ -10,12 +10,12 @@ os.makedirs(DST, exist_ok=True)
 
 # (source filename, output name, max long-edge px, quality)
 JOBS = [
-    ("3f5b719e-IMG_9330.jpeg", "naked-cake.webp", 1800, 82),
-    ("f2ea3e5d-IMG_9331.jpeg", "eclair.webp", 1300, 82),
-    ("ab6cabca-IMG_9333.jpeg", "tiramisu.webp", 1300, 82),
+    ("8cdf4bb4-IMG_9348.png", "naked-cake.webp", 1800, 82),
+    ("804579f1-IMG_9334.png", "eclair.webp", 1300, 82),
+    ("9deeb651-IMG_9346.png", "tiramisu.webp", 1300, 82),
     ("3278fa3d-IMG_9328.jpeg", "birthday-cake.webp", 1300, 82),
     ("7f35932c-d5d49265315b46c08902ac93c84a73c9.jpeg", "tartaletas.webp", 1600, 82),
-    ("70f31e25-IMG_9329.jpeg", "cheesecake.webp", 1300, 82),
+    ("320fcf40-IMG_9349.png", "cheesecake.webp", 1300, 82),
     ("d8d87ae0-IMG_9332.jpeg", "vasito-frambuesa.webp", 1300, 82),
 ]
 
@@ -67,11 +67,10 @@ for src_name, out_name, max_edge, quality in JOBS:
     print(f"{out_name}: {im.size[0]}x{im.size[1]} -> {kb:.0f} KB")
 
 # Extra: a tight macro crop of the naked cake's top tier for a gallery "detail" shot.
-im = Image.open(os.path.join(SRC, "3f5b719e-IMG_9330.jpeg"))
+im = Image.open(os.path.join(SRC, "8cdf4bb4-IMG_9348.png"))
 im = ImageOps.exif_transpose(im).convert("RGB")
-im = im.crop((0, 135, im.size[0], im.size[1]))  # drop the numbered label badge first
 w, h = im.size
-box = (int(w*0.06), int(h*0.0), int(w*0.92), int(h*0.42))
+box = (int(w*0.08), int(h*0.20), int(w*0.92), int(h*0.55))
 detail = im.crop(box)
 detail = grade(detail)
 detail = resize_cap(detail, 1300)
