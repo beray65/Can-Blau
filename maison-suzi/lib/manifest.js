@@ -6,8 +6,8 @@
     tagline: "Horneado con pasión",
 
     contact: {
-      whatsappDisplay: "+34 600 000 000",
-      whatsappLink: "https://wa.me/34600000000",
+      whatsappDisplay: "+34 695 82 38 78",
+      whatsappLink: "https://wa.me/34695823878",
       instagramHandle: "@maisonsuzi",
       instagramLink: "https://instagram.com/maisonsuzi",
       city: "Reparto a domicilio"
