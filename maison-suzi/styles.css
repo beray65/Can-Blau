@@ -636,6 +636,13 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 .contact { padding-block: clamp(5rem, 10vw, 9rem); }
 .contact-inner { display: flex; flex-direction: column; align-items: center; }
 .contact-actions { flex-wrap: wrap; gap: 1.1rem; justify-content: center; margin-top: .5rem; }
+/* Desktop-only: the title wraps to two lines here, so the default 1rem
+   kicker/title/lede gaps (fine on mobile) read as cramped underneath it. */
+@media (min-width: 640px) {
+  .contact .kicker { margin-bottom: 1.6rem; }
+  .contact .section-title { margin-bottom: 1.85rem; }
+  .contact .section-lede { margin-bottom: 3rem; }
+}
 
 /* --- Footer --- */
 .footer { padding-block: 3.5rem 2.5rem; background: var(--ink); color: rgba(250,246,239,0.72); }
