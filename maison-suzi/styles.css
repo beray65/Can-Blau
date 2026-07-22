@@ -407,6 +407,66 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 .scroll-cue span { width: 3px; height: 8px; border-radius: 2px; background: var(--gold); animation: scrollCue 1.8s ease-in-out infinite; }
 @keyframes scrollCue { 0%,100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(10px); opacity: 0.3; } }
 
+/* --- Flythrough (recorrido) ---
+   Default: a plain responsive grid — always visible, no JS required.
+   With JS + no reduced-motion, .fly-active switches it into a tall pinned
+   3D scroll region and main.js drives each item's depth via scroll. */
+.flythrough { padding-block: clamp(4rem, 8vw, 6rem) 0; }
+.flythrough .section-title { margin-bottom: 0; }
+
+.fly-region { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.fly-pin { position: static; }
+.fly-stage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 640px)  { .fly-stage { grid-template-columns: repeat(3, 1fr); padding-inline: 2rem; } }
+@media (min-width: 1280px) { .fly-stage { padding-inline: 2.5rem; } }
+
+.fly-item {
+  position: static; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 4 / 5;
+  box-shadow: 0 1px 0 var(--line-soft), 0 20px 40px -28px rgba(46,27,18,0.25);
+}
+.fly-item img { width: 100%; height: 100%; object-fit: cover; }
+.fly-item figcaption {
+  position: relative; margin-top: -2.4rem;
+  padding: .7rem .8rem .5rem;
+  font-size: .75rem; color: var(--cream);
+  background: linear-gradient(0deg, rgba(46,27,18,0.75), transparent);
+}
+
+/* --- Enhanced: pinned 3D flythrough (JS-driven) --- */
+.fly-region.fly-active {
+  height: calc(6 * 70vh);
+}
+@media (min-width: 720px) {
+  .fly-region.fly-active { height: calc(6 * 90vh); }
+}
+.fly-active .fly-pin {
+  position: sticky; top: 0; height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; perspective: 1400px;
+}
+.fly-active .fly-stage {
+  display: block; padding-inline: 0; max-width: none;
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+}
+.fly-active .fly-item {
+  position: absolute; top: 50%; left: 50%;
+  width: min(360px, 62vw); aspect-ratio: 4 / 5;
+  box-shadow: 0 40px 90px -20px rgba(20,12,8,0.55);
+  will-change: transform, opacity;
+}
+.fly-active .fly-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; margin-top: 0;
+  font-size: .85rem;
+}
+
 /* --- Story --- */
 .story { padding-block: clamp(5rem, 10vw, 8.5rem); }
 .story-grid { display: grid; gap: 3rem; }

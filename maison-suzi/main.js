@@ -186,6 +186,54 @@
   }
 
   /* -----------------------------------------------------------
+     Flythrough — scroll-pinned 3D depth effect (progressive
+     enhancement over the plain static grid in the CSS default state)
+     ----------------------------------------------------------- */
+  function initFlythrough() {
+    var region = $("[data-fly-region]");
+    var pin = $("[data-fly-pin]");
+    var stage = $("[data-fly-stage]");
+    if (!region || !pin || !stage) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    region.classList.add("fly-active");
+    var items = $$("[data-fly-item]", stage);
+    if (!items.length) return;
+    var FAR = 1600;
+    var raf = null;
+
+    function cssVarPx(el, name) {
+      var n = parseFloat(getComputedStyle(el).getPropertyValue(name));
+      return isNaN(n) ? 0 : n;
+    }
+
+    function update() {
+      raf = null;
+      var rect = region.getBoundingClientRect();
+      var total = rect.height - window.innerHeight;
+      if (total <= 0) return;
+      var progress = Math.min(1, Math.max(0, -rect.top / total));
+      var n = items.length;
+      items.forEach(function (el, i) {
+        var peak = (i + 0.5) / n;
+        var win = 1.3 / n;
+        var local = Math.max(-1, Math.min(1, (progress - peak) / win));
+        var z = -Math.abs(local) * FAR;
+        var op = 1 - Math.abs(local);
+        var x = cssVarPx(el, "--x");
+        var y = cssVarPx(el, "--y");
+        el.style.transform = "translate(-50%,-50%) translate3d(" + x + "px," + y + "px," + z + "px)";
+        el.style.opacity = op.toFixed(3);
+        el.style.pointerEvents = op > 0.5 ? "auto" : "none";
+      });
+    }
+    function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
+  }
+
+  /* -----------------------------------------------------------
      Reveal on scroll — low threshold + 6s safety net
      ----------------------------------------------------------- */
   function initReveals() {
@@ -322,6 +370,7 @@
 
     safe(initNav, "initNav");
     safe(initSmoothAnchors, "initSmoothAnchors");
+    safe(initFlythrough, "initFlythrough");
     safe(initReveals, "initReveals");
     safe(initCursor, "initCursor");
     safe(initTilt, "initTilt");
