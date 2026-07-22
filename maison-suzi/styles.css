@@ -1,4 +1,31 @@
 /* =============================================================
+   0. Fonts — self-hosted (no Google Fonts request at runtime).
+   Both files are variable fonts; a single file covers the whole
+   weight range used on the site, declared once per style/weight-range.
+   ============================================================= */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/cormorant-garamond-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/cormorant-garamond-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("assets/fonts/jost-normal.woff2") format("woff2");
+}
+
+/* =============================================================
    1. Tokens
    ============================================================= */
 :root {
