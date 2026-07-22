@@ -475,26 +475,28 @@ void main() {
       cursor: gl.getUniformLocation(program, "u_cursor")
     };
 
-    // Maison Suzi palette: cream -> cream-2 -> gold-2 -> gold -> back to cream-2,
-    // so the field always stays light and warm instead of drifting dark.
+    // Maison Suzi palette, softened: cream -> cream-2 -> gold-2 -> a muted
+    // sandy gold (gold blended toward cream-2, never the full dark gold) ->
+    // back to cream-2. Keeps every tone light enough that text laid over it
+    // reads clearly at a glance, with no dark patches to fight for contrast.
     var COLORS = new Float32Array([
       0.980, 0.965, 0.937,
       0.945, 0.902, 0.827,
-      0.851, 0.714, 0.404,
-      0.561, 0.392, 0.145,
+      0.890, 0.808, 0.615,
+      0.753, 0.647, 0.486,
       0.945, 0.902, 0.827,
       0.945, 0.902, 0.827,
       0.945, 0.902, 0.827,
       0.945, 0.902, 0.827
     ]);
     var COLOR_COUNT = 5;
-    var TIME_SCALE = 0.22;
+    var TIME_SCALE = 0.2;
 
     gl.uniform3fv(uni.colors, COLORS);
-    gl.uniform4f(uni.shape, 1.6, 0.5, 0.5, 0);          // scale, intensity, paramA, warp
-    gl.uniform4f(uni.surface, 2.0, 1.05, 0.03, 0.9);    // detail, contrast, brightness, saturation
-    gl.uniform4f(uni.finish, 0, 0.08, 0, 0.004);        // hue, vignette, blur, grain
-    gl.uniform4f(uni.transform, 4021.0, 0, 0.15, 1);    // seed, rotate, drift, oklab
+    gl.uniform4f(uni.shape, 1.7, 0.32, 0.5, 0);          // scale, intensity, paramA, warp
+    gl.uniform4f(uni.surface, 2.0, 0.85, 0.08, 0.68);    // detail, contrast, brightness, saturation
+    gl.uniform4f(uni.finish, 0, 0.05, 0, 0.003);         // hue, vignette, blur, grain
+    gl.uniform4f(uni.transform, 4021.0, 0, 0.12, 1);     // seed, rotate, drift, oklab
     gl.uniform4f(uni.space, 0, 0, 0, 0);
     gl.uniform4f(uni.cursor, 0, 0, 0, 0);
 
@@ -689,12 +691,19 @@ void main() {
 
     safe(initNav, "initNav");
     safe(initSmoothAnchors, "initSmoothAnchors");
-    safe(initHeroShader, "initHeroShader");
-    safe(initFlythrough, "initFlythrough");
     safe(initReveals, "initReveals");
+    safe(initFlythrough, "initFlythrough");
     safe(initCursor, "initCursor");
     safe(initTilt, "initTilt");
     safe(initMagnetic, "initMagnetic");
+    // Deferred to idle time: shader compile/link is synchronous and can run
+    // long (especially on software GL). requestAnimationFrame runs BEFORE
+    // IntersectionObserver delivery in the same rendering update, so even a
+    // rAF-deferred call can still end up blocking initReveals' first
+    // callback; requestIdleCallback explicitly waits until the browser has
+    // no pending rendering/layout work, so hero text is never held up by it.
+    var deferShader = window.requestIdleCallback || function (cb) { setTimeout(cb, 1); };
+    deferShader(function () { safe(initHeroShader, "initHeroShader"); }, { timeout: 2000 });
 
     document.documentElement.classList.add("is-ready");
   }
