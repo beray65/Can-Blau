@@ -37,13 +37,6 @@
         photo: "assets/img/naked-cake.webp"
       },
       {
-        id: "cookie-pistacho",
-        category: "tartas",
-        name: "Cookie cake de pistacho y frambuesa",
-        desc: "Galleta gruesa horneada en molde, pistacho crocante y chocolate.",
-        icon: "cookie"
-      },
-      {
         id: "eclair",
         category: "individuales",
         name: "Eclair de frutos rojos",
