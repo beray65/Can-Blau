@@ -25,7 +25,8 @@
         category: "tartas",
         name: "Tarta de queso clásica",
         desc: "Horneada despacio, base dorada y un baño de caramelo casero.",
-        icon: "cheesecake"
+        icon: "cheesecake",
+        photo: "assets/img/cheesecake.webp"
       },
       {
         id: "naked-frutos",
@@ -65,6 +66,14 @@
         desc: "Receta tradicional italiana, cacao amargo y un toque de café.",
         icon: "tiramisu",
         photo: "assets/img/tiramisu.webp"
+      },
+      {
+        id: "vasito-frambuesa",
+        category: "individuales",
+        name: "Vasito de cheesecake y frambuesa",
+        desc: "Base de galleta, cheesecake cremoso y coulis de frambuesa casero.",
+        icon: "cup",
+        photo: "assets/img/vasito-frambuesa.webp"
       },
       {
         id: "cumpleanos",

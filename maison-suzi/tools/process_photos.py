@@ -10,11 +10,13 @@ os.makedirs(DST, exist_ok=True)
 
 # (source filename, output name, max long-edge px, quality)
 JOBS = [
-    ("940445b5-IMG_9325.jpeg", "naked-cake.webp", 1800, 82),
-    ("3ce66911-IMG_9324.jpeg", "eclair.webp", 1300, 82),
-    ("0d1c34e6-IMG_9327.jpeg", "tiramisu.webp", 1300, 82),
+    ("3f5b719e-IMG_9330.jpeg", "naked-cake.webp", 1800, 82),
+    ("f2ea3e5d-IMG_9331.jpeg", "eclair.webp", 1300, 82),
+    ("ab6cabca-IMG_9333.jpeg", "tiramisu.webp", 1300, 82),
     ("3278fa3d-IMG_9328.jpeg", "birthday-cake.webp", 1300, 82),
     ("7f35932c-d5d49265315b46c08902ac93c84a73c9.jpeg", "tartaletas.webp", 1600, 82),
+    ("70f31e25-IMG_9329.jpeg", "cheesecake.webp", 1300, 82),
+    ("d8d87ae0-IMG_9332.jpeg", "vasito-frambuesa.webp", 1300, 82),
 ]
 
 def grade(im: Image.Image) -> Image.Image:
@@ -41,17 +43,22 @@ def resize_cap(im: Image.Image, max_edge: int) -> Image.Image:
     return im.resize((nw, nh), Image.LANCZOS)
 
 # Manual pre-crop boxes (left, top, right, bottom) to trim distracting background
-# elements (e.g. a knife block) before grading. Only listed sources are cropped.
-PRECROP = {
-    "940445b5-IMG_9325.jpeg": (0, 0, 720, 1384),  # naked cake: drop the knife block on the right
+# elements (e.g. a knife block, or an exported numbered label badge) before grading.
+_badge = lambda w, h: (0, 135, w, h)  # top-left "0N" label badge on the AI-enhanced set
+PRECROP_FN = {
+    "3f5b719e-IMG_9330.jpeg": _badge,
+    "f2ea3e5d-IMG_9331.jpeg": _badge,
+    "ab6cabca-IMG_9333.jpeg": _badge,
+    "70f31e25-IMG_9329.jpeg": _badge,
+    "d8d87ae0-IMG_9332.jpeg": _badge,
 }
 
 for src_name, out_name, max_edge, quality in JOBS:
     src_path = os.path.join(SRC, src_name)
     im = Image.open(src_path)
     im = ImageOps.exif_transpose(im).convert("RGB")
-    if src_name in PRECROP:
-        im = im.crop(PRECROP[src_name])
+    if src_name in PRECROP_FN:
+        im = im.crop(PRECROP_FN[src_name](*im.size))
     im = grade(im)
     im = resize_cap(im, max_edge)
     out_path = os.path.join(DST, out_name)
@@ -60,11 +67,11 @@ for src_name, out_name, max_edge, quality in JOBS:
     print(f"{out_name}: {im.size[0]}x{im.size[1]} -> {kb:.0f} KB")
 
 # Extra: a tight macro crop of the naked cake's top tier for a gallery "detail" shot.
-# Cropped from the left/top only — the source's knife block sits at the right edge.
-im = Image.open(os.path.join(SRC, "940445b5-IMG_9325.jpeg"))
+im = Image.open(os.path.join(SRC, "3f5b719e-IMG_9330.jpeg"))
 im = ImageOps.exif_transpose(im).convert("RGB")
-w, h = im.size  # 1080 x 1384
-box = (int(w*0.00), int(h*0.27), int(w*0.72), int(h*0.62))
+im = im.crop((0, 135, im.size[0], im.size[1]))  # drop the numbered label badge first
+w, h = im.size
+box = (int(w*0.06), int(h*0.0), int(w*0.92), int(h*0.42))
 detail = im.crop(box)
 detail = grade(detail)
 detail = resize_cap(detail, 1300)
