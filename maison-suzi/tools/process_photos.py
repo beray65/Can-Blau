@@ -40,9 +40,18 @@ def resize_cap(im: Image.Image, max_edge: int) -> Image.Image:
         nh, nw = max_edge, round(w * max_edge / h)
     return im.resize((nw, nh), Image.LANCZOS)
 
+# Manual pre-crop boxes (left, top, right, bottom) to trim distracting background
+# elements (e.g. a knife block) before grading. Only listed sources are cropped.
+PRECROP = {
+    "940445b5-IMG_9325.jpeg": (0, 0, 720, 1384),  # naked cake: drop the knife block on the right
+}
+
 for src_name, out_name, max_edge, quality in JOBS:
     src_path = os.path.join(SRC, src_name)
     im = Image.open(src_path)
+    im = ImageOps.exif_transpose(im).convert("RGB")
+    if src_name in PRECROP:
+        im = im.crop(PRECROP[src_name])
     im = grade(im)
     im = resize_cap(im, max_edge)
     out_path = os.path.join(DST, out_name)
@@ -50,12 +59,12 @@ for src_name, out_name, max_edge, quality in JOBS:
     kb = os.path.getsize(out_path) / 1024
     print(f"{out_name}: {im.size[0]}x{im.size[1]} -> {kb:.0f} KB")
 
-# Extra: a tight macro crop of the naked cake's top tier for a gallery "detail" shot
+# Extra: a tight macro crop of the naked cake's top tier for a gallery "detail" shot.
+# Cropped from the left/top only — the source's knife block sits at the right edge.
 im = Image.open(os.path.join(SRC, "940445b5-IMG_9325.jpeg"))
 im = ImageOps.exif_transpose(im).convert("RGB")
 w, h = im.size  # 1080 x 1384
-# top tier + berries/figs region, roughly the upper-middle third
-box = (int(w*0.02), int(h*0.28), int(w*0.98), int(h*0.62))
+box = (int(w*0.00), int(h*0.27), int(w*0.72), int(h*0.62))
 detail = im.crop(box)
 detail = grade(detail)
 detail = resize_cap(detail, 1300)
