@@ -176,7 +176,7 @@ em { font-style: italic; color: var(--gold); font-weight: 500; }
   font-weight: 500;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  transition: transform .45s var(--ease-soft), box-shadow .45s var(--ease-soft), background-color .3s, color .3s, border-color .3s;
+  transition: transform .3s var(--ease-soft), box-shadow .3s var(--ease-soft), background-color .3s, color .3s, border-color .3s;
 }
 .btn-primary {
   background: var(--ink);
@@ -269,7 +269,7 @@ em { font-style: italic; color: var(--gold); font-weight: 500; }
 }
 .gallery-item:hover img { transform: scale(1.08); filter: saturate(1.1) brightness(1.02); }
 .card-body { padding: 1.4rem 1.5rem 1.7rem; }
-.card-body h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+.card-body h4 { font-size: 1.3rem; margin-bottom: .5rem; }
 .card-body p { font-size: .92rem; color: var(--ink-mute); }
 
 /* =============================================================
@@ -335,7 +335,7 @@ html.nav-open .nav-burger span:nth-child(3) { transform: translateY(-6.4px) rota
 }
 html.nav-open .nav-mobile { clip-path: inset(0); }
 .nav-mobile nav { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
-.nav-mobile nav a { font-family: var(--serif); font-size: 1.6rem; font-style: italic; color: var(--ink); }
+.nav-mobile nav a { display: inline-block; padding: .5rem 0; font-family: var(--serif); font-size: 1.6rem; font-style: italic; color: var(--ink); }
 
 /* --- Hero --- */
 .hero {
@@ -560,9 +560,11 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 .footer-brand .nav-monogram { color: var(--gold-2); }
 .footer-brand span:last-child { font-family: var(--serif); font-style: italic; font-size: 1.25rem; }
 .footer-tagline { font-family: var(--serif); font-style: italic; color: var(--gold-2); font-size: 1.05rem; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1.4rem; justify-content: center; font-size: .85rem; margin-top: .4rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; font-size: .85rem; margin-top: .4rem; }
+.footer-links a { display: inline-block; padding: .4rem; }
 .footer-links a:hover { color: var(--cream); }
 .footer-social { display: flex; gap: .6rem; align-items: center; font-size: .85rem; margin-top: .6rem; }
+.footer-social a { display: inline-block; padding: .4rem; }
 .footer-social a:hover { color: var(--cream); }
 .footer-copy { font-size: .78rem; opacity: 0.6; margin-top: 1.2rem; }
 

@@ -7,6 +7,19 @@
 <meta name="description" content="Maison Suzi: repostería artesanal francesa hecha en casa por Suzan. Tartas, eclairs, tartaletas y pasteles de cumpleaños, horneados con pasión y entregados a domicilio.">
 <meta name="theme-color" content="#FAF6EF">
 
+<!-- Open Graph / redes sociales — og:image usa ruta relativa; al desplegar en un dominio
+     real, cámbiala por la URL absoluta (https://tudominio.com/assets/img/naked-cake.webp) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maison Suzi">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Maison Suzi — Repostería artesanal a domicilio">
+<meta property="og:description" content="Tartas, eclairs, tartaletas y pasteles de cumpleaños hechos a mano por Suzan, horneados con pasión y entregados a domicilio.">
+<meta property="og:image" content="assets/img/naked-cake.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maison Suzi — Repostería artesanal a domicilio">
+<meta name="twitter:description" content="Tartas, eclairs, tartaletas y pasteles de cumpleaños hechos a mano, horneados con pasión.">
+<meta name="twitter:image" content="assets/img/naked-cake.webp">
+
 <!-- Favicon: monograma MS en línea dorada sobre fondo crema -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FAF6EF'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' font-style='italic' fill='%23C9A24B' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
 
@@ -15,7 +28,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
 
 <link rel="preload" as="image" href="assets/img/naked-cake.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20260722h">
+<link rel="stylesheet" href="styles.css?v=20260722i">
+
+<!-- Datos estructurados para buscadores. Sin dirección física (reparto a domicilio);
+     añádela aquí si en el futuro tienes un local u obrador con dirección fija. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Maison Suzi",
+  "description": "Repostería artesanal francesa hecha en casa: tartas, eclairs, tartaletas y pasteles de cumpleaños con reparto a domicilio.",
+  "image": "assets/img/naked-cake.webp",
+  "telephone": "+34600000000",
+  "servesCuisine": "Repostería francesa",
+  "priceRange": "€€",
+  "sameAs": ["https://instagram.com/maisonsuzi"]
+}
+</script>
 </head>
 <body>
 <script>document.documentElement.classList.add("js");</script>
@@ -173,7 +202,7 @@
               <img src="assets/img/cheesecake.webp" alt="Tarta de queso clásica horneada con mermelada de moras" loading="lazy" decoding="async">
             </div>
             <div class="card-body">
-              <h3>Tarta de queso clásica</h3>
+              <h4>Tarta de queso clásica</h4>
               <p>Horneada despacio, base dorada y un baño de caramelo casero.</p>
             </div>
           </article>
@@ -182,7 +211,7 @@
               <img src="assets/img/naked-cake.webp" alt="Naked cake de dos pisos decorada con frambuesas, moras, arándanos e higos frescos" loading="lazy" decoding="async">
             </div>
             <div class="card-body">
-              <h3>Naked cake de frutos rojos</h3>
+              <h4>Naked cake de frutos rojos</h4>
               <p>Capas ligeras, crema suave y un jardín de frutas de temporada.</p>
             </div>
           </article>
@@ -197,7 +226,7 @@
               <img src="assets/img/eclair.webp" alt="Eclair relleno de crema con frambuesas, arándanos y grosellas, bañado en chocolate" loading="lazy" decoding="async" style="object-position: 50% 45%;">
             </div>
             <div class="card-body">
-              <h3>Eclair de frutos rojos</h3>
+              <h4>Eclair de frutos rojos</h4>
               <p>Choux relleno de crema, glaseado brillante y fruta fresca.</p>
             </div>
           </article>
@@ -206,7 +235,7 @@
               <img src="assets/img/tartaletas.webp" alt="Tartaletas de fruta de temporada: frutos rojos, arándanos, frambuesa y merengue de lima" loading="lazy" decoding="async">
             </div>
             <div class="card-body">
-              <h3>Tartaletas de fruta de temporada</h3>
+              <h4>Tartaletas de fruta de temporada</h4>
               <p>Base crujiente, crema pastelera y fruta fresca — a elegir sabor.</p>
             </div>
           </article>
@@ -215,7 +244,7 @@
               <img src="assets/img/tiramisu.webp" alt="Tiramisú clásico en vasito individual, decorado con physalis y cacao" loading="lazy" decoding="async" style="object-position: 50% 70%;">
             </div>
             <div class="card-body">
-              <h3>Tiramisú clásico en vasito</h3>
+              <h4>Tiramisú clásico en vasito</h4>
               <p>Receta tradicional italiana, cacao amargo y un toque de café.</p>
             </div>
           </article>
@@ -224,7 +253,7 @@
               <img src="assets/img/vasito-frambuesa.webp" alt="Vasito de cheesecake con coulis de frambuesa, base de galleta y menta fresca" loading="lazy" decoding="async" style="object-position: 50% 35%;">
             </div>
             <div class="card-body">
-              <h3>Vasito de cheesecake y frambuesa</h3>
+              <h4>Vasito de cheesecake y frambuesa</h4>
               <p>Base de galleta, cheesecake cremoso y coulis de frambuesa casero.</p>
             </div>
           </article>
@@ -239,7 +268,7 @@
               <img src="assets/img/birthday-cake.webp" alt="Pastel de cumpleaños de chocolate con Ferrero Rocher, frutos rojos y velas doradas" loading="lazy" decoding="async">
             </div>
             <div class="card-body">
-              <h3>Pastel de cumpleaños a medida</h3>
+              <h4>Pastel de cumpleaños a medida</h4>
               <p>Diseñado contigo: rellenos, colores y decoración para tu ocasión.</p>
             </div>
           </article>
@@ -425,6 +454,6 @@
 </footer>
 
 <script defer src="lib/manifest.js"></script>
-<script defer src="main.js?v=20260722h"></script>
+<script defer src="main.js?v=20260722i"></script>
 </body>
 </html>

@@ -54,7 +54,7 @@
               '<span class="card-icon" aria-hidden="true">' + icon + '</span>' +
             '</div>' +
             '<div class="card-body">' +
-              '<h3>' + escHTML(p.name) + '</h3>' +
+              '<h4>' + escHTML(p.name) + '</h4>' +
               '<p>' + escHTML(p.desc) + '</p>' +
             '</div>' +
           '</article>'
@@ -102,22 +102,54 @@
     var burger = $("[data-nav-burger]");
     var mobile = $("[data-nav-mobile]");
     if (!burger || !mobile) return;
-    var closeMenu = function () {
+
+    var focusablesSel = 'a[href], button:not([disabled])';
+    var isOpen = function () { return burger.getAttribute("aria-expanded") === "true"; };
+
+    // The panel stays in the DOM at all times (only clip-path hides it), so its
+    // links must be explicitly pulled out of tab order while closed — otherwise
+    // keyboard users land on invisible focus targets.
+    mobile.setAttribute("inert", "");
+    $$(focusablesSel, mobile).forEach(function (el) { el.setAttribute("tabindex", "-1"); });
+
+    var closeMenu = function (opts) {
       mobile.setAttribute("aria-hidden", "true");
+      mobile.setAttribute("inert", "");
+      $$(focusablesSel, mobile).forEach(function (el) { el.setAttribute("tabindex", "-1"); });
       burger.setAttribute("aria-expanded", "false");
       document.documentElement.classList.remove("nav-open");
+      if (!opts || opts.returnFocus !== false) burger.focus();
     };
+    var openMenu = function () {
+      mobile.setAttribute("aria-hidden", "false");
+      mobile.removeAttribute("inert");
+      $$(focusablesSel, mobile).forEach(function (el) { el.removeAttribute("tabindex"); });
+      burger.setAttribute("aria-expanded", "true");
+      document.documentElement.classList.add("nav-open");
+      var first = $(focusablesSel, mobile);
+      if (first) first.focus();
+    };
+
     burger.addEventListener("click", function () {
-      var open = burger.getAttribute("aria-expanded") === "true";
-      if (open) { closeMenu(); }
-      else {
-        mobile.setAttribute("aria-hidden", "false");
-        burger.setAttribute("aria-expanded", "true");
-        document.documentElement.classList.add("nav-open");
-      }
+      if (isOpen()) closeMenu(); else openMenu();
     });
     $$("[data-nav-mobile-link]", mobile).forEach(function (a) {
-      a.addEventListener("click", closeMenu);
+      a.addEventListener("click", function () { closeMenu({ returnFocus: false }); });
+    });
+
+    // Escape closes the menu; Tab is trapped inside it while open.
+    mobile.addEventListener("keydown", function (e) {
+      if (!isOpen()) return;
+      if (e.key === "Escape") { closeMenu(); return; }
+      if (e.key !== "Tab") return;
+      var items = $$(focusablesSel, mobile);
+      if (!items.length) return;
+      var firstEl = items[0], lastEl = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault(); lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault(); firstEl.focus();
+      }
     });
   }
 
@@ -136,7 +168,21 @@
       var navOffset = 84;
       var top = el.getBoundingClientRect().top + window.scrollY - navOffset;
       window.scrollTo({ top: top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      // Sync the URL so the section is bookmarkable/shareable and back/forward work,
+      // without pushState itself causing a jump (it never scrolls on its own).
+      if (window.history && history.pushState) history.pushState(null, "", id);
     });
+
+    // Deep link on load: jump straight to the hash target, accounting for the fixed nav.
+    if (location.hash) {
+      var target = document.querySelector(location.hash);
+      if (target) {
+        requestAnimationFrame(function () {
+          var top = target.getBoundingClientRect().top + window.scrollY - 84;
+          window.scrollTo({ top: top, behavior: "auto" });
+        });
+      }
+    }
   }
 
   /* -----------------------------------------------------------
