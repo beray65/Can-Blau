@@ -32,7 +32,8 @@
         category: "tartas",
         name: "Naked cake de frutos rojos",
         desc: "Capas ligeras, crema suave y un jardín de frutas de temporada.",
-        icon: "layer-cake"
+        icon: "layer-cake",
+        photo: "assets/img/naked-cake.webp"
       },
       {
         id: "cookie-pistacho",
@@ -46,28 +47,32 @@
         category: "individuales",
         name: "Eclair de frutos rojos",
         desc: "Choux relleno de crema, glaseado brillante y fruta fresca.",
-        icon: "eclair"
+        icon: "eclair",
+        photo: "assets/img/eclair.webp"
       },
       {
-        id: "vasito-galleta",
+        id: "tartaletas",
         category: "individuales",
-        name: "Vasito de galleta y frutos rojos",
-        desc: "Capas de galleta, crema y mermelada casera, coronado con macaron.",
-        icon: "cup"
+        name: "Tartaletas de fruta de temporada",
+        desc: "Base crujiente, crema pastelera y fruta fresca — a elegir sabor.",
+        icon: "cup",
+        photo: "assets/img/tartaletas.webp"
       },
       {
         id: "tiramisu",
         category: "individuales",
         name: "Tiramisú clásico en vasito",
         desc: "Receta tradicional italiana, cacao amargo y un toque de café.",
-        icon: "tiramisu"
+        icon: "tiramisu",
+        photo: "assets/img/tiramisu.webp"
       },
       {
         id: "cumpleanos",
         category: "cumple",
         name: "Pastel de cumpleaños a medida",
         desc: "Diseñado contigo: rellenos, colores y decoración para tu ocasión.",
-        icon: "birthday"
+        icon: "birthday",
+        photo: "assets/img/birthday-cake.webp"
       }
     ],
 
