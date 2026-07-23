@@ -475,12 +475,13 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-@media (min-width: 720px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 170px; gap: 1.2rem; } }
+@media (min-width: 720px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 170px; gap: 1.2rem; grid-auto-flow: dense; } }
 @media (min-width: 1280px) { .gallery-grid { grid-auto-rows: 200px; } }
 
 .gallery-item {
   position: relative; border-radius: var(--radius-sm); overflow: hidden;
   display: grid; place-items: center; color: var(--cream);
+  background: var(--ink-3);
   --rx: 0deg; --ry: 0deg;
   transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
   transform-style: preserve-3d;
@@ -488,6 +489,7 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   box-shadow: 0 1px 0 var(--line-soft);
 }
 .gallery-item:hover { box-shadow: 0 30px 60px -24px rgba(201,162,75,0.35); }
+.gallery-item--contain img { object-fit: contain; }
 .gallery-item figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: .9rem 1rem 1rem;
@@ -503,16 +505,16 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 }
 
 @media (min-width: 720px) {
-  .gallery-item--a { grid-column: span 2; grid-row: span 2; }
-  .gallery-item--b { grid-column: span 2; grid-row: span 1; }
-  .gallery-item--c { grid-column: span 1; grid-row: span 1; }
-  .gallery-item--d { grid-column: span 1; grid-row: span 1; }
-  .gallery-item--e { grid-column: span 2; grid-row: span 1; }
-  .gallery-item--f { grid-column: span 2; grid-row: span 1; }
+  .gallery-item--hero { grid-column: span 2; grid-row: span 2; }
+  .gallery-item--tall { grid-column: span 1; grid-row: span 2; }
+  .gallery-item--wide { grid-column: span 2; grid-row: span 1; }
 }
 @media (max-width: 719px) {
-  .gallery-item--a { grid-column: span 2; aspect-ratio: 16/10; }
   .gallery-item { aspect-ratio: 1; }
+  .gallery-item--hero { grid-column: span 2; aspect-ratio: 4 / 3; }
+  .gallery-item--hero.gallery-item--contain { aspect-ratio: 3 / 4; }
+  .gallery-item--tall { aspect-ratio: 3 / 4; }
+  .gallery-item--wide { grid-column: span 2; aspect-ratio: 16 / 9; }
 }
 
 /* --- La Carta (full menu, printed-menu look on paper) --- */
