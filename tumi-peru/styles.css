@@ -513,7 +513,12 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 }
 
 @media (min-width: 720px) {
-  .gallery-item--hero { grid-column: span 2; grid-row: span 2; }
+  /* The ceviche photo has almost no breathing room around the dish (the
+     chili garnish touches the top edge, the bowl touches the bottom) —
+     a 2x2 cell forces ~25% to be cropped off the top/bottom. Taller (2x3)
+     brings that down to ~12%, taken off the sides instead, which this
+     photo can spare. */
+  .gallery-item--hero { grid-column: span 2; grid-row: span 3; }
   .gallery-item--tall { grid-column: span 1; grid-row: span 2; }
   .gallery-item--wide { grid-column: span 2; grid-row: span 1; }
   /* Matches the dessert photo's own portrait ratio (~0.6) almost exactly,
@@ -522,7 +527,7 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 }
 @media (max-width: 719px) {
   .gallery-item { aspect-ratio: 1; }
-  .gallery-item--hero { grid-column: span 2; aspect-ratio: 4 / 3; }
+  .gallery-item--hero { grid-column: span 2; aspect-ratio: 4 / 5; }
   .gallery-item--tall { aspect-ratio: 3 / 4; }
   .gallery-item--wide { grid-column: span 2; aspect-ratio: 16 / 9; }
   .gallery-item--feature { grid-column: span 2; aspect-ratio: 3 / 5; }
