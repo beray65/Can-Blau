@@ -123,14 +123,10 @@
      HERO
      ========================================================= -->
 <section class="hero" id="inicio">
-  <div class="hero-art" aria-hidden="true">
-    <div class="hero-mesh"></div>
-    <!-- Enhanced only: WebGL waves in the brand's terracotta/gold tones, fade
-         in over .hero-mesh once JS + WebGL are available; otherwise
-         .hero-mesh alone stays the hero background, exactly as before. -->
-    <canvas class="hero-shader" data-hero-shader></canvas>
-    <div class="hero-grain"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <img src="assets/img/ceviche-clasico.webp" alt="" fetchpriority="high" loading="eager" decoding="sync">
   </div>
+  <div class="hero-grain" aria-hidden="true"></div>
 
   <div class="container hero-grid">
     <div class="hero-content">
@@ -153,10 +149,6 @@
         <a class="btn btn-primary" data-magnetic data-magnetic-strength="0.3" href="#carta">Ver la carta</a>
         <a class="btn btn-ghost" data-magnetic data-magnetic-strength="0.3" href="#visita">Cómo llegar</a>
       </div>
-    </div>
-
-    <div class="hero-photo reveal" data-reveal>
-      <img src="assets/img/ceviche-clasico.webp" alt="Ceviche Clásico: pescado fresco marinado en leche de tigre, con boniato, choclo y cebolla morada" fetchpriority="high" loading="eager" decoding="sync">
     </div>
   </div>
 
