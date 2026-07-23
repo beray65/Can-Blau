@@ -307,7 +307,6 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
   position: absolute; z-index: -1; top: 8%; left: 50%;
   width: min(60vw, 560px);
   transform: translateX(-50%);
-  color: var(--gold);
   opacity: 0.16;
 }
 .hero-inner { text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -364,7 +363,7 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
 }
 .historia-figure { position: relative; order: -1; }
 .historia-lantern {
-  width: min(46vw, 190px); margin-inline: auto; color: var(--gold); opacity: 0.85;
+  width: min(46vw, 190px); margin-inline: auto; opacity: 0.85;
 }
 .historia-pattern {
   position: absolute; inset: 0; z-index: -1; opacity: 0.05; margin: auto;
@@ -393,11 +392,20 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
   display: grid; gap: 1.4rem;
 }
 .testimonial {
+  --rx: 0deg; --ry: 0deg;
   background: var(--bg-3);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 1.8rem;
   position: relative;
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform .55s var(--ease-soft), box-shadow .55s var(--ease-soft), border-color .35s var(--ease-out);
+}
+.testimonial:hover {
+  transition-duration: .15s;
+  border-color: rgba(201,121,63,0.35);
+  box-shadow: 0 30px 60px -25px rgba(201,121,63,0.3), 0 12px 26px rgba(0,0,0,0.35);
 }
 .testimonial p {
   font-family: var(--serif); font-style: italic; color: var(--cream-2);
@@ -414,54 +422,77 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
 .carta { padding-block: clamp(4.5rem, 9vw, 8rem); background: var(--bg-2); }
 .carta-note { color: var(--cream-3); font-size: 0.9rem; margin-bottom: 2.2rem; max-width: 52ch; }
 
-.carta-filters {
-  display: flex; flex-wrap: wrap; gap: 0.6rem;
-  margin-bottom: 2.6rem;
+/* Nivel 1 — categorías principales (Comida / Bebidas / Dulces / Salados) */
+.carta-groups {
+  display: flex; flex-wrap: wrap; gap: 0.7rem;
+  margin-bottom: 2.2rem;
 }
-.carta-filter {
-  padding: 0.55rem 1.15rem;
+.carta-group {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   border: 1px solid var(--line-2);
-  font-size: 0.86rem;
+  font-family: var(--serif); font-style: italic; font-size: 1.05rem;
   color: var(--cream-2);
   transition: background-color .35s var(--ease-out), color .35s var(--ease-out), border-color .35s var(--ease-out);
 }
-.carta-filter:hover { border-color: var(--accent); }
-.carta-filter.is-active {
-  background: var(--accent); border-color: var(--accent); color: var(--bg);
-  font-weight: 600;
+.carta-group img { width: 20px; height: 20px; }
+.carta-group:hover { border-color: var(--accent); }
+.carta-group.is-active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color: transparent; color: var(--cream);
 }
 
-.carta-grid {
-  display: grid; gap: 1.1rem;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 640px) { .carta-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1080px) { .carta-grid { grid-template-columns: repeat(3, 1fr); } }
+.carta-group-panel { display: none; }
+.carta-group-panel.is-active { display: block; }
 
-.dish {
-  --rx: 0deg; --ry: 0deg;
-  display: flex; align-items: center; gap: 1rem;
-  background: var(--bg-3);
+/* Nivel 2 — subcategorías dentro de cada grupo */
+.carta-subcats {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.carta-subcat {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--cream-3);
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1.2rem 1.3rem;
-  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
-  transform-style: preserve-3d;
-  transition: transform .55s var(--ease-soft), box-shadow .55s var(--ease-soft), border-color .35s var(--ease-out);
+  transition: background-color .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out);
 }
-.dish:hover {
-  transition-duration: .15s;
-  border-color: rgba(201,121,63,0.4);
-  box-shadow: 0 30px 60px -25px rgba(201,121,63,0.35), 0 12px 26px rgba(0,0,0,0.35);
+.carta-subcat:hover { color: var(--cream); border-color: var(--line-2); }
+.carta-subcat.is-active {
+  background: var(--bg-3); border-color: var(--gold); color: var(--gold); font-weight: 600;
 }
-.dish.is-hidden { display: none; }
-.dish-icon { width: 40px; height: 40px; color: var(--accent); flex-shrink: 0; }
-.dish-body { flex: 1; min-width: 0; }
-.dish-body h3 { font-size: 1.05rem; font-style: italic; margin-bottom: .2rem; }
-.dish-body p { font-size: 0.84rem; color: var(--cream-3); font-weight: 300; }
-.dish-price {
-  font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1.05rem; flex-shrink: 0;
+
+.carta-sub-panel { display: none; }
+.carta-sub-panel.is-active { display: block; animation: menuFade .5s var(--ease-soft); }
+@keyframes menuFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.menu-list {
+  display: grid; gap: 0;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 780px) { .menu-list { grid-template-columns: repeat(2, 1fr); column-gap: 2.5rem; } }
+
+.menu-row {
+  display: flex; align-items: baseline; gap: 0.8rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--line);
+}
+.menu-name {
+  font-family: var(--serif); font-style: italic; font-size: 1.02rem; color: var(--cream);
+  flex: 1;
+  border-bottom: 1px dotted var(--line-2);
+  padding-bottom: 0.3em;
+}
+.menu-price {
+  font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1rem; white-space: nowrap;
+}
+.menu-note {
+  margin-top: 1.2rem; font-size: 0.82rem; color: var(--cream-3); font-style: italic;
 }
 
 /* =============================================================

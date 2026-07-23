@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" fill="none">
   <path d="M20 316 V150 C20 84 62 30 120 30 C178 30 220 84 220 150 V316"
-        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        stroke="#c9a961" stroke-width="2.5" stroke-linecap="round"/>
   <path d="M46 316 V152 C46 100 76 58 120 58 C164 58 194 100 194 152 V316"
-        stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
-  <path d="M120 30 V10 M108 16 H132" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        stroke="#c9a961" stroke-width="1.2" opacity="0.55"/>
+  <path d="M120 30 V10 M108 16 H132" stroke="#c9a961" stroke-width="2.5" stroke-linecap="round"/>
 </svg>

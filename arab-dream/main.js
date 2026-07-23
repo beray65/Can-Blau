@@ -156,13 +156,15 @@
   }
 
   /* ---------------------------------------------------------
-     Tilt 3D subtle (max 7deg) — cards only, fine pointer only
+     Tilt 3D subtle (max 7deg) — testimonial cards, fine pointer only
      --------------------------------------------------------- */
   function initTilt() {
     if (!fineHover) return;
-    $$(".dish").forEach(function (card) {
-      var MAX = 6;
+    $$(".testimonial").forEach(function (card) {
+      var MAX = 5;
       var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+      card.style.setProperty("--rx", "0deg");
+      card.style.setProperty("--ry", "0deg");
       card.addEventListener("mousemove", function (e) {
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
@@ -212,22 +214,41 @@
   }
 
   /* ---------------------------------------------------------
-     Carta — category filter
+     Carta — two-level tabs (grupo principal + subcategoría)
      --------------------------------------------------------- */
-  function initCartaFilter() {
-    var buttons = $$("[data-filter]");
-    var dishes = $$(".dish");
-    if (!buttons.length || !dishes.length) return;
-    buttons.forEach(function (btn) {
+  function initCarta() {
+    var groupButtons = $$(".carta-group");
+    var groupPanels = $$(".carta-group-panel");
+    if (!groupButtons.length || !groupPanels.length) return;
+
+    groupButtons.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var cat = btn.dataset.filter;
-        buttons.forEach(function (b) {
-          b.classList.toggle("is-active", b === btn);
-          b.setAttribute("aria-selected", b === btn ? "true" : "false");
+        var target = btn.dataset.group;
+        groupButtons.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle("is-active", active);
+          b.setAttribute("aria-selected", active ? "true" : "false");
         });
-        dishes.forEach(function (dish) {
-          var show = cat === "all" || dish.dataset.category === cat;
-          dish.classList.toggle("is-hidden", !show);
+        groupPanels.forEach(function (p) {
+          p.classList.toggle("is-active", p.dataset.groupPanel === target);
+        });
+      });
+    });
+
+    groupPanels.forEach(function (panel) {
+      var subButtons = $$(".carta-subcat", panel);
+      var subPanels = $$(".carta-sub-panel", panel);
+      subButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var target = btn.dataset.subcat;
+          subButtons.forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle("is-active", active);
+            b.setAttribute("aria-selected", active ? "true" : "false");
+          });
+          subPanels.forEach(function (p) {
+            p.classList.toggle("is-active", p.dataset.subcatPanel === target);
+          });
         });
       });
     });
@@ -291,7 +312,7 @@
     safe(initSplitText, "initSplitText");
     safe(initTilt, "initTilt");
     safe(initCountUp, "initCountUp");
-    safe(initCartaFilter, "initCartaFilter");
+    safe(initCarta, "initCarta");
     safe(initOpenStatus, "initOpenStatus");
     safe(initWhatsAppLinks, "initWhatsAppLinks");
     safe(initFooterYear, "initFooterYear");

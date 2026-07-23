@@ -192,142 +192,272 @@
     <div class="container">
       <p class="kicker" data-reveal>La carta</p>
       <h2 class="section-title" data-reveal>Sabores para compartir</h2>
-      <p class="carta-note" data-reveal>Selección orientativa de la casa. Carta y precios sujetos a confirmación por el restaurante.</p>
+      <p class="carta-note" data-reveal>Precios en vigor en el restaurante. Consulta con el equipo cualquier alérgeno o intolerancia.</p>
 
-      <div class="carta-filters" data-carta-filters role="tablist" aria-label="Categorías de la carta">
-        <button type="button" class="carta-filter is-active" data-filter="all" role="tab" aria-selected="true">Todo</button>
-        <button type="button" class="carta-filter" data-filter="entrantes" role="tab" aria-selected="false">Entrantes</button>
-        <button type="button" class="carta-filter" data-filter="tajines" role="tab" aria-selected="false">Tajines</button>
-        <button type="button" class="carta-filter" data-filter="cuscus" role="tab" aria-selected="false">Cuscús</button>
-        <button type="button" class="carta-filter" data-filter="parrilla" role="tab" aria-selected="false">Parrilla</button>
-        <button type="button" class="carta-filter" data-filter="dulces" role="tab" aria-selected="false">Dulces</button>
-        <button type="button" class="carta-filter" data-filter="te" role="tab" aria-selected="false">Té y café</button>
+<!-- CARTA:START -->
+      <div class="carta-groups" data-carta-groups role="tablist" aria-label="Categorías de la carta">
+        <button type="button" class="carta-group is-active" data-group="comida" role="tab" aria-selected="true"><img src="assets/img/icon-tagine.svg" alt="" aria-hidden="true">Comida</button>
+        <button type="button" class="carta-group" data-group="bebidas" role="tab" aria-selected="false"><img src="assets/img/icon-tea.svg" alt="" aria-hidden="true">Bebidas</button>
+        <button type="button" class="carta-group" data-group="dulces" role="tab" aria-selected="false"><img src="assets/img/icon-sweets.svg" alt="" aria-hidden="true">Dulces</button>
+        <button type="button" class="carta-group" data-group="salados" role="tab" aria-selected="false"><img src="assets/img/icon-mezze.svg" alt="" aria-hidden="true">Salados</button>
       </div>
-
-      <div class="carta-grid" data-carta-grid>
-
-        <article class="dish" data-category="entrantes" data-reveal>
-          <img src="assets/img/icon-mezze.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Hummus casero</h3><p>Garbanzos, tahini y aceite de oliva virgen</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="entrantes" data-reveal>
-          <img src="assets/img/icon-mezze.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Baba ganoush</h3><p>Berenjena ahumada, ajo y limón</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="entrantes" data-reveal>
-          <img src="assets/img/icon-mezze.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Falafel</h3><p>Seis piezas, salsa de yogur y hierbas</p></div>
-          <span class="dish-price">7&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="entrantes" data-reveal>
-          <img src="assets/img/icon-mezze.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Berenjenas rellenas</h3><p>Especiadas, al estilo de la casa</p></div>
-          <span class="dish-price">8&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="entrantes" data-reveal>
-          <img src="assets/img/icon-mezze.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Harira</h3><p>Sopa tradicional de lentejas y garbanzos</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-
-        <article class="dish" data-category="tajines" data-reveal>
-          <img src="assets/img/icon-tagine.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Tajine de pollo</h3><p>Limón confitado, aceitunas y especias</p></div>
-          <span class="dish-price">14&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="tajines" data-reveal>
-          <img src="assets/img/icon-tagine.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Tajine de cordero</h3><p>Ciruelas pasas, almendra tostada y canela</p></div>
-          <span class="dish-price">16&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="tajines" data-reveal>
-          <img src="assets/img/icon-tagine.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Tajine de osobuco</h3><p>Cocción lenta, verduras de temporada</p></div>
-          <span class="dish-price">16&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="tajines" data-reveal>
-          <img src="assets/img/icon-tagine.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Tajine de verduras</h3><p>Selección de temporada, cuscús aparte</p></div>
-          <span class="dish-price">12&nbsp;€</span>
-        </article>
-
-        <article class="dish" data-category="cuscus" data-reveal>
-          <img src="assets/img/icon-couscous.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Cuscús real</h3><p>Pollo, cordero, verduras y garbanzos</p></div>
-          <span class="dish-price">15&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="cuscus" data-reveal>
-          <img src="assets/img/icon-couscous.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Cuscús con kefta</h3><p>Albóndigas especiadas, salsa de tomate</p></div>
-          <span class="dish-price">13&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="cuscus" data-reveal>
-          <img src="assets/img/icon-couscous.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Cuscús de verduras</h3><p>Siete verduras de temporada</p></div>
-          <span class="dish-price">11&nbsp;€</span>
-        </article>
-
-        <article class="dish" data-category="parrilla" data-reveal>
-          <img src="assets/img/icon-skewer.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Brochetas mixtas</h3><p>Cordero, pollo y ternera a la brasa</p></div>
-          <span class="dish-price">14&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="parrilla" data-reveal>
-          <img src="assets/img/icon-skewer.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Kefta a la brasa</h3><p>Carne especiada, comino y perejil</p></div>
-          <span class="dish-price">12&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="parrilla" data-reveal>
-          <img src="assets/img/icon-skewer.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Pollo a la brasa</h3><p>Marinado con especias marroquíes</p></div>
-          <span class="dish-price">13&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="parrilla" data-reveal>
-          <img src="assets/img/icon-skewer.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Tacos árabes de pollo</h3><p>Pan casero, verduras y salsas de la casa</p></div>
-          <span class="dish-price">9&nbsp;€</span>
-        </article>
-
-        <article class="dish" data-category="dulces" data-reveal>
-          <img src="assets/img/icon-sweets.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Pastela dulce</h3><p>Hojaldre, almendra y canela</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="dulces" data-reveal>
-          <img src="assets/img/icon-sweets.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Cuernos de gacela</h3><p>Pasta de almendra, agua de azahar</p></div>
-          <span class="dish-price">5&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="dulces" data-reveal>
-          <img src="assets/img/icon-sweets.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Baklava surtido</h3><p>Selección de la casa, miel y pistacho</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="dulces" data-reveal>
-          <img src="assets/img/icon-sweets.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Pasteles árabes</h3><p>Variedad diaria de repostería</p></div>
-          <span class="dish-price">6&nbsp;€</span>
-        </article>
-
-        <article class="dish" data-category="te" data-reveal>
-          <img src="assets/img/icon-tea.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Té moruno a la menta</h3><p>Servido a la manera tradicional</p></div>
-          <span class="dish-price">3&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="te" data-reveal>
-          <img src="assets/img/icon-tea.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Café árabe con cardamomo</h3><p>Tueste especiado</p></div>
-          <span class="dish-price">3&nbsp;€</span>
-        </article>
-        <article class="dish" data-category="te" data-reveal>
-          <img src="assets/img/icon-tea.svg" alt="" class="dish-icon" aria-hidden="true">
-          <div class="dish-body"><h3>Zumo natural del día</h3><p>Fruta fresca de temporada</p></div>
-          <span class="dish-price">4&nbsp;€</span>
-        </article>
-
+      <div class="carta-panels">
+      <div class="carta-group-panel is-active" data-group-panel="comida">
+        <div class="carta-subcats" data-subcats role="tablist" aria-label="Subcategorías de Comida">
+          <button type="button" class="carta-subcat is-active" data-subcat="tacos" role="tab" aria-selected="true">Tacos &amp; Wraps</button>
+          <button type="button" class="carta-subcat" data-subcat="sopas" role="tab" aria-selected="false">Sopas</button>
+          <button type="button" class="carta-subcat" data-subcat="hamburguesas" role="tab" aria-selected="false">Hamburguesas</button>
+          <button type="button" class="carta-subcat" data-subcat="cuscus" role="tab" aria-selected="false">Cuscús</button>
+          <button type="button" class="carta-subcat" data-subcat="tajin" role="tab" aria-selected="false">Tajín</button>
+          <button type="button" class="carta-subcat" data-subcat="platos" role="tab" aria-selected="false">Platos</button>
+        </div>
+        <div class="carta-sub-panels">
+          <div class="carta-sub-panel is-active" data-subcat-panel="tacos" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Pollo</span><span class="menu-price">7&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kefta</span><span class="menu-price">7,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mixto (Pollo + Kefta)</span><span class="menu-price">7,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Gambas</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Calamares</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mixto (Gambas + Calamares)</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mixto (Gambas + Pollo)</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel garbanzos</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel espinacas + almendras</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel pimientos</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel mixto</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel espinacas y piñones</span><span class="menu-price">9&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Atún</span><span class="menu-price">6,50&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="sopas" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Harira marroquí</span><span class="menu-price">4&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Harira completa (con huevo y chebakia)</span><span class="menu-price">6&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Sopa de marisco</span><span class="menu-price">7&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Sopa de calabaza</span><span class="menu-price">5&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="hamburguesas" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Pollo</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kefta</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Doble pollo</span><span class="menu-price">12&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Doble kefta</span><span class="menu-price">12&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel de garbanzo</span><span class="menu-price">7,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel espinacas</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel pimiento</span><span class="menu-price">8,50&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="cuscus" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Pollo</span><span class="menu-price">8,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Ternera</span><span class="menu-price">10&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cordero</span><span class="menu-price">12&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Vegetal</span><span class="menu-price">6,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Saykok</span><span class="menu-price">5&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Safa</span><span class="menu-price">10&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="tajin" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Pollo</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Ternera</span><span class="menu-price">9,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cordero con verduras</span><span class="menu-price">13&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Verdura</span><span class="menu-price">6,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Berenjena rellena de kefta</span><span class="menu-price">6,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kefta</span><span class="menu-price">8&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Gambas</span><span class="menu-price">14&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Gambas y calamares</span><span class="menu-price">13,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Alubias</span><span class="menu-price">6&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Lentejas</span><span class="menu-price">6&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Baisara</span><span class="menu-price">6&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="platos" data-group="comida">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Falafel garbanzo con arroz y ensalada</span><span class="menu-price">9,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel espinacas con arroz y ensalada</span><span class="menu-price">10,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Falafel pimiento con arroz y ensalada</span><span class="menu-price">10,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Arroz con pollo</span><span class="menu-price">12&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Arroz con ternera</span><span class="menu-price">13&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Zaalok</span><span class="menu-price">4&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Arroz solo</span><span class="menu-price">4&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Ensalada pequeña</span><span class="menu-price">6&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Ensalada grande</span><span class="menu-price">10&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <div class="carta-group-panel" data-group-panel="bebidas">
+        <div class="carta-subcats" data-subcats role="tablist" aria-label="Subcategorías de Bebidas">
+          <button type="button" class="carta-subcat is-active" data-subcat="frias" role="tab" aria-selected="true">Bebidas frías</button>
+          <button type="button" class="carta-subcat" data-subcat="zumos" role="tab" aria-selected="false">Zumos</button>
+          <button type="button" class="carta-subcat" data-subcat="batidos" role="tab" aria-selected="false">Batidos</button>
+          <button type="button" class="carta-subcat" data-subcat="tes" role="tab" aria-selected="false">Tés e infusiones</button>
+          <button type="button" class="carta-subcat" data-subcat="cafes" role="tab" aria-selected="false">Cafés</button>
+        </div>
+        <div class="carta-sub-panels">
+          <div class="carta-sub-panel is-active" data-subcat-panel="frias" data-group="bebidas">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Coca-Cola</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Coca-Cola Zero</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Fanta Naranja</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Fanta Limón</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Aquarius Naranja</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Aquarius Limón</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Red Bull</span><span class="menu-price">2,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Hawai</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Poms</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Sprite</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Tónica</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Nestea</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">ColaCao</span><span class="menu-price">2&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="zumos" data-group="bebidas">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Naranja</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Melocotón</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Piña</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Multifruta</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Manzana</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bio Fruta</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Naranja natural</span><span class="menu-price">3,50&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="batidos" data-group="bebidas">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Aguacate</span><span class="menu-price">5&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Aguacate y frutos secos</span><span class="menu-price">5,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Fruta con leche</span><span class="menu-price">4&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Fruta con naranja</span><span class="menu-price">4,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Almendras con leche</span><span class="menu-price">5&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Plátano con leche</span><span class="menu-price">4&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Naranja y fresa</span><span class="menu-price">5,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Naranja con mango</span><span class="menu-price">5,50&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="tes" data-group="bebidas">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Marroquí</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rojo (caramelo belga)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Las amigas de la cúrcuma</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Infusión de mango</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Té de jengibre y limón</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Infusión de piña colada</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Infusión relajante</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Poleo menta</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Manzanilla</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rojo (Pu-erh)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Blanco (piel de melocotón)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Azul (oolong)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Negro (turco)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Frutos del bosque</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Roibos (chai y áfrica)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Negro (inglés)</span><span class="menu-price">1,80&nbsp;€</span></li>
+            </ul>
+          </div>
+          <div class="carta-sub-panel" data-subcat-panel="cafes" data-group="bebidas">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Americano</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cortado</span><span class="menu-price">1,40&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Descafeinado</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cappuccino</span><span class="menu-price">2,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Café solo</span><span class="menu-price">1,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Café con leche</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Leche</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">ColaCao</span><span class="menu-price">2&nbsp;€</span></li>
+            </ul>
+            <p class="menu-note">Suplemento leche de soja, sin lactosa o de avena: +0,10 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="carta-group-panel" data-group-panel="dulces">
+        <div class="carta-sub-panels">
+          <div class="carta-sub-panel is-active" data-subcat-panel="dulces-caseros" data-group="dulces">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Sakya</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kahk</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Galleta caramel</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Galleta de chocolate</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Galleta mermelada</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Galleta khalit</span><span class="menu-price">1,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Halwa (kilo)</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Chebakia</span><span class="menu-price">1&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Caab chocolate</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kikis watani</span><span class="menu-price">0,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Miloja</span><span class="menu-price">1,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Pasta de dátil</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Dátil con nueces</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Grebia</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Polvorones</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Chebakia (1 kg)</span><span class="menu-price">25&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bochneja (1 kg)</span><span class="menu-price">20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mekrot (1 kg)</span><span class="menu-price">20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Sfof (100 g)</span><span class="menu-price">3&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Polo Oreo</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Baklawa</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bolita de coco</span><span class="menu-price">1,10&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bolita María</span><span class="menu-price">1,10&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bolita de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Bombón</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de anacardo</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de pistachos</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de cacahuete</span><span class="menu-price">1,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cinta de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cinta de cacahuete</span><span class="menu-price">1,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cono helado</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Cuerno choco</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kgab, pasta de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Fakas</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Haram</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mluza de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mluza de nueces</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mluza de coco</span><span class="menu-price">1,40&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Nido de pistacho</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Nido de frutos secos</span><span class="menu-price">1,40&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Noga de almendra</span><span class="menu-price">1,40&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de almendras con avellanas</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de almendras, nueces y pasas</span><span class="menu-price">1,60&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Tartajea de frutos secos</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Twisat de almendras</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Twisat de frutos secos</span><span class="menu-price">1,60&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="carta-group-panel" data-group-panel="salados">
+        <div class="carta-sub-panels">
+          <div class="carta-sub-panel is-active" data-subcat-panel="salados" data-group="salados">
+            <ul class="menu-list">
+            <li class="menu-row"><span class="menu-name">Pastilla de pollo</span><span class="menu-price">3,30&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Pastilla de marisco</span><span class="menu-price">3,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de pollo</span><span class="menu-price">3&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de marisco</span><span class="menu-price">3,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de queso</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de espinacas con piñones</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kich de pollo</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Kich de kefta</span><span class="menu-price">2,80&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Lumpia</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Croquetas de pollo</span><span class="menu-price">1,20&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Empanadas de atún</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de kefta con verduras</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de pollo con verduras</span><span class="menu-price">2,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rolitos de arroz</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de queso</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rghifa rellena de pollo</span><span class="menu-price">3&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Rghifa rellena de kefta</span><span class="menu-price">3&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Mjebna</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Briwat de pollo con bechamel</span><span class="menu-price">1,50&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Pistola de gambas con bechamel</span><span class="menu-price">2&nbsp;€</span></li>
+            <li class="menu-row"><span class="menu-name">Corno de gambas con bechamel</span><span class="menu-price">2&nbsp;€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- CARTA:END -->
     </div>
   </section>
 

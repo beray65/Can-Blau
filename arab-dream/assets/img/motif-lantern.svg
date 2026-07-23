@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 140" fill="none">
-  <path d="M40 4 V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <path d="M24 16 H56 L50 30 H30 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M20 30 C20 30 16 40 16 62 C16 96 24 108 40 108 C56 108 64 96 64 62 C64 40 60 30 60 30" stroke="currentColor" stroke-width="2"/>
-  <path d="M28 40 V90 M40 36 V96 M52 40 V90" stroke="currentColor" stroke-width="1.1" opacity="0.55"/>
-  <path d="M16 62 H64" stroke="currentColor" stroke-width="1.1" opacity="0.55"/>
-  <path d="M30 108 H50 L44 128 H36 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M40 128 V136" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 4 V16" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 16 H56 L50 30 H30 Z" stroke="#c9a961" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M20 30 C20 30 16 40 16 62 C16 96 24 108 40 108 C56 108 64 96 64 62 C64 40 60 30 60 30" stroke="#c9a961" stroke-width="2"/>
+  <path d="M28 40 V90 M40 36 V96 M52 40 V90" stroke="#c9a961" stroke-width="1.1" opacity="0.55"/>
+  <path d="M16 62 H64" stroke="#c9a961" stroke-width="1.1" opacity="0.55"/>
+  <path d="M30 108 H50 L44 128 H36 Z" stroke="#c9a961" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M40 128 V136" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
 </svg>
