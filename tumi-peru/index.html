@@ -123,10 +123,14 @@
      HERO
      ========================================================= -->
 <section class="hero" id="inicio">
-  <div class="hero-bg" aria-hidden="true">
-    <img src="assets/img/ceviche-clasico.webp" alt="" fetchpriority="high" loading="eager" decoding="sync">
+  <div class="hero-art" aria-hidden="true">
+    <div class="hero-mesh"></div>
+    <!-- Enhanced only: WebGL waves in the brand's terracotta/gold tones, fade
+         in over .hero-mesh once JS + WebGL are available; otherwise
+         .hero-mesh alone stays the hero background, exactly as before. -->
+    <canvas class="hero-shader" data-hero-shader></canvas>
+    <div class="hero-grain"></div>
   </div>
-  <div class="hero-grain" aria-hidden="true"></div>
 
   <div class="container hero-grid">
     <div class="hero-content">
@@ -149,6 +153,10 @@
         <a class="btn btn-primary" data-magnetic data-magnetic-strength="0.3" href="#carta">Ver la carta</a>
         <a class="btn btn-ghost" data-magnetic data-magnetic-strength="0.3" href="#visita">Cómo llegar</a>
       </div>
+    </div>
+
+    <div class="hero-photo reveal" data-reveal>
+      <img src="assets/img/ceviche-clasico.webp" alt="Ceviche Clásico: pescado fresco marinado en leche de tigre, con boniato, choclo y cebolla morada" fetchpriority="high" loading="eager" decoding="sync">
     </div>
   </div>
 
@@ -288,7 +296,7 @@
       <img src="assets/img/ceviche-noche.webp" alt="Ceviche Clásico servido en bol de piedra, sobre fondo oscuro" loading="lazy" decoding="async">
       <figcaption>Ceviche Clásico</figcaption>
     </figure>
-    <figure class="gallery-item gallery-item--hero gallery-item--contain reveal" data-reveal>
+    <figure class="gallery-item gallery-item--feature reveal" data-reveal>
       <img src="assets/img/postres-seleccion.webp" alt="Selección de postres de la casa: brownie, granola bowl, tarta de queso, frutos rojos y batido" loading="lazy" decoding="async">
       <figcaption>Selección de postres</figcaption>
     </figure>
