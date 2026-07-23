@@ -335,6 +335,15 @@ section { position: relative; }
 }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
+.nav-lang {
+  font-size: .78rem; font-weight: 600; letter-spacing: 0.04em; color: var(--cream-soft);
+  border: 1px solid var(--line); border-radius: 999px; padding: .3rem .7rem;
+  transition: color .3s, border-color .3s;
+}
+.nav-lang:hover { color: var(--gold-2); border-color: var(--gold-2); }
+
+.nav-mobile-lang { font-size: 1.05rem !important; opacity: 0.75; }
+
 .btn-nav-cta { display: none; }
 @media (min-width: 720px) { .btn-nav-cta { display: inline-flex; } }
 
