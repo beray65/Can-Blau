@@ -230,6 +230,33 @@
   }
 
   /* -----------------------------------------------------------
+     Cookie notice — shown once, dismissal remembered in
+     localStorage so returning visitors don't see it again.
+     ----------------------------------------------------------- */
+  function initCookieNotice() {
+    var notice = $("[data-cookie-notice]");
+    if (!notice) return;
+    var STORAGE_KEY = "tumi-cookie-ack";
+    var ack;
+    try { ack = window.localStorage.getItem(STORAGE_KEY); } catch (e) { ack = null; }
+    if (ack) return;
+
+    notice.hidden = false;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { notice.classList.add("is-visible"); });
+    });
+
+    var btn = $("[data-cookie-accept]", notice);
+    if (btn) {
+      btn.addEventListener("click", function () {
+        try { window.localStorage.setItem(STORAGE_KEY, "1"); } catch (e) { /* ignore */ }
+        notice.classList.remove("is-visible");
+        setTimeout(function () { notice.hidden = true; }, 400);
+      });
+    }
+  }
+
+  /* -----------------------------------------------------------
      Boot
      ----------------------------------------------------------- */
   function boot() {
@@ -239,6 +266,7 @@
     safe(initCursor, "initCursor");
     safe(initTilt, "initTilt");
     safe(initMagnetic, "initMagnetic");
+    safe(initCookieNotice, "initCookieNotice");
     document.documentElement.classList.add("is-ready");
   }
 

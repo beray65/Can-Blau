@@ -577,6 +577,28 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 .menu-item-price { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--terracotta); white-space: nowrap; }
 .menu-item-desc { font-size: .74rem; color: #7A6650; margin-top: .05rem; max-width: 42ch; line-height: 1.35; }
 
+/* --- Reseñas --- */
+.reviews { padding-block: clamp(5rem, 10vw, 8rem); }
+.reviews-rating {
+  display: flex; align-items: center; justify-content: center; gap: .6rem;
+  margin: -.5rem auto 3rem; color: var(--cream-mute); font-size: .92rem;
+}
+.reviews-stars { color: var(--gold-2); letter-spacing: .1em; font-size: .95rem; }
+.reviews-grid { display: grid; gap: 1.6rem; }
+@media (min-width: 720px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
+.review-card {
+  margin: 0;
+  background: var(--ink-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+}
+.review-card .review-stars { margin-bottom: 1rem; }
+.review-card p { font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.5; color: var(--cream); margin-bottom: 1.2rem; }
+.review-card footer { font-size: .82rem; color: var(--cream-mute); }
+.review-card footer span { opacity: .75; }
+.reviews-note { text-align: center; font-size: .76rem; color: var(--cream-mute); opacity: .7; margin-top: 1.8rem; }
+
 /* --- Visítanos / Contacto --- */
 .visit { padding-block: clamp(5rem, 10vw, 8.5rem); background: var(--ink-2); }
 .visit-grid { display: grid; gap: 2.5rem; }
@@ -659,10 +681,32 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
 
 /* =============================================================
-   8. Reduced motion
+   8. Cookie notice
+   ============================================================= */
+.cookie-notice {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 300;
+  background: var(--ink-3);
+  border-top: 1px solid var(--line-soft);
+  box-shadow: 0 -20px 40px -20px rgba(0,0,0,0.5);
+  transform: translateY(100%);
+  transition: transform .5s var(--ease-soft);
+}
+.cookie-notice.is-visible { transform: translateY(0); }
+.cookie-notice-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 1rem 1.5rem;
+  padding-block: 1.1rem;
+  text-align: center;
+}
+.cookie-notice-inner p { font-size: .84rem; color: var(--cream-mute); max-width: 62ch; }
+.cookie-notice-inner .btn { flex: none; padding: .6rem 1.4rem; font-size: .85rem; }
+
+/* =============================================================
+   9. Reduced motion
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
   .hero-bg img { animation: none; }
   .scroll-cue span { animation: none; }
   [data-reveal] { transition-duration: .35s; }
+  .cookie-notice { transition-duration: .01s; }
 }
