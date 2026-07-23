@@ -1,0 +1,9 @@
+Sube aquí tus fotos reales del restaurante (interior, platos, terraza, equipo).
+
+Formatos aceptados: JPG, PNG o HEIC (fotos de iPhone).
+Sugerencia mínima para aprovechar el diseño actual:
+  - 1 foto panorámica del local (para el hero)
+  - 4-6 fotos de platos o ambiente (para la sección "Historia" y una futura galería)
+
+Una vez subidas, pide que se conviertan a WebP y se enlacen en la web
+(sustituyendo la ilustración/patrón actual del hero y la sección "Nuestra casa").

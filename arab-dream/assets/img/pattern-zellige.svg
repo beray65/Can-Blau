@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <g id="star8">
+      <path d="M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z" />
+    </g>
+  </defs>
+  <g fill="none" stroke="#c98a4b" stroke-width="1" opacity="0.9">
+    <use href="#star8" x="0" y="0" transform="translate(0,0)"/>
+    <use href="#star8" x="0" y="0" transform="translate(60,60)"/>
+    <use href="#star8" x="0" y="0" transform="translate(60,-60)"/>
+    <use href="#star8" x="0" y="0" transform="translate(-60,60)"/>
+    <use href="#star8" x="0" y="0" transform="translate(-60,-60)"/>
+    <circle cx="60" cy="0" r="3.2"/>
+    <circle cx="0" cy="60" r="3.2"/>
+    <circle cx="120" cy="60" r="3.2"/>
+    <circle cx="60" cy="120" r="3.2"/>
+  </g>
+</svg>
