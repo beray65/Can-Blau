@@ -20,7 +20,7 @@
       mapsLink: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Arab Dream Palma, Carrer de Manacor 17, 07006 Palma"),
       instagram: "#",
       facebook: "#",
-      email: "hola@arabdreampalma.es"
+      email: "arabdream.ny@gmail.com"
     },
 
     rating: { value: 4.6, count: 367 },

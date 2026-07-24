@@ -11,10 +11,13 @@ Abre `index.html` haciendo doble clic, o sirve la carpeta con `python3 -m http.s
 2. **Número de WhatsApp**: se usó el teléfono público de Google Maps (871 85 55 20), que tiene formato de fijo. Confirma que ese número tiene WhatsApp activo; si no, dame el número de móvil correcto y actualizo `lib/manifest.js` (campo `contact.whatsapp`).
 3. **Instagram / Facebook**: no se encontraron enlaces oficiales. Los iconos del footer están en `index.html` (buscar el comentario `TODO cliente`) apuntando a `#` — sustitúyelos por las URLs reales.
 4. **Carta y precios**: ya es la carta real que me pasaste (Comida, Bebidas, Dulces, Salados — 170 referencias). Un par de nombres tenían erratas evidentes de tecleo y los corregí (p. ej. "Aquarius", "Sprite", "Nestea", "Cappuccino", "pimientos", "Polvorones", "Lumpia", "Poleo menta"); revísalos por si alguno no era realmente un typo. "Harira completa" la completé como "(con huevo y chebakia)" tal cual me la pasaste — si lleva algo más (dátiles, etc.) dímelo y lo actualizo. Para cambiar cualquier plato o precio, edita `tools/menu-data.mjs` y corre `node tools/generate-carta.mjs` para regenerar la sección `#carta` de `index.html` (no la edites a mano, se sobrescribe).
-5. **Email de contacto**: se usó un email de ejemplo (`hola@arabdreampalma.es`) — sustitúyelo por el real en el footer de `index.html`.
+5. **Email de contacto**: actualizado al real, `arabdream.ny@gmail.com`.
 
 ## Datos verificados (no inventados)
-Dirección, teléfono, horario (L–S 9:00–22:00, domingo cerrado) y valoración de Google (4,6★, 367 reseñas) proceden de capturas reales de Google Maps aportadas por el cliente.
+Dirección, teléfono, horario (L–S 9:00–22:00, domingo cerrado), valoración de Google (4,6★, 367 reseñas) y email de contacto proceden de datos reales aportados por el cliente.
+
+## Alternativa de estilo (mockup, no publicada)
+`mockup-vintage-paper.html` es una segunda propuesta visual (paleta amarillo suave/beige/terracota/dorado/zafiro, textura de papel envejecido) hecha para comparar con el diseño principal. Es un único archivo autocontenido con fotos de Unsplash de marcador de posición — no sustituye a `index.html`, es solo para decidir dirección de estilo.
 
 ## Estructura
 ```

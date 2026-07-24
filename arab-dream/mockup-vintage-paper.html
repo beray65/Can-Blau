@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arab Dream Palma · Propuesta "Vintage Paper"</title>
+<meta name="description" content="Propuesta visual alternativa para Arab Dream Palma: paleta cálida marroquí sobre textura de papel envejecido.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@300;400;600;700&display=swap">
+
+<style>
+  /* =========================================================
+     Tokens — paleta marroquí (amarillo suave / beige / terracota / dorado / zafiro)
+     ========================================================= */
+  :root {
+    --yellow:    #FDE68A;
+    --beige:     #F5F0DC;
+    --paper:     #FBF6E9;
+    --terracota: #C1694F;
+    --terracota-dark: #A34E38;
+    --gold:      #C9A227;
+    --sapphire:  #1B4F91;
+    --ink:       #3B2F27;
+    --ink-soft:  #6B5A4A;
+    --line:      rgba(59,47,39,0.14);
+
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --radius: 14px;
+    --radius-lg: 26px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* =========================================================
+     Reset & base
+     ========================================================= */
+  * , *::before, *::after { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background-color: var(--beige);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; padding: 0; }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.15; color: var(--terracota-dark); }
+  .container { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3rem); }
+
+  /* Textura de papel envejecido: grano sutil + viñeta cálida, 100% CSS (sin imágenes externas) */
+  body {
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(201,162,39,0.08), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(193,105,79,0.08), transparent 55%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.18 0 0 0 0 0.15 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: auto, auto, 220px 220px;
+  }
+
+  /* Patrón geométrico árabe sutil (estrella de 8 puntas), reutilizado como fondo de sección */
+  .pattern-bg {
+    position: relative;
+    isolation: isolate;
+  }
+  .pattern-bg::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23C9A227' stroke-width='1'><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(60,60)'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(60,-60)'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(-60,60)'/></g></svg>");
+    background-size: 120px 120px;
+  }
+
+  :focus-visible { outline: 2px solid var(--sapphire); outline-offset: 3px; border-radius: 4px; }
+  .skip-link {
+    position: fixed; top: -100px; left: 1rem; z-index: 999;
+    background: var(--ink); color: var(--paper); padding: .7rem 1.1rem; border-radius: var(--radius);
+    transition: top .3s var(--ease);
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* =========================================================
+     Botones
+     ========================================================= */
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .btn:hover { transform: translateY(-3px); }
+  .btn-primary { background: var(--terracota); color: var(--paper); box-shadow: 0 10px 24px -8px rgba(193,105,79,0.55); }
+  .btn-primary:hover { box-shadow: 0 16px 32px -8px rgba(193,105,79,0.6); }
+  .btn-ghost { background: transparent; border: 1.5px solid var(--terracota); color: var(--terracota-dark); }
+  .btn-ghost:hover { background: rgba(193,105,79,0.08); }
+
+  /* =========================================================
+     Nav
+     ========================================================= */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(251,246,233,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; }
+  .nav-brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--terracota-dark); }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: none; gap: 2rem; font-weight: 600; font-size: 0.92rem; }
+  .nav-links a:hover { color: var(--terracota); }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+
+  /* =========================================================
+     Hero
+     ========================================================= */
+  .hero {
+    position: relative;
+    min-height: 92svh;
+    display: flex; align-items: center;
+    overflow: clip;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: -2;
+    background-color: var(--terracota-dark);
+    background-image:
+      linear-gradient(180deg, rgba(59,47,39,0.35), rgba(59,47,39,0.72)),
+      url("https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover; background-position: center;
+  }
+  .hero-inner { position: relative; z-index: 1; color: var(--paper); max-width: 640px; }
+  .hero-inner .kicker { color: var(--yellow); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem; }
+  .hero-inner h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin-bottom: 1.2rem; }
+  .hero-inner h1 em { color: var(--yellow); font-style: italic; }
+  .hero-inner p { font-size: 1.1rem; max-width: 46ch; margin-bottom: 2rem; color: #F3E9D2; font-weight: 300; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+  /* =========================================================
+     Secciones genéricas
+     ========================================================= */
+  section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  .kicker {
+    display: inline-block; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 0.82rem; color: var(--sapphire); margin-bottom: 0.8rem;
+  }
+  .section-title { font-size: clamp(1.9rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+  .section-sub { color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.5rem; }
+
+  /* =========================================================
+     Historia
+     ========================================================= */
+  .historia-grid { display: grid; gap: 2.5rem; align-items: center; }
+  .historia-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(59,47,39,0.35);
+    border: 6px solid var(--paper);
+  }
+  .historia-photo img { aspect-ratio: 4/3; object-fit: cover; }
+  .historia-copy p { margin-bottom: 1rem; color: var(--ink-soft); }
+  @media (min-width: 900px) { .historia-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* =========================================================
+     Carta (muestra)
+     ========================================================= */
+  .menu-categories { display: grid; gap: 1.6rem; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .menu-categories { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1080px) { .menu-categories { grid-template-columns: repeat(3, 1fr); } }
+
+  .menu-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    box-shadow: 0 18px 40px -24px rgba(59,47,39,0.35);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .menu-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -20px rgba(193,105,79,0.35); }
+  .menu-card h3 {
+    font-size: 1.3rem; margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--gold); display: inline-block;
+  }
+  .menu-card ul { display: flex; flex-direction: column; gap: 0.85rem; }
+  .menu-row { display: flex; justify-content: space-between; gap: 1rem; }
+  .menu-row .name { font-weight: 600; }
+  .menu-row .desc { display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 400; }
+  .menu-row .price { font-family: var(--serif); font-weight: 700; color: var(--terracota); white-space: nowrap; }
+  .menu-note { margin-top: 2rem; font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+
+  /* =========================================================
+     Galería
+     ========================================================= */
+  .gallery {
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 720px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+  .gallery figure {
+    border-radius: var(--radius); overflow: hidden; aspect-ratio: 1;
+    border: 4px solid var(--paper);
+    box-shadow: 0 14px 30px -18px rgba(59,47,39,0.4);
+  }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+  .gallery figure:hover img { transform: scale(1.08); }
+
+  /* =========================================================
+     Reservas
+     ========================================================= */
+  .reservas { background: var(--yellow); }
+  .reservas-grid { display: grid; gap: 2.5rem; }
+  .reservas-card {
+    background: var(--paper); border-radius: var(--radius-lg); padding: 2.2rem;
+    box-shadow: 0 20px 45px -20px rgba(59,47,39,0.3);
+  }
+  .reservas-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .reservas-list { display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.95rem; }
+  .reservas-list li strong { color: var(--terracota-dark); }
+  .reservas-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.4rem; }
+  .map-frame {
+    border-radius: var(--radius-lg); overflow: hidden; border: 6px solid var(--paper);
+    box-shadow: 0 20px 45px -20px rgba(59,47,39,0.3);
+  }
+  .map-frame iframe { width: 100%; aspect-ratio: 4/3; border: 0; }
+  @media (min-width: 900px) { .reservas-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* =========================================================
+     Footer
+     ========================================================= */
+  footer { background: var(--ink); color: var(--paper); padding-block: 3.5rem 2rem; }
+  .footer-grid { display: grid; gap: 2.2rem; margin-bottom: 2.5rem; }
+  @media (min-width: 720px) { .footer-grid { grid-template-columns: 1.3fr repeat(3, 1fr); } }
+  footer h3 { font-family: var(--serif); color: var(--yellow); font-size: 1.1rem; margin-bottom: 1rem; }
+  footer p, footer li { color: #E7DFC9; font-size: 0.92rem; }
+  footer a:hover { color: var(--yellow); }
+  .footer-bottom { border-top: 1px solid rgba(251,246,233,0.15); padding-top: 1.4rem; font-size: 0.8rem; color: #B8AD91; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-brand">Arab Dream <span>Palma</span></a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#historia">Historia</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#reservas">Reservas</a>
+    </nav>
+    <a href="#reservas" class="btn btn-primary" style="padding:.6rem 1.3rem; font-size:.85rem;">Reservar mesa</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="inicio">
+    <div class="hero-bg" role="img" aria-label="Mesa marroquí con tajín y té a la menta (foto de referencia, sustituir por foto real)"></div>
+    <div class="container hero-inner">
+      <p class="kicker">Gastronomía marroquí · Palma de Mallorca</p>
+      <h1>Sabores de Marruecos, <em>servidos con calma</em>.</h1>
+      <p>Tajines a fuego lento, cuscús real y té a la menta en el barrio de Llevant. Una mesa cálida para compartir.</p>
+      <div class="hero-cta">
+        <a href="#reservas" class="btn btn-primary">Reservar mesa</a>
+        <a href="#carta" class="btn btn-ghost" style="border-color:var(--paper); color:var(--paper);">Ver la carta</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia" class="pattern-bg">
+    <div class="container historia-grid">
+      <div class="historia-photo">
+        <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&w=1000&q=80"
+             alt="Especias marroquíes (foto de referencia, sustituir por foto real del local)" loading="lazy">
+      </div>
+      <div class="historia-copy">
+        <p class="kicker">Nuestra casa</p>
+        <h2 class="section-title">Una cocina que huele a hogar</h2>
+        <p>En Arab Dream cocinamos como en una casa marroquí: a fuego lento, con especias molidas al momento y el pan recién hecho.</p>
+        <p>Cada tajín, cada cuscús, cada vaso de té a la menta se sirve pensando en la sobremesa larga y la hospitalidad como parte del menú.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carta">
+    <div class="container">
+      <p class="kicker">La carta</p>
+      <h2 class="section-title">Una muestra de nuestros sabores</h2>
+      <p class="section-sub">Selección representativa de la carta completa. Precios en vigor en el restaurante.</p>
+
+      <div class="menu-categories">
+        <div class="menu-card">
+          <h3>Sopas</h3>
+          <ul>
+            <li class="menu-row"><span><span class="name">Harira marroquí</span><span class="desc">Lentejas, garbanzos y especias</span></span><span class="price">4 €</span></li>
+            <li class="menu-row"><span><span class="name">Harira completa</span><span class="desc">Con huevo y chebakia</span></span><span class="price">6 €</span></li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>Tajín</h3>
+          <ul>
+            <li class="menu-row"><span><span class="name">Tajín de pollo</span><span class="desc">Especias de la casa</span></span><span class="price">8 €</span></li>
+            <li class="menu-row"><span><span class="name">Tajín de cordero con verduras</span></span><span class="price">13 €</span></li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>Cuscús</h3>
+          <ul>
+            <li class="menu-row"><span><span class="name">Cuscús de pollo</span></span><span class="price">8,50 €</span></li>
+            <li class="menu-row"><span><span class="name">Cuscús vegetal</span></span><span class="price">6,50 €</span></li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>Dulces</h3>
+          <ul>
+            <li class="menu-row"><span><span class="name">Baklawa</span></span><span class="price">1,50 €</span></li>
+            <li class="menu-row"><span><span class="name">Chebakia</span></span><span class="price">1 €</span></li>
+          </ul>
+        </div>
+        <div class="menu-card">
+          <h3>Té e infusiones</h3>
+          <ul>
+            <li class="menu-row"><span><span class="name">Té marroquí</span></span><span class="price">1,50 €</span></li>
+            <li class="menu-row"><span><span class="name">Manzanilla</span></span><span class="price">1,50 €</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="menu-note">Muestra de la carta completa (170 referencias) disponible en la web principal.</p>
+    </div>
+  </section>
+
+  <section id="galeria" class="pattern-bg">
+    <div class="container">
+      <p class="kicker">Ambiente</p>
+      <h2 class="section-title">Rincones de la casa</h2>
+      <p class="section-sub">Fotos de referencia — sustituir por fotografías reales del restaurante.</p>
+      <div class="gallery">
+        <figure><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80" alt="Té a la menta (foto de referencia)" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80" alt="Mesa con platos marroquíes (foto de referencia)" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80" alt="Especias en el mercado (foto de referencia)" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Interior de estilo marroquí (foto de referencia)" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservas" class="reservas">
+    <div class="container reservas-grid">
+      <div class="reservas-card">
+        <p class="kicker" style="color:var(--terracota-dark)">Reservas</p>
+        <h2 class="section-title">Te guardamos una mesa</h2>
+        <ul class="reservas-list">
+          <li><strong>Dirección:</strong> C. de Manacor, 17 · Llevant, Palma</li>
+          <li><strong>Teléfono:</strong> <a href="tel:+34871855520">871 85 55 20</a></li>
+          <li><strong>Email:</strong> <a href="mailto:arabdream.ny@gmail.com">arabdream.ny@gmail.com</a></li>
+          <li><strong>Horario:</strong> Lunes a sábado, 9:00–22:00 · Domingo cerrado</li>
+        </ul>
+        <div class="reservas-cta">
+          <a href="https://wa.me/34871855520?text=Hola%20Arab%20Dream%2C%20me%20gustar%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
+          <a href="tel:+34871855520" class="btn btn-ghost">Llamar</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe title="Arab Dream Palma en Google Maps"
+          src="https://www.google.com/maps?q=Arab%20Dream%20Palma%2C%20Carrer%20de%20Manacor%2017%2C%2007006%20Palma&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>Arab Dream Palma</h3>
+      <p>Gastronomía marroquí en el corazón de Palma.</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="tel:+34871855520">871 85 55 20</a></li>
+        <li><a href="mailto:arabdream.ny@gmail.com">arabdream.ny@gmail.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Horario</h3>
+      <ul>
+        <li>Lunes – Sábado: 9:00–22:00</li>
+        <li>Domingo: Cerrado</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Ubicación</h3>
+      <ul><li>C. de Manacor, 17 · Llevant, Palma</li></ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Arab Dream Palma. Propuesta visual "vintage paper" — mockup de comparación, no publicado.</p>
+  </div>
+</footer>
+
+</body>
+</html>
