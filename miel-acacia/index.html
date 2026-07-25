@@ -3,47 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acacia Dorada — Miel pura de acacia, directa del apiario</title>
-<meta name="description" content="Miel de acacia extraída en frío, sin mezclar y sin pasteurizar. Envasada a mano en tandas pequeñas en la Sierra de Gredos. Pide por WhatsApp o email.">
-<meta name="theme-color" content="#140F09">
+<title>Acacia Dorada — Miel artesanal de edición limitada</title>
+<meta name="description" content="Miel monofloral extraída en frío y envasada a mano en la Sierra de Gredos. Acacia, lavanda, bosque y panal virgen. Ediciones limitadas por cosecha.">
+<meta name="theme-color" content="#1A0F05">
 <script>document.documentElement.classList.add('has-js');</script>
 
-<meta property="og:title" content="Acacia Dorada — Miel pura de acacia">
-<meta property="og:description" content="Miel monofloral de acacia, extraída en frío y envasada a mano. Pide tu tarro por WhatsApp.">
+<meta property="og:title" content="Acacia Dorada — Miel artesanal de edición limitada">
+<meta property="og:description" content="Oro líquido cosechado a mano. Miel monofloral extraída en frío, sin pasteurizar, en tandas pequeñas.">
 <meta property="og:type" content="website">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 6 9 11.5 9 16a9 9 0 1 1-18 0c0-4.5 4-10 9-16Z' fill='%23E3A73B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 6 9 11.5 9 16a9 9 0 1 1-18 0c0-4.5 4-10 9-16Z' fill='%23FFB800'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-
-<link rel="stylesheet" href="styles.css?v=20260725">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-500-italic-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-300-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css?v=20260725b">
+<link rel="stylesheet" href="styles.css?v=20260725b">
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido</a>
 
-<!-- Shared SVG defs -->
+<!-- Degradados compartidos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="honeyGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F2C572"/>
-      <stop offset="100%" stop-color="#C97F1E"/>
+    <linearGradient id="honeyAmber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD87A"/>
+      <stop offset="55%" stop-color="#FFB800"/>
+      <stop offset="100%" stop-color="#C67C1E"/>
+    </linearGradient>
+    <linearGradient id="honeyLavender" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8C7F0"/>
+      <stop offset="50%" stop-color="#B98FD4"/>
+      <stop offset="100%" stop-color="#7B5AA6"/>
+    </linearGradient>
+    <linearGradient id="honeyForest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C89A5B"/>
+      <stop offset="52%" stop-color="#8A5A24"/>
+      <stop offset="100%" stop-color="#4A2E12"/>
     </linearGradient>
   </defs>
 </svg>
 
 <div class="splash" data-splash aria-hidden="true">
-  <span class="splash-mark">Acacia Dorada</span>
+  <span class="splash-mark gold-text">Acacia Dorada</span>
 </div>
+
+<!-- Fondo orgánico animado -->
+<div class="ambient" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="page">
 
 <header class="nav" data-nav>
   <div class="container nav-inner">
-    <a class="brand" href="#inicio"><em>Acacia</em> Dorada</a>
+    <a class="brand" href="#inicio"><em class="gold-text">Acacia</em> Dorada</a>
     <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#coleccion">Colección</a>
+      <a href="#proceso">Del panal a la mesa</a>
       <a href="#historia">Historia</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#proceso">Proceso</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#contacto">Contacto</a>
@@ -59,44 +79,46 @@
 </header>
 
 <div class="nav-mobile" id="navMobile" data-nav-mobile>
+  <a href="#coleccion">Colección</a>
+  <a href="#proceso">Del panal a la mesa</a>
   <a href="#historia">Historia</a>
-  <a href="#catalogo">Catálogo</a>
-  <a href="#proceso">Proceso</a>
   <a href="#opiniones">Opiniones</a>
   <a href="#preguntas">Preguntas</a>
   <a href="#contacto">Contacto</a>
 </div>
-<noscript><style>@media (max-width: 959px) { .nav-mobile{position:static;opacity:1;pointer-events:auto;transform:none;background:var(--bg-3);padding:calc(var(--nav-h) + 1rem) 1.25rem 1rem;} }</style></noscript>
+<noscript><style>@media (max-width: 959px){.nav-mobile{position:static;opacity:1;pointer-events:auto;transform:none;padding:calc(var(--nav-h) + 1rem) 1.35rem 1rem;}}</style></noscript>
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- ============ HERO ============ -->
   <section class="hero" id="inicio" data-hero>
-    <div class="hero-mesh" aria-hidden="true"></div>
-    <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-spotlight" data-hero-spotlight aria-hidden="true"></div>
     <div class="pollen" aria-hidden="true">
-      <span style="left:6%; animation-duration:11s; animation-delay:0s;"></span>
-      <span style="left:14%; animation-duration:9s; animation-delay:1.2s;"></span>
-      <span style="left:22%; animation-duration:13s; animation-delay:.4s;"></span>
-      <span style="left:31%; animation-duration:10s; animation-delay:2.5s;"></span>
-      <span style="left:40%; animation-duration:12s; animation-delay:.8s;"></span>
-      <span style="left:49%; animation-duration:8s; animation-delay:3.1s;"></span>
-      <span style="left:58%; animation-duration:14s; animation-delay:1.6s;"></span>
-      <span style="left:66%; animation-duration:9.5s; animation-delay:2.1s;"></span>
-      <span style="left:74%; animation-duration:11.5s; animation-delay:.2s;"></span>
-      <span style="left:82%; animation-duration:10.5s; animation-delay:3.6s;"></span>
-      <span style="left:90%; animation-duration:13.5s; animation-delay:1s;"></span>
-      <span style="left:96%; animation-duration:9s; animation-delay:2.8s;"></span>
+      <span style="left:5%;  animation-duration:12s;   animation-delay:0s"></span>
+      <span style="left:13%; animation-duration:9.5s;  animation-delay:1.4s"></span>
+      <span style="left:21%; animation-duration:14s;   animation-delay:.5s"></span>
+      <span style="left:30%; animation-duration:10.5s; animation-delay:2.7s"></span>
+      <span style="left:39%; animation-duration:12.5s; animation-delay:.9s"></span>
+      <span style="left:48%; animation-duration:8.5s;  animation-delay:3.3s"></span>
+      <span style="left:57%; animation-duration:15s;   animation-delay:1.8s"></span>
+      <span style="left:65%; animation-duration:10s;   animation-delay:2.2s"></span>
+      <span style="left:73%; animation-duration:13s;   animation-delay:.3s"></span>
+      <span style="left:81%; animation-duration:11s;   animation-delay:3.9s"></span>
+      <span style="left:89%; animation-duration:14.5s; animation-delay:1.1s"></span>
+      <span style="left:96%; animation-duration:9s;    animation-delay:2.9s"></span>
     </div>
+
     <div class="container hero-inner">
       <div class="hero-copy">
-        <p class="kicker">Miel monofloral · Sierra de Gredos</p>
-        <h1 class="hero-title">Miel de acacia.<br><em>Clara como la luz, dulce sin empalagar.</em></h1>
-        <p class="hero-sub">Extraída en frío de un único acacio en flor, sin mezclar con otras cosechas y sin pasteurizar. Envasamos a mano en tandas pequeñas, la misma semana de la extracción.</p>
+        <p class="kicker">Cosecha 2026 · Sierra de Gredos</p>
+        <h1 class="hero-title">
+          <span class="line">Oro líquido,</span>
+          <span class="line"><em class="gold-text">cosechado a mano.</em></span>
+        </h1>
+        <p class="hero-sub">Miel monofloral extraída en frío, sin mezclar y sin pasteurizar. Cada tanda sale del apiario la misma semana en que se recoge — y cuando se acaba, hay que esperar a la siguiente floración.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
-          <a class="btn btn-whatsapp" data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel%20de%20acacia." target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="#coleccion" data-magnetic>Ver la colección</a>
+          <a class="btn btn-whatsapp" data-magnetic data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel." target="_blank" rel="noopener">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.14c-.24.68-1.4 1.31-1.93 1.35-.5.05-1 .25-3.36-.7-2.85-1.13-4.68-4.04-4.82-4.23-.14-.19-1.15-1.53-1.15-2.92s.72-2.07.98-2.35c.24-.27.53-.33.71-.33l.5.01c.16 0 .38-.06.59.45.24.58.8 2 .87 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.23 1.38.27.14.43.12.59-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.54.73 1.8.86.27.14.45.2.51.32.06.12.06.68-.18 1.34Z"/></svg>
             Pedir por WhatsApp
           </a>
@@ -104,22 +126,32 @@
         <div class="hero-trust">
           <span>100% pura</span>
           <span>Sin pasteurizar</span>
-          <span>Envasado a mano</span>
-          <span>Origen único</span>
+          <span>Extracción en frío</span>
+          <span>Tandas limitadas</span>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <svg class="honeycomb-graphic" viewBox="0 0 300 300">
-          <path class="hc-line" d="M210,144.64 L244.64,164.64 L244.64,204.64 L210,224.64 L175.36,204.64 L175.36,164.64 Z"/>
-          <path class="hc-line" d="M150,219.28 L184.64,199.28 L184.64,239.28 L150,259.28 L115.36,239.28 L115.36,199.28 Z" transform="translate(0,0)"/>
-          <path class="hc-line" d="M90,144.64 L124.64,164.64 L124.64,204.64 L90,224.64 L55.36,204.64 L55.36,164.64 Z"/>
-          <path class="hc-line strong" d="M90,75.36 L124.64,95.36 L124.64,135.36 L90,155.36 L55.36,135.36 L55.36,95.36 Z"/>
-          <path class="hc-glow" d="M150,40.72 L184.64,60.72 L184.64,100.72 L150,120.72 L115.36,100.72 L115.36,60.72 Z"/>
-          <path class="hc-line" d="M210,75.36 L244.64,95.36 L244.64,135.36 L210,155.36 L175.36,135.36 L175.36,95.36 Z"/>
-          <path class="hc-glow" d="M150,110 L184.64,130 L184.64,170 L150,190 L115.36,170 L115.36,130 Z"/>
+
+      <div class="hero-visual">
+        <div class="hero-jar-glow" aria-hidden="true"></div>
+        <svg class="hero-jar" viewBox="0 0 300 380" role="img" aria-label="Frasco de cristal de miel de acacia">
+          <ellipse cx="150" cy="358" rx="82" ry="14" class="jar-shadow"/>
+          <!-- miel -->
+          <path class="jar-honey" d="M62,150 h176 v170 a26,26 0 0 1 -26,26 h-124 a26,26 0 0 1 -26,-26 z"/>
+          <!-- cristal -->
+          <path class="jar-glass-body" d="M62,104 a26,26 0 0 1 26,-26 h124 a26,26 0 0 1 26,26 v216 a26,26 0 0 1 -26,26 h-124 a26,26 0 0 1 -26,-26 z"/>
+          <!-- sello hexagonal -->
+          <path class="jar-seal" d="M150,196 L172,209 L172,235 L150,248 L128,235 L128,209 Z"/>
+          <path class="jar-seal" d="M150,208 L162,215 L162,229 L150,236 L138,229 L138,215 Z"/>
+          <!-- cuello y tapa -->
+          <rect x="92" y="58" width="116" height="24" rx="9" class="jar-rim"/>
+          <rect x="102" y="24" width="96" height="40" rx="12" class="jar-lid"/>
+          <!-- brillo del cristal -->
+          <line x1="86" y1="132" x2="86" y2="300" class="jar-shine"/>
+          <line x1="102" y1="150" x2="102" y2="232" class="jar-shine" stroke-opacity=".1"/>
         </svg>
-        <div class="hero-float-badge">
-          <strong>4.9</strong>
+
+        <div class="hero-badge glass">
+          <strong class="gold-text">4.9</strong>
           <div>
             <span class="stars">★★★★★</span>
             <small>+120 pedidos</small>
@@ -127,321 +159,361 @@
         </div>
       </div>
     </div>
-    <svg class="hero-drip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,40 C180,80 320,10 480,45 C640,80 760,15 960,42 C1140,68 1300,18 1440,48 L1440,90 L0,90 Z" fill="#140F09"/>
-    </svg>
   </section>
+
+  <!-- Goteo de miel -->
+  <svg class="drip" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#1A0F05" d="M0,44 C120,74 210,26 320,44 C420,60 470,96 512,96 C554,96 566,58 600,52 C680,38 760,74 840,66 C900,60 930,30 980,34 C1050,40 1064,92 1108,92 C1152,92 1160,50 1220,42 C1310,30 1380,62 1440,50 L1440,110 L0,110 Z"/>
+  </svg>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span class="marquee-item">Miel 100% pura</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Sin pasteurizar</span><span class="marquee-dot">✦</span>
       <span class="marquee-item">Extracción en frío</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Envasado a mano</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Origen único · Sierra de Gredos</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Miel 100% pura</span><span class="marquee-dot">✦</span>
       <span class="marquee-item">Sin pasteurizar</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Extracción en frío</span><span class="marquee-dot">✦</span>
       <span class="marquee-item">Envasado a mano</span><span class="marquee-dot">✦</span>
-      <span class="marquee-item">Origen único · Sierra de Gredos</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Edición limitada por cosecha</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Sierra de Gredos</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Extracción en frío</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Sin pasteurizar</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Envasado a mano</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Edición limitada por cosecha</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Sierra de Gredos</span><span class="marquee-dot">✦</span>
     </div>
   </div>
 
-  <!-- HISTORIA -->
-  <section class="story" id="historia">
+  <!-- ============ COLECCIÓN ============ -->
+  <section id="coleccion">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">Edición limitada</p>
+        <h2>Cuatro flores, <em class="gold-text">cuatro mieles</em>.</h2>
+        <p>Cada variedad depende de una floración concreta. Producimos lo que dan las colmenas ese año — ni un tarro más.</p>
+      </div>
+
+      <div class="collection-grid">
+
+        <article class="glass product reveal" data-tilt data-product
+                 data-id="p-acacia" data-name="Miel de Acacia" data-price="11.50"
+                 style="--halo: rgba(255,184,0,.55); --tint: rgba(255,184,0,.28)">
+          <span class="product-tag">Insignia</span>
+          <div class="product-figure">
+            <svg class="jar-art" viewBox="0 0 160 220" aria-hidden="true">
+              <ellipse cx="80" cy="208" rx="44" ry="8" class="jar-shadow"/>
+              <path class="jar-honey" d="M32,86 h96 v90 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-glass-body" d="M32,62 a16,16 0 0 1 16,-16 h64 a16,16 0 0 1 16,16 v114 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-seal" d="M80,112 L93,120 L93,135 L80,143 L67,135 L67,120 Z"/>
+              <rect x="50" y="34" width="60" height="14" rx="5" class="jar-rim"/>
+              <rect x="56" y="12" width="48" height="24" rx="8" class="jar-lid"/>
+              <line x1="46" y1="78" x2="46" y2="168" class="jar-shine"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <p class="product-origin">Robinia pseudoacacia</p>
+            <h3>Miel de Acacia</h3>
+            <p class="product-notes">Clarísima y delicada. No cristaliza y endulza sin tapar el sabor de nada.</p>
+            <div class="product-meta"><span>500 g</span><span>Muy suave</span><span>Líquida</span></div>
+          </div>
+          <div class="product-foot">
+            <div class="product-price gold-text">11,50 €<small>500 g</small></div>
+            <div class="qty" data-qty>
+              <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
+              <output data-qty-value>1</output>
+              <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block add-btn" data-add type="button">Añadir al carrito</button>
+        </article>
+
+        <article class="glass product reveal" data-tilt data-product
+                 data-id="p-lavanda" data-name="Miel de Lavanda" data-price="14.90"
+                 style="--halo: rgba(185,143,212,.55); --tint: rgba(185,143,212,.26); --jar: url(#honeyLavender)">
+          <span class="product-tag">Solo 80 tarros</span>
+          <div class="product-figure">
+            <svg class="jar-art" viewBox="0 0 160 220" aria-hidden="true">
+              <ellipse cx="80" cy="208" rx="44" ry="8" class="jar-shadow"/>
+              <path class="jar-honey" d="M32,94 h96 v82 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-glass-body" d="M32,62 a16,16 0 0 1 16,-16 h64 a16,16 0 0 1 16,16 v114 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-seal" d="M80,116 L93,124 L93,139 L80,147 L67,139 L67,124 Z"/>
+              <rect x="50" y="34" width="60" height="14" rx="5" class="jar-rim"/>
+              <rect x="56" y="12" width="48" height="24" rx="8" class="jar-lid"/>
+              <line x1="46" y1="84" x2="46" y2="168" class="jar-shine"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <p class="product-origin">Lavandula latifolia</p>
+            <h3>Miel de Lavanda</h3>
+            <p class="product-notes">Floral y aromática, con un final limpio. La favorita para infusiones y quesos frescos.</p>
+            <div class="product-meta"><span>500 g</span><span>Aromática</span><span>Cremosa</span></div>
+          </div>
+          <div class="product-foot">
+            <div class="product-price gold-text">14,90 €<small>500 g</small></div>
+            <div class="qty" data-qty>
+              <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
+              <output data-qty-value>1</output>
+              <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block add-btn" data-add type="button">Añadir al carrito</button>
+        </article>
+
+        <article class="glass product reveal" data-tilt data-product
+                 data-id="p-bosque" data-name="Miel de Bosque" data-price="13.50"
+                 style="--halo: rgba(200,154,91,.5); --tint: rgba(138,90,36,.34); --jar: url(#honeyForest)">
+          <span class="product-tag">Cosecha tardía</span>
+          <div class="product-figure">
+            <svg class="jar-art" viewBox="0 0 160 220" aria-hidden="true">
+              <ellipse cx="80" cy="208" rx="44" ry="8" class="jar-shadow"/>
+              <path class="jar-honey" d="M32,82 h96 v94 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-glass-body" d="M32,62 a16,16 0 0 1 16,-16 h64 a16,16 0 0 1 16,16 v114 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <path class="jar-seal" d="M80,110 L93,118 L93,133 L80,141 L67,133 L67,118 Z"/>
+              <rect x="50" y="34" width="60" height="14" rx="5" class="jar-rim"/>
+              <rect x="56" y="12" width="48" height="24" rx="8" class="jar-lid"/>
+              <line x1="46" y1="74" x2="46" y2="168" class="jar-shine"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <p class="product-origin">Mielada de encina y roble</p>
+            <h3>Miel de Bosque</h3>
+            <p class="product-notes">Oscura, densa y con notas de malta. Muy mineral, casi balsámica. Nada dulzona.</p>
+            <div class="product-meta"><span>500 g</span><span>Intensa</span><span>Densa</span></div>
+          </div>
+          <div class="product-foot">
+            <div class="product-price gold-text">13,50 €<small>500 g</small></div>
+            <div class="qty" data-qty>
+              <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
+              <output data-qty-value>1</output>
+              <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block add-btn" data-add type="button">Añadir al carrito</button>
+        </article>
+
+        <article class="glass product reveal" data-tilt data-product
+                 data-id="p-panal" data-name="Panal virgen" data-price="16.90"
+                 style="--halo: rgba(255,138,43,.5); --tint: rgba(255,138,43,.26)">
+          <span class="product-tag is-ghost">Muy limitado</span>
+          <div class="product-figure">
+            <svg class="jar-art" viewBox="0 0 160 220" aria-hidden="true">
+              <ellipse cx="80" cy="208" rx="44" ry="8" class="jar-shadow"/>
+              <path class="jar-honey" d="M32,88 h96 v88 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <rect x="48" y="104" width="17" height="17" rx="2" class="jar-comb" transform="rotate(30 56 112)"/>
+              <rect x="76" y="126" width="17" height="17" rx="2" class="jar-comb" transform="rotate(30 84 134)"/>
+              <rect x="98" y="98" width="17" height="17" rx="2" class="jar-comb" transform="rotate(30 106 106)"/>
+              <rect x="62" y="152" width="17" height="17" rx="2" class="jar-comb" transform="rotate(30 70 160)"/>
+              <path class="jar-glass-body" d="M32,62 a16,16 0 0 1 16,-16 h64 a16,16 0 0 1 16,16 v114 a16,16 0 0 1 -16,16 h-64 a16,16 0 0 1 -16,-16 z"/>
+              <rect x="50" y="34" width="60" height="14" rx="5" class="jar-rim"/>
+              <rect x="56" y="12" width="48" height="24" rx="8" class="jar-lid"/>
+              <line x1="46" y1="80" x2="46" y2="168" class="jar-shine"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <p class="product-origin">Panal entero con cera</p>
+            <h3>Panal virgen</h3>
+            <p class="product-notes">Tal como sale de la colmena, con su cera. Se come entero, sobre pan o con queso curado.</p>
+            <div class="product-meta"><span>300 g</span><span>Con cera</span><span>Sin filtrar</span></div>
+          </div>
+          <div class="product-foot">
+            <div class="product-price gold-text">16,90 €<small>300 g</small></div>
+            <div class="qty" data-qty>
+              <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
+              <output data-qty-value>1</output>
+              <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block add-btn" data-add type="button">Añadir al carrito</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEL PANAL A LA MESA ============ -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section-head center reveal">
+        <p class="kicker">El proceso</p>
+        <h2>Del panal <em class="gold-text">a la mesa</em>.</h2>
+        <p>Cinco pasos, ninguno acelerado. Entre el primero y el último pasan unas tres semanas.</p>
+      </div>
+
+      <div class="timeline" data-timeline>
+        <div class="timeline-step reveal">
+          <span class="timeline-node" aria-hidden="true"></span>
+          <p class="timeline-when">Día 1 · Primavera</p>
+          <h3>La floración manda</h3>
+          <p>Trasladamos las colmenas al pie de la floración justo cuando abre. Solo hay una ventana al año, y dura tres semanas.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-node" aria-hidden="true"></span>
+          <p class="timeline-when">Día 14</p>
+          <h3>Cata en la colmena</h3>
+          <p>Comprobamos a mano la humedad de cada cuadro. Si la miel no está operculada, se queda: no se recoge verde.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-node" aria-hidden="true"></span>
+          <p class="timeline-when">Día 16</p>
+          <h3>Extracción en frío</h3>
+          <p>Centrifugado por debajo de 35 °C. Ni una gota se calienta, así que enzimas, polen y aroma llegan intactos al tarro.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-node" aria-hidden="true"></span>
+          <p class="timeline-when">Días 17–21</p>
+          <h3>Decantación por gravedad</h3>
+          <p>Reposa en tinas de acero hasta que la espuma sube sola. Sin filtros a presión, sin pasteurizar, sin prisa.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-node" aria-hidden="true"></span>
+          <p class="timeline-when">Día 22</p>
+          <h3>Envasado a mano</h3>
+          <p>Llenamos, etiquetamos y precintamos tarro a tarro en el propio apiario. Cada lote lleva su cosecha escrita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HISTORIA ============ -->
+  <section id="historia">
     <div class="container story-grid">
       <div class="story-figure reveal">
-        <svg viewBox="0 0 300 300" aria-hidden="true">
-          <path class="hc-line strong" d="M210,144.64 L244.64,164.64 L244.64,204.64 L210,224.64 L175.36,204.64 L175.36,164.64 Z"/>
-          <path class="hc-line" d="M150,219.28 L184.64,199.28 L184.64,239.28 L150,259.28 L115.36,239.28 L115.36,199.28 Z"/>
-          <path class="hc-line" d="M90,144.64 L124.64,164.64 L124.64,204.64 L90,224.64 L55.36,204.64 L55.36,164.64 Z"/>
-          <path class="hc-glow" d="M90,75.36 L124.64,95.36 L124.64,135.36 L90,155.36 L55.36,135.36 L55.36,95.36 Z"/>
-          <path class="hc-line" d="M150,40.72 L184.64,60.72 L184.64,100.72 L150,120.72 L115.36,100.72 L115.36,60.72 Z"/>
-          <path class="hc-line" d="M210,75.36 L244.64,95.36 L244.64,135.36 L210,155.36 L175.36,135.36 L175.36,95.36 Z"/>
-          <path class="hc-glow" d="M150,110 L184.64,130 L184.64,170 L150,190 L115.36,170 L115.36,130 Z"/>
+        <svg class="comb-art" viewBox="0 0 300 300" aria-hidden="true">
+          <path class="comb-line hot" d="M210,144.64 L244.64,164.64 L244.64,204.64 L210,224.64 L175.36,204.64 L175.36,164.64 Z"/>
+          <path class="comb-line" d="M150,219.28 L184.64,199.28 L184.64,239.28 L150,259.28 L115.36,239.28 L115.36,199.28 Z"/>
+          <path class="comb-line" d="M90,144.64 L124.64,164.64 L124.64,204.64 L90,224.64 L55.36,204.64 L55.36,164.64 Z"/>
+          <path class="comb-fill" d="M90,75.36 L124.64,95.36 L124.64,135.36 L90,155.36 L55.36,135.36 L55.36,95.36 Z"/>
+          <path class="comb-line" d="M150,40.72 L184.64,60.72 L184.64,100.72 L150,120.72 L115.36,100.72 L115.36,60.72 Z"/>
+          <path class="comb-line" d="M210,75.36 L244.64,95.36 L244.64,135.36 L210,155.36 L175.36,135.36 L175.36,95.36 Z"/>
+          <path class="comb-fill" d="M150,110 L184.64,130 L184.64,170 L150,190 L115.36,170 L115.36,130 Z"/>
         </svg>
       </div>
+
       <div>
         <p class="kicker reveal">Nuestra historia</p>
-        <h2 class="section-head reveal" style="margin-bottom:1.4rem">Tres generaciones cuidando las mismas colmenas.</h2>
-        <p class="reveal" style="color:var(--cream-2); max-width:52ch; margin-bottom:2.2rem;">Mi abuelo empezó con seis colmenas junto a un cortafuegos de acacios en la Sierra de Gredos. Hoy seguimos moviendo las colmenas al mismo lugar cada primavera, durante las tres semanas que dura la floración, para conseguir una miel monofloral de verdad: sin mezclar, sin acelerar nada.</p>
-        <div class="stats-row reveal">
-          <div class="stat"><b data-count-to="12">0</b><span>colmenas propias</span></div>
-          <div class="stat"><b data-count-to="3" data-suffix="ª">0</b><span>generación de apicultores</span></div>
-          <div class="stat"><b data-count-to="0" data-suffix="%">—</b><span>aditivos ni azúcares</span></div>
+        <h2 class="reveal" style="font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,4.6vw,3.4rem);margin-top:1.1rem">Tres generaciones cuidando <em class="gold-text">las mismas colmenas</em>.</h2>
+        <p class="reveal" style="color:var(--cream-2);max-width:52ch;margin-top:1.4rem;font-weight:300">Mi abuelo empezó con seis colmenas junto a un cortafuegos de acacios. Hoy seguimos moviéndolas al mismo sitio cada primavera y seguimos abriendo cada una a mano, sin humo de más y sin tratamientos agresivos.</p>
+
+        <div class="stats reveal">
+          <div class="stat"><b class="gold-text" data-count-to="12">0</b><span>colmenas propias</span></div>
+          <div class="stat"><b class="gold-text" data-count-to="3" data-suffix="ª">0</b><span>generación</span></div>
+          <div class="stat"><b class="gold-text" data-count-to="0" data-suffix="%">—</b><span>aditivos ni azúcares</span></div>
         </div>
-        <div class="story-pillars" style="margin-top:2.5rem;">
+
+        <div class="pillars">
           <div class="pillar reveal">
             <span class="num">01</span>
-            <div><h3>Trashumancia de acacio</h3><p>Trasladamos las colmenas siguiendo la floración, no al revés. Solo así conseguimos una miel realmente monofloral.</p></div>
+            <div><h3>Trashumancia real</h3><p>Movemos las colmenas siguiendo cada floración. Es la única forma de que una miel sea monofloral de verdad.</p></div>
           </div>
           <div class="pillar reveal">
             <span class="num">02</span>
-            <div><h3>Apicultura de trato lento</h3><p>Revisamos cada colmena a mano, sin tratamientos agresivos, respetando el ritmo de las abejas.</p></div>
+            <div><h3>Sin atajos térmicos</h3><p>Nada supera los 35 °C. Calentar la miel la deja bonita y transparente, pero le quita justo lo que la hace miel.</p></div>
           </div>
           <div class="pillar reveal">
             <span class="num">03</span>
-            <div><h3>Pureza garantizada</h3><p>Sin mezclar lotes, sin calentar por encima de 35°C y sin azúcares añadidos. Lo que ves en la etiqueta es lo único que hay dentro.</p></div>
+            <div><h3>Trazabilidad por tarro</h3><p>Cada etiqueta lleva lote y cosecha. Si nos preguntas de qué colmena salió el tuyo, te lo podemos decir.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CATÁLOGO -->
-  <section class="catalog" id="catalogo">
+  <!-- ============ OPINIONES ============ -->
+  <section id="opiniones">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Catálogo</p>
-        <h2>Elige tu formato.</h2>
-        <p>Todos los tarros salen del mismo lote. La única diferencia es cuánto te va a durar.</p>
-      </div>
-
-      <div class="catalog-grid" data-catalog>
-
-        <article class="card product-card reveal" data-tilt data-product data-id="p-250" data-name="Tarro 250 g" data-price="6.90">
-          <span class="product-badge">Para probar</span>
-          <div class="product-jar-wrap">
-            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
-              <rect x="22" y="66" width="76" height="76" rx="10" class="jar-fill"/>
-              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
-              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-              <line x1="32" y1="70" x2="32" y2="138" class="jar-shine"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3>Tarro 250 g</h3>
-            <p class="product-size">250 g · tarro de cristal</p>
-            <p class="product-desc">El tamaño ideal para descubrir su sabor antes de pasar al tarro grande.</p>
-            <div class="product-foot">
-              <span class="product-price">6,90 €</span>
-              <div class="qty-stepper" data-qty-stepper>
-                <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
-                <output data-qty-value>1</output>
-                <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-block add-to-cart" data-add-to-cart type="button">Añadir al carrito</button>
-        </article>
-
-        <article class="card product-card reveal" data-tilt data-product data-id="p-500" data-name="Tarro 500 g" data-price="11.50">
-          <span class="product-badge">Más pedido</span>
-          <div class="product-jar-wrap">
-            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
-              <rect x="22" y="58" width="76" height="84" rx="10" class="jar-fill"/>
-              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
-              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-              <line x1="32" y1="62" x2="32" y2="138" class="jar-shine"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3>Tarro 500 g</h3>
-            <p class="product-size">500 g · tarro de cristal</p>
-            <p class="product-desc">El formato que repiten nuestros clientes cada temporada.</p>
-            <div class="product-foot">
-              <span class="product-price">11,50 €</span>
-              <div class="qty-stepper" data-qty-stepper>
-                <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
-                <output data-qty-value>1</output>
-                <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-block add-to-cart" data-add-to-cart type="button">Añadir al carrito</button>
-        </article>
-
-        <article class="card product-card reveal" data-tilt data-product data-id="p-1000" data-name="Tarro 1 kg" data-price="19.90">
-          <span class="product-badge">Ahorro</span>
-          <div class="product-jar-wrap">
-            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
-              <rect x="22" y="48" width="76" height="94" rx="10" class="jar-fill"/>
-              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
-              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-              <line x1="32" y1="52" x2="32" y2="138" class="jar-shine"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3>Tarro 1 kg</h3>
-            <p class="product-size">1000 g · tarro de cristal</p>
-            <p class="product-desc">Para quienes ya saben que no van a volver a otra miel.</p>
-            <div class="product-foot">
-              <span class="product-price">19,90 €</span>
-              <div class="qty-stepper" data-qty-stepper>
-                <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
-                <output data-qty-value>1</output>
-                <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-block add-to-cart" data-add-to-cart type="button">Añadir al carrito</button>
-        </article>
-
-        <article class="card product-card reveal" data-tilt data-product data-id="p-panal" data-name="Panal virgen 300 g" data-price="14.90">
-          <span class="product-badge">Edición limitada</span>
-          <div class="product-jar-wrap">
-            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
-              <rect x="22" y="62" width="76" height="80" rx="10" class="jar-fill"/>
-              <rect x="34" y="78" width="14" height="14" class="jar-comb" transform="rotate(30 41 85)"/>
-              <rect x="58" y="92" width="14" height="14" class="jar-comb" transform="rotate(30 65 99)"/>
-              <rect x="76" y="70" width="14" height="14" class="jar-comb" transform="rotate(30 83 77)"/>
-              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
-              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3>Panal virgen 300 g</h3>
-            <p class="product-size">300 g · con cera de panal</p>
-            <p class="product-desc">Miel tal como sale de la colmena, con cera incluida. Producción muy limitada.</p>
-            <div class="product-foot">
-              <span class="product-price">14,90 €</span>
-              <div class="qty-stepper" data-qty-stepper>
-                <button type="button" data-qty-minus aria-label="Restar unidad">−</button>
-                <output data-qty-value>1</output>
-                <button type="button" data-qty-plus aria-label="Sumar unidad">+</button>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-block add-to-cart" data-add-to-cart type="button">Añadir al carrito</button>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="ornament-divider" aria-hidden="true"><span></span></div>
-
-  <!-- PROCESO -->
-  <section class="process" id="proceso">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Del acacio al tarro</p>
-        <h2>Cómo se hace.</h2>
-        <p>Cuatro pasos, ninguno acelerado.</p>
-      </div>
-      <div class="process-list">
-        <div class="process-item reveal">
-          <span class="num">01</span>
-          <div><h3>Floración de acacia</h3><p>Trasladamos las colmenas a los acacios en flor durante las tres semanas que dura la floración, la única ventana del año para esta miel.</p></div>
-        </div>
-        <div class="process-item reveal">
-          <span class="num">02</span>
-          <div><h3>Extracción en frío</h3><p>Centrifugamos los panales sin superar los 35°C para no alterar enzimas ni aroma. Nada se cocina, nada se fuerza.</p></div>
-        </div>
-        <div class="process-item reveal">
-          <span class="num">03</span>
-          <div><h3>Decantación natural</h3><p>Reposa varios días en tinas de acero para que suba la espuma por gravedad. No filtramos a presión ni pasteurizamos.</p></div>
-        </div>
-        <div class="process-item reveal">
-          <span class="num">04</span>
-          <div><h3>Envasado a mano</h3><p>Cada tarro se llena, etiqueta y precinta en el propio apiario, en tandas pequeñas, la misma semana de la extracción.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ornament-divider" aria-hidden="true"><span></span></div>
-
-  <!-- OPINIONES -->
-  <section class="testimonials" id="opiniones">
-    <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <p class="kicker">Opiniones</p>
-        <h2>Lo que dicen quienes ya la probaron.</h2>
+        <h2>Lo que dicen <em class="gold-text">quienes ya la probaron</em>.</h2>
       </div>
       <div class="testimonial-grid">
-        <div class="card testimonial-card reveal">
-          <span class="quote-mark">“</span>
+        <div class="glass testimonial reveal">
+          <span class="mark gold-text">“</span>
           <p class="quote">Es la única miel que mis hijos aceptan en el vaso de leche sin arrugar la nariz. Clarísima y nada empalagosa.</p>
-          <div class="testimonial-author"><span class="avatar">M</span><div class="who"><b>Marta R.</b><span>Clienta desde 2022</span></div></div>
+          <div class="testimonial-author">
+            <span class="avatar">M</span>
+            <span class="who"><b>Marta R.</b><span>Clienta desde 2022</span></span>
+          </div>
         </div>
-        <div class="card testimonial-card reveal">
-          <span class="quote-mark">“</span>
-          <p class="quote">La pedí para el obrador y ahora es la que uso en todos los glaseados. No cristaliza y el sabor es muy limpio.</p>
-          <div class="testimonial-author"><span class="avatar">D</span><div class="who"><b>Diego I.</b><span>Pastelero</span></div></div>
+        <div class="glass testimonial reveal">
+          <span class="mark gold-text">“</span>
+          <p class="quote">Pedí la de lavanda para el obrador y ahora es la que uso en todos los glaseados. El aroma aguanta el horno.</p>
+          <div class="testimonial-author">
+            <span class="avatar">D</span>
+            <span class="who"><b>Diego I.</b><span>Pastelero</span></span>
+          </div>
         </div>
-        <div class="card testimonial-card reveal">
-          <span class="quote-mark">“</span>
-          <p class="quote">Se nota que no está mezclada con nada. El panal virgen es una pasada, lo pongo directo en la tabla de quesos.</p>
-          <div class="testimonial-author"><span class="avatar">L</span><div class="who"><b>Lucía F.</b><span>Clienta desde 2023</span></div></div>
+        <div class="glass testimonial reveal">
+          <span class="mark gold-text">“</span>
+          <p class="quote">La de bosque con un queso curado es otra cosa. Y el panal virgen desapareció de casa en tres días.</p>
+          <div class="testimonial-author">
+            <span class="avatar">L</span>
+            <span class="who"><b>Lucía F.</b><span>Clienta desde 2023</span></span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PREGUNTAS -->
-  <section class="faq" id="preguntas">
+  <!-- ============ PREGUNTAS ============ -->
+  <section id="preguntas">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
         <p class="kicker">Preguntas frecuentes</p>
-        <h2>Antes de que preguntes.</h2>
+        <h2>Antes de que <em class="gold-text">preguntes</em>.</h2>
       </div>
       <div class="faq-wrap reveal" data-accordion>
-
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Por qué la miel de acacia no cristaliza?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>Tiene un contenido muy alto de fructosa frente a glucosa, lo que retrasa la cristalización durante meses o incluso años. Es normal que se mantenga líquida y clara mucho más tiempo que otras mieles.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Por qué la miel de acacia no cristaliza?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>Tiene mucha más fructosa que glucosa, y eso retrasa la cristalización durante meses o años. Es normal que siga líquida y clara mucho más tiempo que otras mieles. Las de lavanda y bosque sí cristalizan con el tiempo: es señal de que no están pasteurizadas.</p></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Es apta para niños y personas diabéticas?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>Es apta para niños mayores de 12 meses, como cualquier miel. Para personas diabéticas, su índice glucémico es más bajo que el de otras mieles, pero recomendamos siempre consultar con su médico antes de incorporarla.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Es apta para niños y personas diabéticas?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>Apta para niños mayores de 12 meses, como cualquier miel. Para personas diabéticas, el índice glucémico de la acacia es más bajo que el de otras mieles, pero sigue siendo un azúcar: consulta con tu médico antes de incorporarla.</p></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Cómo debo conservarla?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>A temperatura ambiente, alejada de la luz directa y bien cerrada. No hace falta refrigerar. Si con el tiempo empieza a cristalizar, un baño maría suave a menos de 40°C la vuelve a dejar líquida sin dañarla.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Cómo debo conservarla?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>A temperatura ambiente, lejos de la luz directa y bien cerrada. No necesita nevera. Si cristaliza, un baño maría suave por debajo de 40 °C la devuelve a estado líquido sin estropearla.</p></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Hacéis envíos a toda España?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>Sí, enviamos a península en 24–48h. Para Baleares, Canarias y otros destinos, escríbenos por WhatsApp o email y te confirmamos plazos y coste.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Hacéis envíos a toda España?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>Sí, a península en 24–48 h. Para Baleares, Canarias y otros destinos escríbenos por WhatsApp o email y te confirmamos plazo y coste antes de que pagues nada.</p></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Puedo visitar el apiario?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>Sí, organizamos visitas guiadas fuera de la temporada de extracción, con cita previa. Escríbenos y buscamos fecha.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Qué significa "edición limitada"?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>Que embotellamos lo que dan las colmenas ese año y no reponemos hasta la siguiente floración. La lavanda suele agotarse en semanas; el panal virgen, antes.</p></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false">¿Cómo pago mi pedido?<span class="plus" aria-hidden="true"></span></button>
-          <div class="accordion-panel"><p>Añade los tarros que quieras al carrito y pulsa "Finalizar por WhatsApp": te escribimos con el importe final, gastos de envío y forma de pago (transferencia o Bizum). También puedes escribirnos directamente por email.</p></div>
+        <div class="acc-item" data-open="false">
+          <button class="acc-trigger" aria-expanded="false">¿Cómo pago mi pedido?<span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><p>Añades los tarros al carrito y pulsas "Finalizar por WhatsApp": nos llega tu pedido ya escrito y te confirmamos importe final, envío y forma de pago (transferencia o Bizum). También puedes escribirnos por email si lo prefieres.</p></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto">
     <div class="container contact-grid">
       <div>
         <p class="kicker reveal">Contacto</p>
-        <h2 class="section-head reveal" style="margin-bottom:2rem;">¿Dudas antes de pedir? Escríbenos.</h2>
+        <h2 class="reveal" style="font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,4.6vw,3.2rem);margin-top:1.1rem;margin-bottom:2.2rem">¿Dudas antes de pedir? <em class="gold-text">Escríbenos</em>.</h2>
         <div class="contact-methods">
-          <a class="card contact-method reveal" data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel%20de%20acacia." target="_blank" rel="noopener">
+          <a class="glass contact-method reveal" data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel." target="_blank" rel="noopener">
             <span class="icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.14c-.24.68-1.4 1.31-1.93 1.35-.5.05-1 .25-3.36-.7-2.85-1.13-4.68-4.04-4.82-4.23-.14-.19-1.15-1.53-1.15-2.92s.72-2.07.98-2.35c.24-.27.53-.33.71-.33l.5.01c.16 0 .38-.06.59.45.24.58.8 2 .87 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.23 1.38.27.14.43.12.59-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.54.73 1.8.86.27.14.45.2.51.32.06.12.06.68-.18 1.34Z"/></svg></span>
-            <div><b>WhatsApp</b><span data-contact-whatsapp>+34 600 00 00 00</span></div>
+            <span><b>WhatsApp</b><span data-contact-whatsapp>+34 600 00 00 00</span></span>
           </a>
-          <a class="card contact-method reveal" data-contact-email-link href="mailto:hola@acaciadorada.es">
+          <a class="glass contact-method reveal" data-contact-email-link href="mailto:hola@acaciadorada.es">
             <span class="icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-            <div><b>Email</b><span data-contact-email>hola@acaciadorada.es</span></div>
+            <span><b>Email</b><span data-contact-email>hola@acaciadorada.es</span></span>
           </a>
-          <div class="card contact-method reveal">
+          <div class="glass contact-method reveal">
             <span class="icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
-            <div><b>Apiario</b><span>Sierra de Gredos, Ávila · Lun–Vie, 9:00–18:00</span></div>
+            <span><b>Apiario</b><span>Sierra de Gredos, Ávila · Lun–Vie, 9:00–18:00</span></span>
           </div>
         </div>
       </div>
 
-      <form class="card contact-form reveal" data-contact-form action="mailto:hola@acaciadorada.es" method="post" enctype="text/plain">
+      <form class="glass contact-form reveal" data-contact-form action="mailto:hola@acaciadorada.es" method="post" enctype="text/plain">
         <div class="field">
           <label for="cf-name">Nombre</label>
           <input id="cf-name" name="nombre" type="text" required autocomplete="name">
@@ -455,7 +527,7 @@
           <textarea id="cf-msg" name="mensaje" required></textarea>
         </div>
         <button class="btn btn-primary btn-block" type="submit">Enviar mensaje</button>
-        <p class="form-note">Al enviar, se abrirá tu aplicación de correo con el mensaje ya redactado.</p>
+        <p class="form-note">Al enviar se abrirá tu aplicación de correo con el mensaje ya redactado.</p>
       </form>
     </div>
   </section>
@@ -463,37 +535,57 @@
 </main>
 
 <footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="#inicio"><em>Acacia</em> Dorada</a>
-      <p>Miel de acacia extraída en frío y envasada a mano en la Sierra de Gredos, sin mezclar y sin pasteurizar.</p>
+  <div class="container">
+
+    <div class="glass footer-cta reveal">
+      <h2>Te avisamos cuando abra <em class="gold-text">la próxima cosecha</em>.</h2>
+      <p>Un correo por temporada. Sin promociones, sin ruido: solo el aviso de cuándo vuelve a haber tarros.</p>
+      <form class="subscribe" data-subscribe>
+        <label class="sr-only" for="sub-email">Tu email</label>
+        <input id="sub-email" name="email" type="email" placeholder="tu@email.com" required autocomplete="email">
+        <button class="btn btn-primary" type="submit" data-magnetic>Avísame</button>
+      </form>
+      <p class="subscribe-note">Al enviar se abrirá tu aplicación de correo con la solicitud ya escrita.</p>
     </div>
-    <div class="footer-col">
-      <h4>Explorar</h4>
-      <a href="#historia">Historia</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#opiniones">Opiniones</a>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio"><em class="gold-text">Acacia</em> Dorada</a>
+        <p>Miel monofloral extraída en frío y envasada a mano en la Sierra de Gredos. Sin mezclar, sin pasteurizar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Colección</h4>
+        <a href="#coleccion">Miel de Acacia</a>
+        <a href="#coleccion">Miel de Lavanda</a>
+        <a href="#coleccion">Miel de Bosque</a>
+        <a href="#coleccion">Panal virgen</a>
+      </div>
+      <div class="footer-col">
+        <h4>La casa</h4>
+        <a href="#proceso">Del panal a la mesa</a>
+        <a href="#historia">Historia</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#preguntas">Preguntas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:hola@acaciadorada.es">hola@acaciadorada.es</a>
+        <p>Sierra de Gredos, Ávila</p>
+        <p>Visitas con cita previa</p>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <a data-whatsapp-generic href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20miel%20de%20acacia." target="_blank" rel="noopener">WhatsApp</a>
-      <a href="mailto:hola@acaciadorada.es">hola@acaciadorada.es</a>
-      <p>Sierra de Gredos, Ávila</p>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Acacia Dorada. Todos los derechos reservados.</span>
+      <span>Hecho a mano, tarro a tarro.</span>
     </div>
-    <div class="footer-col">
-      <h4>Apiario</h4>
-      <p>Lun–Vie, 9:00–18:00</p>
-      <p>Visitas con cita previa</p>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© <span data-year>2026</span> Acacia Dorada. Todos los derechos reservados.</span>
-    <span>Hecho a mano, tarro a tarro.</span>
   </div>
 </footer>
 
-<!-- Cart drawer -->
+</div><!-- /.page -->
+
+<!-- Carrito -->
 <div class="cart-overlay" data-cart-overlay></div>
 <aside class="cart-drawer" data-cart-drawer aria-label="Carrito de compra">
   <div class="cart-head">
@@ -501,12 +593,12 @@
     <button class="cart-close" data-cart-close aria-label="Cerrar carrito">✕</button>
   </div>
   <div class="cart-items" data-cart-items>
-    <p class="cart-empty" data-cart-empty>Tu carrito está vacío. Añade algún tarro del catálogo.</p>
+    <p class="cart-empty" data-cart-empty>Tu carrito está vacío. Elige algún tarro de la colección.</p>
   </div>
   <div class="cart-foot">
-    <div class="cart-subtotal"><span>Subtotal</span><b data-cart-subtotal>0,00 €</b></div>
+    <div class="cart-total"><span>Subtotal</span><b class="gold-text" data-cart-subtotal>0,00 €</b></div>
     <a class="btn btn-whatsapp btn-block" data-cart-checkout href="#" target="_blank" rel="noopener">Finalizar por WhatsApp</a>
-    <button class="btn btn-ghost btn-block btn-sm" data-cart-clear type="button">Vaciar carrito</button>
+    <button class="btn btn-glass btn-block btn-sm" data-cart-clear type="button">Vaciar carrito</button>
   </div>
 </aside>
 
@@ -520,6 +612,6 @@
 <script defer src="lib/gsap.min.js"></script>
 <script defer src="lib/ScrollTrigger.min.js"></script>
 <script defer src="lib/manifest.js"></script>
-<script defer src="main.js?v=20260725"></script>
+<script defer src="main.js?v=20260725b"></script>
 </body>
 </html>
