@@ -3,25 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arab Dream Palma · Propuesta "Vintage Paper"</title>
-<meta name="description" content="Propuesta visual alternativa para Arab Dream Palma: paleta cálida marroquí sobre textura de papel envejecido.">
+<title>Arab Dream Palma · Auténtica Gastronomía Marroquí</title>
+<meta name="description" content="Arab Dream Palma: tajines, cuscús y té a la menta en el barrio de Llevant. Auténtica gastronomía marroquí en Palma de Mallorca. Reserva tu mesa.">
+<meta name="theme-color" content="#C1694F">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="Arab Dream Palma">
+<meta property="og:title" content="Arab Dream Palma · Gastronomía Marroquí">
+<meta property="og:description" content="Tajines, cuscús y té a la menta en el barrio de Llevant, Palma de Mallorca.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FBF6E9'/%3E%3Cpath d='M32 10 L37 24 L52 30 L37 36 L32 50 L27 36 L12 30 L27 24 Z' fill='none' stroke='%23C1694F' stroke-width='2.4'/%3E%3C/svg%3E" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@300;400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@300;400;600;700;800&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Arab Dream Palma",
+  "servesCuisine": "Moroccan",
+  "priceRange": "€€",
+  "telephone": "+34871855520",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Carrer de Manacor, 17",
+    "addressLocality": "Palma",
+    "addressRegion": "Illes Balears",
+    "postalCode": "07006",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "22:00" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "367" }
+}
+</script>
 
 <style>
   /* =========================================================
-     Tokens — paleta marroquí (amarillo suave / beige / terracota / dorado / zafiro)
+     1. Tokens — paleta marroquí (amarillo suave / beige / terracota / dorado / zafiro)
      ========================================================= */
   :root {
     --yellow:    #FDE68A;
+    --yellow-deep: #F5C84B;
     --beige:     #F5F0DC;
     --paper:     #FBF6E9;
     --terracota: #C1694F;
     --terracota-dark: #A34E38;
+    --terracota-deep: #7C3A28;
     --gold:      #C9A227;
+    --gold-light: #E4C567;
     --sapphire:  #1B4F91;
+    --sapphire-deep: #123763;
     --ink:       #3B2F27;
     --ink-soft:  #6B5A4A;
     --line:      rgba(59,47,39,0.14);
@@ -29,48 +65,59 @@
     --serif: "Playfair Display", Georgia, serif;
     --sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --radius: 14px;
-    --radius-lg: 26px;
+    --radius-lg: 28px;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   /* =========================================================
-     Reset & base
+     2. Reset & base
      ========================================================= */
   * , *::before, *::after { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     font-family: var(--sans);
     color: var(--ink);
     background-color: var(--beige);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
   ul { list-style: none; padding: 0; }
-  h1, h2, h3 { font-family: var(--serif); line-height: 1.15; color: var(--terracota-dark); }
+  h1, h2, h3 { font-family: var(--serif); line-height: 1.15; color: var(--terracota-deep); text-wrap: balance; }
+  p { text-wrap: pretty; }
   .container { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3rem); }
 
   /* Textura de papel envejecido: grano sutil + viñeta cálida, 100% CSS (sin imágenes externas) */
   body {
     background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(201,162,39,0.08), transparent 55%),
-      radial-gradient(ellipse at 85% 90%, rgba(193,105,79,0.08), transparent 55%),
+      radial-gradient(ellipse at 20% 10%, rgba(201,162,39,0.09), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(193,105,79,0.09), transparent 55%),
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.23 0 0 0 0 0.18 0 0 0 0 0.15 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     background-size: auto, auto, 220px 220px;
   }
 
-  /* Patrón geométrico árabe sutil (estrella de 8 puntas), reutilizado como fondo de sección */
-  .pattern-bg {
-    position: relative;
-    isolation: isolate;
-  }
+  /* Patrón geométrico árabe sutil (estrella de 8 puntas), fondo de sección */
+  .pattern-bg { position: relative; isolation: isolate; }
   .pattern-bg::before {
     content: "";
     position: absolute; inset: 0; z-index: -1;
-    opacity: 0.07;
+    opacity: 0.08;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23C9A227' stroke-width='1'><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(60,60)'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(60,-60)'/><path d='M30 4 L36 24 L56 30 L36 36 L30 56 L24 36 L4 30 L24 24 Z' transform='translate(-60,60)'/></g></svg>");
     background-size: 120px 120px;
+  }
+
+  /* Cinta de mosaico zellige (estrellas terracota + rombos zafiro sobre crema) — divisor entre secciones */
+  .mosaic-ribbon {
+    height: 20px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23FBF6E9'/><path d='M20 4 L25.5 15 L37 20 L25.5 25 L20 36 L14.5 25 L3 20 L14.5 15 Z' fill='%23C1694F'/><path d='M20 4 L25.5 15 L37 20 L25.5 25 L20 36 L14.5 25 L3 20 L14.5 15 Z' fill='none' stroke='%23C9A227' stroke-width='1'/><rect x='52' y='52' width='16' height='16' fill='%231B4F91' transform='rotate(45 60 60)'/><circle cx='60' cy='20' r='3' fill='%23C9A227'/><circle cx='20' cy='60' r='3' fill='%23C9A227'/></svg>");
+    background-size: 56px 56px;
+    background-repeat: repeat;
+    box-shadow: inset 0 2px 4px rgba(59,47,39,0.15), inset 0 -2px 4px rgba(59,47,39,0.15);
   }
 
   :focus-visible { outline: 2px solid var(--sapphire); outline-offset: 3px; border-radius: 4px; }
@@ -82,159 +129,351 @@
   .skip-link:focus { top: 1rem; }
 
   /* =========================================================
-     Botones
+     3. Reveal on scroll
+     ========================================================= */
+  [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--ease-soft), transform .8s var(--ease-soft); }
+  [data-reveal].is-revealed { opacity: 1; transform: none; }
+
+  /* =========================================================
+     4. Botones
      ========================================================= */
   .btn {
-    display: inline-flex; align-items: center; gap: .5rem;
-    padding: 0.9rem 1.8rem;
-    border-radius: var(--radius);
-    font-weight: 700;
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: 0.95rem 1.9rem;
+    border-radius: 999px;
+    font-weight: 800;
     font-size: 0.95rem;
+    letter-spacing: 0.01em;
     transition: transform .35s var(--ease), box-shadow .35s var(--ease);
   }
   .btn:hover { transform: translateY(-3px); }
-  .btn-primary { background: var(--terracota); color: var(--paper); box-shadow: 0 10px 24px -8px rgba(193,105,79,0.55); }
-  .btn-primary:hover { box-shadow: 0 16px 32px -8px rgba(193,105,79,0.6); }
-  .btn-ghost { background: transparent; border: 1.5px solid var(--terracota); color: var(--terracota-dark); }
-  .btn-ghost:hover { background: rgba(193,105,79,0.08); }
+  .btn:active { transform: translateY(-1px); }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--terracota), var(--terracota-dark));
+    color: var(--paper);
+    box-shadow: 0 10px 26px -8px rgba(193,105,79,0.6);
+    position: relative;
+  }
+  .btn-primary:hover { box-shadow: 0 18px 34px -8px rgba(193,105,79,0.65); }
+  .btn-ghost { background: rgba(251,246,233,0.12); border: 1.5px solid var(--paper); color: var(--paper); }
+  .btn-ghost:hover { background: rgba(251,246,233,0.22); }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: var(--ink); box-shadow: 0 10px 26px -8px rgba(201,162,39,0.55); }
 
   /* =========================================================
-     Nav
+     5. Nav
      ========================================================= */
   .nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(251,246,233,0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(251,246,233,0.85);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
     border-bottom: 1px solid var(--line);
+    transition: box-shadow .3s var(--ease), padding .3s var(--ease);
   }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; }
-  .nav-brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--terracota-dark); }
+  .nav.is-scrolled { box-shadow: 0 6px 24px -12px rgba(59,47,39,0.25); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.05rem; gap: 1rem; }
+  .nav-brand { display: flex; align-items: center; gap: .5rem; font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: var(--terracota-dark); }
+  .nav-brand .glyph { color: var(--gold); font-size: 1.1rem; }
   .nav-brand span { color: var(--gold); }
-  .nav-links { display: none; gap: 2rem; font-weight: 600; font-size: 0.92rem; }
-  .nav-links a:hover { color: var(--terracota); }
-  @media (min-width: 860px) { .nav-links { display: flex; } }
+  .nav-links { display: none; gap: 2rem; font-weight: 700; font-size: 0.92rem; }
+  .nav-links a { position: relative; padding-block: .2rem; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+    background: var(--terracota); transform: scaleX(0); transform-origin: right;
+    transition: transform .4s var(--ease);
+  }
+  .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .nav-links a:hover { color: var(--terracota-dark); }
+  .nav-actions { display: flex; align-items: center; gap: 0.9rem; }
+  .nav-actions .btn { display: none; }
+  @media (min-width: 560px) { .nav-actions .btn { display: inline-flex; } }
+  .nav-brand { font-size: 1.05rem; }
+  @media (min-width: 480px) { .nav-brand { font-size: 1.35rem; } }
+  .nav-burger {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 30px; height: 30px; background: none; border: 0; cursor: pointer;
+  }
+  .nav-burger span { display: block; width: 100%; height: 2px; background: var(--terracota-dark); border-radius: 2px; transition: transform .35s var(--ease-soft), opacity .3s; }
+  .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (min-width: 900px) { .nav-links { display: flex; } .nav-burger { display: none; } }
+
+  .nav-mobile {
+    position: fixed; inset: 0; z-index: 95;
+    background: var(--paper);
+    display: grid; place-items: center;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path .6s var(--ease-soft);
+  }
+  .nav-mobile[data-open="true"] { clip-path: inset(0); }
+  .nav-mobile nav { display: flex; flex-direction: column; align-items: center; gap: 1.7rem; }
+  .nav-mobile-link { font-family: var(--serif); font-style: italic; font-size: 2rem; color: var(--terracota-dark); }
+  .nav-mobile-phone { color: var(--sapphire); font-weight: 700; margin-top: .5rem; }
 
   /* =========================================================
-     Hero
+     6. WhatsApp flotante
+     ========================================================= */
+  .whatsapp-fab {
+    position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 90;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: #25D366; color: #0b1a10;
+    display: grid; place-items: center;
+    box-shadow: 0 12px 28px rgba(59,47,39,0.35);
+    animation: fabPulse 3.2s ease-out infinite;
+    transition: transform .4s var(--ease-soft);
+  }
+  .whatsapp-fab:hover { transform: translateY(-4px) scale(1.05); }
+  .whatsapp-fab svg { width: 30px; height: 30px; }
+  @keyframes fabPulse {
+    0%   { box-shadow: 0 12px 28px rgba(59,47,39,0.35), 0 0 0 0 rgba(37,211,102,0.45); }
+    70%  { box-shadow: 0 12px 28px rgba(59,47,39,0.35), 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 12px 28px rgba(59,47,39,0.35), 0 0 0 0 rgba(37,211,102,0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .whatsapp-fab { animation: none; } }
+
+  /* =========================================================
+     7. Hero
      ========================================================= */
   .hero {
     position: relative;
-    min-height: 92svh;
+    min-height: 96svh;
     display: flex; align-items: center;
     overflow: clip;
+    padding-top: 4rem;
   }
   .hero-bg {
-    position: absolute; inset: 0; z-index: -2;
-    background-color: var(--terracota-dark);
+    position: absolute; inset: 0; z-index: -3;
+    background-color: var(--terracota-deep);
     background-image:
-      linear-gradient(180deg, rgba(59,47,39,0.35), rgba(59,47,39,0.72)),
+      linear-gradient(180deg, rgba(59,26,17,0.45) 0%, rgba(59,26,17,0.55) 55%, rgba(28,14,10,0.88) 100%),
       url("https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=1800&q=80");
     background-size: cover; background-position: center;
   }
-  .hero-inner { position: relative; z-index: 1; color: var(--paper); max-width: 640px; }
-  .hero-inner .kicker { color: var(--yellow); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem; }
-  .hero-inner h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin-bottom: 1.2rem; }
+  .hero-glow {
+    position: absolute; inset: -20%; z-index: -2;
+    background:
+      radial-gradient(45% 40% at 25% 25%, rgba(253,230,138,0.25), transparent 65%),
+      radial-gradient(40% 35% at 80% 75%, rgba(27,79,145,0.28), transparent 65%);
+    filter: blur(60px);
+    animation: glowDrift 20s ease-in-out infinite;
+  }
+  @keyframes glowDrift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(3%,-2%) scale(1.08); } }
+  .hero-arch-deco {
+    position: absolute; z-index: -1; bottom: -6%; left: 50%; transform: translateX(-50%);
+    width: min(80vw, 900px); opacity: 0.5;
+  }
+  .hero-inner { position: relative; z-index: 1; color: var(--paper); max-width: 660px; }
+  .hero-glyph { display: block; font-family: var(--serif); font-style: italic; font-size: 1.8rem; color: var(--gold-light); margin-bottom: 0.8rem; }
+  .hero-inner .kicker { color: var(--yellow); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: .5rem; }
+  .hero-inner .kicker::before { content: ""; width: 22px; height: 1.5px; background: var(--yellow); }
+  .hero-inner h1 { font-size: clamp(2.5rem, 6.4vw, 4.6rem); margin-bottom: 1.3rem; color: var(--paper); }
   .hero-inner h1 em { color: var(--yellow); font-style: italic; }
-  .hero-inner p { font-size: 1.1rem; max-width: 46ch; margin-bottom: 2rem; color: #F3E9D2; font-weight: 300; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .hero-inner p.lead { font-size: 1.15rem; max-width: 46ch; margin-bottom: 2.2rem; color: #F3E9D2; font-weight: 300; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.6rem; }
+  .hero-stats { display: flex; flex-wrap: wrap; gap: 2.2rem; }
+  .hero-stat { display: flex; flex-direction: column; }
+  .hero-stat .v { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--gold-light); }
+  .hero-stat .l { font-size: 0.78rem; color: #D9C9A8; letter-spacing: 0.03em; }
+
+  .hero-scroll-cue {
+    position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%);
+    width: 22px; height: 36px; border: 1px solid rgba(251,246,233,0.5); border-radius: 999px;
+    display: flex; justify-content: center; padding-top: 7px;
+  }
+  .hero-scroll-cue span { width: 3px; height: 7px; border-radius: 999px; background: var(--gold-light); animation: cueBounce 1.8s var(--ease-soft) infinite; }
+  @keyframes cueBounce { 0%,100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(10px); opacity: .3; } }
+  @media (prefers-reduced-motion: reduce) { .hero-scroll-cue span { animation: none; } }
+
+  /* Farolillo flotante decorativo */
+  .lantern-float { position: absolute; z-index: 1; animation: lanternBob 5s ease-in-out infinite; }
+  .lantern-float.l1 { top: 14%; right: 8%; width: 70px; opacity: 0.85; animation-delay: 0s; }
+  .lantern-float.l2 { top: 30%; right: 18%; width: 42px; opacity: 0.6; animation-delay: 1.2s; }
+  @keyframes lanternBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @media (max-width: 899px) { .lantern-float.l2 { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .lantern-float { animation: none; } }
 
   /* =========================================================
-     Secciones genéricas
+     8. Secciones genéricas
      ========================================================= */
-  section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  section { padding-block: clamp(3.8rem, 8vw, 6.5rem); }
   .kicker {
-    display: inline-block; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    font-size: 0.82rem; color: var(--sapphire); margin-bottom: 0.8rem;
+    display: inline-flex; align-items: center; gap: .5rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 0.82rem; color: var(--sapphire); margin-bottom: 0.9rem;
   }
-  .section-title { font-size: clamp(1.9rem, 4vw, 2.8rem); margin-bottom: 1rem; }
-  .section-sub { color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.5rem; }
+  .kicker::before { content: ""; width: 22px; height: 1.5px; background: var(--sapphire); }
+  .section-title { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 1rem; }
+  .section-title em { font-style: italic; color: var(--terracota); }
+  .section-sub { color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.6rem; }
+  .section-head { max-width: 720px; }
+  .section-head.center { margin-inline: auto; text-align: center; }
+  .section-head.center .kicker { justify-content: center; }
+  .section-head.center .kicker::before { display: none; }
 
   /* =========================================================
-     Historia
+     9. Marco de arco decorativo (fotos)
      ========================================================= */
-  .historia-grid { display: grid; gap: 2.5rem; align-items: center; }
-  .historia-photo {
+  .arch-frame {
+    position: relative;
+    padding: 10px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23FBF6E9'/><path d='M20 4 L25.5 15 L37 20 L25.5 25 L20 36 L14.5 25 L3 20 L14.5 15 Z' fill='%23C1694F'/><rect x='52' y='52' width='16' height='16' fill='%231B4F91' transform='rotate(45 60 60)'/><circle cx='60' cy='20' r='3' fill='%23C9A227'/><circle cx='20' cy='60' r='3' fill='%23C9A227'/></svg>");
+    background-size: 44px 44px;
     border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(59,47,39,0.35);
-    border: 6px solid var(--paper);
+    box-shadow: 0 30px 60px -20px rgba(59,47,39,0.4);
   }
-  .historia-photo img { aspect-ratio: 4/3; object-fit: cover; }
-  .historia-copy p { margin-bottom: 1rem; color: var(--ink-soft); }
-  @media (min-width: 900px) { .historia-grid { grid-template-columns: 1fr 1fr; } }
+  .arch-frame .arch-inner {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--terracota-dark);
+    border-radius: 50% 50% 10px 10px / 38% 38% 10px 10px;
+    border: 5px solid var(--paper);
+  }
+  .arch-frame .arch-inner img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    background: var(--terracota-dark); color: var(--paper);
+    font-size: 0.8rem; text-align: center; padding: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
 
   /* =========================================================
-     Carta (muestra)
+     10. Historia
      ========================================================= */
-  .menu-categories { display: grid; gap: 1.6rem; grid-template-columns: 1fr; }
+  .historia-grid { display: grid; gap: 3rem; align-items: center; }
+  .historia-copy p { margin-bottom: 1rem; color: var(--ink-soft); }
+  .historia-pillars { display: grid; gap: 1.4rem; margin-top: 2rem; }
+  .historia-pillar { display: flex; gap: 1rem; align-items: flex-start; }
+  .historia-pillar .icon {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--yellow), var(--yellow-deep));
+    box-shadow: 0 8px 18px -6px rgba(201,162,39,0.5);
+  }
+  .historia-pillar .icon svg { width: 22px; height: 22px; color: var(--terracota-deep); }
+  .historia-pillar h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+  .historia-pillar p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+  @media (min-width: 900px) { .historia-grid { grid-template-columns: 0.85fr 1fr; } }
+  @media (min-width: 640px) { .historia-pillars { grid-template-columns: repeat(3, 1fr); } }
+
+  /* =========================================================
+     11. Carta (muestra)
+     ========================================================= */
+  .menu-categories { display: grid; gap: 1.7rem; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .menu-categories { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1080px) { .menu-categories { grid-template-columns: repeat(3, 1fr); } }
 
   .menu-card {
+    position: relative;
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    padding: 1.8rem;
+    padding: 2rem 1.8rem 1.8rem;
     box-shadow: 0 18px 40px -24px rgba(59,47,39,0.35);
-    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+    transition: transform .45s var(--ease-soft), box-shadow .45s var(--ease-soft);
   }
-  .menu-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -20px rgba(193,105,79,0.35); }
-  .menu-card h3 {
-    font-size: 1.3rem; margin-bottom: 1.2rem; padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--gold); display: inline-block;
+  .menu-card:hover { transform: translateY(-8px) rotate(-0.3deg); box-shadow: 0 30px 55px -20px rgba(193,105,79,0.4); }
+  .menu-card::before {
+    content: ""; position: absolute; top: -1px; left: 1.6rem; width: 34px; height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--terracota));
+    border-radius: 0 0 4px 4px;
   }
-  .menu-card ul { display: flex; flex-direction: column; gap: 0.85rem; }
-  .menu-row { display: flex; justify-content: space-between; gap: 1rem; }
-  .menu-row .name { font-weight: 600; }
+  .menu-card-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.3rem; }
+  .menu-card-head .icon {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--sapphire), var(--sapphire-deep));
+  }
+  .menu-card-head .icon svg { width: 20px; height: 20px; color: var(--yellow); }
+  .menu-card h3 { font-size: 1.25rem; }
+  .menu-card ul { display: flex; flex-direction: column; gap: 0.9rem; }
+  .menu-row { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .7rem; border-bottom: 1px dashed var(--line); }
+  .menu-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .menu-row .name { font-weight: 700; }
   .menu-row .desc { display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 400; }
   .menu-row .price { font-family: var(--serif); font-weight: 700; color: var(--terracota); white-space: nowrap; }
-  .menu-note { margin-top: 2rem; font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+  .menu-note { margin-top: 2.2rem; font-size: 0.9rem; color: var(--ink-soft); font-style: italic; text-align: center; }
 
   /* =========================================================
-     Galería
+     12. Galería
      ========================================================= */
-  .gallery {
-    display: grid; gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .gallery { display: grid; gap: 1.2rem; grid-template-columns: repeat(2, 1fr); }
   @media (min-width: 720px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
   .gallery figure {
-    border-radius: var(--radius); overflow: hidden; aspect-ratio: 1;
-    border: 4px solid var(--paper);
-    box-shadow: 0 14px 30px -18px rgba(59,47,39,0.4);
+    border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1;
+    border: 5px solid var(--paper);
+    box-shadow: 0 16px 32px -18px rgba(59,47,39,0.45);
+    position: relative;
   }
-  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
-  .gallery figure:hover img { transform: scale(1.08); }
+  .gallery img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .7s var(--ease-soft);
+    background: var(--terracota-dark); color: var(--paper);
+    font-size: .75rem; text-align: center;
+    display: flex; align-items: center; justify-content: center; padding: .8rem;
+  }
+  .gallery figure:hover img { transform: scale(1.1) rotate(1deg); }
 
   /* =========================================================
-     Reservas
+     13. Testimonios
      ========================================================= */
-  .reservas { background: var(--yellow); }
-  .reservas-grid { display: grid; gap: 2.5rem; }
+  .testimonials { display: grid; gap: 1.6rem; grid-template-columns: 1fr; }
+  @media (min-width: 780px) { .testimonials { grid-template-columns: repeat(3, 1fr); } }
+  .testimonial {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 1.9rem; position: relative;
+    box-shadow: 0 16px 34px -22px rgba(59,47,39,0.3);
+  }
+  .testimonial .stars { color: var(--gold); letter-spacing: 2px; margin-bottom: .9rem; font-size: 0.95rem; }
+  .testimonial p { font-family: var(--serif); font-style: italic; color: var(--ink); margin-bottom: 1.1rem; }
+  .testimonial-attrib { font-size: 0.85rem; color: var(--terracota-dark); font-weight: 700; }
+  .testimonial-attrib span { color: var(--ink-soft); font-weight: 400; }
+
+  /* =========================================================
+     14. Reservas
+     ========================================================= */
+  .reservas { background: linear-gradient(160deg, var(--yellow) 0%, var(--yellow-deep) 100%); position: relative; overflow: clip; }
+  .reservas-grid { display: grid; gap: 2.6rem; }
   .reservas-card {
-    background: var(--paper); border-radius: var(--radius-lg); padding: 2.2rem;
-    box-shadow: 0 20px 45px -20px rgba(59,47,39,0.3);
+    background: var(--paper); border-radius: var(--radius-lg); padding: 2.4rem;
+    box-shadow: 0 24px 50px -20px rgba(59,47,39,0.35);
   }
   .reservas-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
-  .reservas-list { display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.95rem; }
+  .reservas-list { display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem; }
   .reservas-list li strong { color: var(--terracota-dark); }
-  .reservas-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.4rem; }
+  .reservas-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+  .status-chip {
+    display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; font-size: 0.85rem;
+    padding: .4rem .9rem; border-radius: 999px; background: rgba(27,79,145,0.1); color: var(--sapphire-deep);
+    margin-bottom: 1.2rem;
+  }
+  .status-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-soft); }
+  .status-chip.is-open .dot { background: #2f9e44; }
   .map-frame {
     border-radius: var(--radius-lg); overflow: hidden; border: 6px solid var(--paper);
-    box-shadow: 0 20px 45px -20px rgba(59,47,39,0.3);
+    box-shadow: 0 24px 50px -20px rgba(59,47,39,0.35);
   }
   .map-frame iframe { width: 100%; aspect-ratio: 4/3; border: 0; }
   @media (min-width: 900px) { .reservas-grid { grid-template-columns: 1fr 1fr; } }
 
   /* =========================================================
-     Footer
+     15. Footer
      ========================================================= */
-  footer { background: var(--ink); color: var(--paper); padding-block: 3.5rem 2rem; }
-  .footer-grid { display: grid; gap: 2.2rem; margin-bottom: 2.5rem; }
+  footer { background: var(--ink); color: var(--paper); padding-block: 3.8rem 2rem; position: relative; }
+  .footer-grid { display: grid; gap: 2.3rem; margin-bottom: 2.6rem; }
   @media (min-width: 720px) { .footer-grid { grid-template-columns: 1.3fr repeat(3, 1fr); } }
-  footer h3 { font-family: var(--serif); color: var(--yellow); font-size: 1.1rem; margin-bottom: 1rem; }
+  footer h3 { font-family: var(--serif); color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1rem; }
   footer p, footer li { color: #E7DFC9; font-size: 0.92rem; }
+  footer li { margin-bottom: .5rem; }
   footer a:hover { color: var(--yellow); }
+  .footer-social { display: flex; gap: .7rem; margin-top: 1.2rem; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(251,246,233,0.25);
+    display: grid; place-items: center; transition: border-color .3s, transform .3s var(--ease-soft);
+  }
+  .footer-social a:hover { border-color: var(--gold-light); transform: translateY(-3px); }
+  .footer-social svg { width: 16px; height: 16px; }
   .footer-bottom { border-top: 1px solid rgba(251,246,233,0.15); padding-top: 1.4rem; font-size: 0.8rem; color: #B8AD91; }
 </style>
 </head>
@@ -242,115 +481,227 @@
 
 <a href="#main" class="skip-link">Saltar al contenido</a>
 
-<header class="nav">
+<a class="whatsapp-fab" data-whatsapp-link href="https://wa.me/34871855520?text=Hola%20Arab%20Dream%2C%20me%20gustar%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.02 3C9.4 3 4.02 8.38 4.02 15c0 2.25.62 4.36 1.7 6.17L4 29l8.02-1.63A11.9 11.9 0 0 0 16.02 27C22.65 27 28 21.62 28 15S22.65 3 16.02 3Zm0 21.7c-1.87 0-3.6-.52-5.08-1.42l-.36-.22-4.4.9.94-4.3-.24-.37A9.6 9.6 0 0 1 5.35 15c0-5.9 4.8-10.68 10.67-10.68S26.68 9.1 26.68 15 21.9 24.7 16.02 24.7Zm5.86-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.83 1.04-1.02 1.25-.19.22-.37.24-.69.08-.32-.16-1.34-.5-2.55-1.6-.94-.85-1.58-1.9-1.76-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.22.05-.4-.03-.56-.08-.16-.72-1.76-.99-2.4-.26-.63-.53-.55-.72-.56h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.65s1.14 3.08 1.3 3.29c.16.22 2.24 3.51 5.5 4.78.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.52.27-.74.27-1.38.19-1.51-.08-.14-.29-.22-.61-.38Z"/></svg>
+</a>
+
+<header class="nav" data-nav>
   <div class="container nav-inner">
-    <a href="#inicio" class="nav-brand">Arab Dream <span>Palma</span></a>
+    <a href="#inicio" class="nav-brand"><span class="glyph">✦</span>Arab Dream <span>Palma</span></a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a href="#historia">Historia</a>
       <a href="#carta">Carta</a>
       <a href="#galeria">Galería</a>
       <a href="#reservas">Reservas</a>
     </nav>
-    <a href="#reservas" class="btn btn-primary" style="padding:.6rem 1.3rem; font-size:.85rem;">Reservar mesa</a>
+    <div class="nav-actions">
+      <a href="#reservas" class="btn btn-primary" style="padding:.6rem 1.3rem; font-size:.85rem;">Reservar mesa</a>
+      <button type="button" class="nav-burger" data-nav-toggle aria-expanded="false" aria-controls="nav-mobile" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<div class="nav-mobile" id="nav-mobile" data-nav-mobile aria-hidden="true">
+  <nav aria-label="Navegación móvil">
+    <a href="#inicio" class="nav-mobile-link">Inicio</a>
+    <a href="#historia" class="nav-mobile-link">Historia</a>
+    <a href="#carta" class="nav-mobile-link">Carta</a>
+    <a href="#galeria" class="nav-mobile-link">Galería</a>
+    <a href="#reservas" class="nav-mobile-link">Reservas</a>
+    <a href="tel:+34871855520" class="nav-mobile-phone">871 85 55 20</a>
+  </nav>
+</div>
 
 <main id="main">
 
   <section class="hero" id="inicio">
     <div class="hero-bg" role="img" aria-label="Mesa marroquí con tajín y té a la menta (foto de referencia, sustituir por foto real)"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <img class="lantern-float l1" aria-hidden="true" alt=""
+      src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 140' fill='none'><path d='M40 4 V16' stroke='%23E4C567' stroke-width='2' stroke-linecap='round'/><path d='M24 16 H56 L50 30 H30 Z' stroke='%23E4C567' stroke-width='2' stroke-linejoin='round'/><path d='M20 30 C20 30 16 40 16 62 C16 96 24 108 40 108 C56 108 64 96 64 62 C64 40 60 30 60 30' stroke='%23E4C567' stroke-width='2'/><path d='M28 40 V90 M40 36 V96 M52 40 V90' stroke='%23E4C567' stroke-width='1.1' opacity='0.6'/><path d='M30 108 H50 L44 128 H36 Z' stroke='%23E4C567' stroke-width='2' stroke-linejoin='round'/></svg>">
+    <img class="lantern-float l2" aria-hidden="true" alt=""
+      src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 140' fill='none'><path d='M40 4 V16' stroke='%23FDE68A' stroke-width='2' stroke-linecap='round'/><path d='M24 16 H56 L50 30 H30 Z' stroke='%23FDE68A' stroke-width='2' stroke-linejoin='round'/><path d='M20 30 C20 30 16 40 16 62 C16 96 24 108 40 108 C56 108 64 96 64 62 C64 40 60 30 60 30' stroke='%23FDE68A' stroke-width='2'/><path d='M30 108 H50 L44 128 H36 Z' stroke='%23FDE68A' stroke-width='2' stroke-linejoin='round'/></svg>">
     <div class="container hero-inner">
-      <p class="kicker">Gastronomía marroquí · Palma de Mallorca</p>
-      <h1>Sabores de Marruecos, <em>servidos con calma</em>.</h1>
-      <p>Tajines a fuego lento, cuscús real y té a la menta en el barrio de Llevant. Una mesa cálida para compartir.</p>
-      <div class="hero-cta">
+      <span class="hero-glyph" data-reveal>مرحباً</span>
+      <p class="kicker" data-reveal>Gastronomía marroquí · Palma de Mallorca</p>
+      <h1 data-reveal>Sabores de Marruecos, <em>servidos con calma</em>.</h1>
+      <p class="lead" data-reveal>Tajines a fuego lento, cuscús real y té a la menta en el barrio de Llevant. Una mesa cálida para compartir, como en casa.</p>
+      <div class="hero-cta" data-reveal>
         <a href="#reservas" class="btn btn-primary">Reservar mesa</a>
-        <a href="#carta" class="btn btn-ghost" style="border-color:var(--paper); color:var(--paper);">Ver la carta</a>
+        <a href="#carta" class="btn btn-ghost">Ver la carta</a>
+      </div>
+      <div class="hero-stats" data-reveal>
+        <div class="hero-stat"><span class="v">4.6 ★</span><span class="l">367 reseñas en Google</span></div>
+        <div class="hero-stat"><span class="v" data-open-status>—</span><span class="l">L–S, 9:00–22:00</span></div>
+        <div class="hero-stat"><span class="v">Llevant</span><span class="l">C. de Manacor, 17 · Palma</span></div>
       </div>
     </div>
+    <a href="#historia" class="hero-scroll-cue" aria-label="Bajar"><span></span></a>
   </section>
+
+  <div class="mosaic-ribbon" aria-hidden="true"></div>
 
   <section id="historia" class="pattern-bg">
     <div class="container historia-grid">
-      <div class="historia-photo">
-        <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&w=1000&q=80"
-             alt="Especias marroquíes (foto de referencia, sustituir por foto real del local)" loading="lazy">
+      <div class="arch-frame" data-reveal>
+        <div class="arch-inner">
+          <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&w=1000&q=80"
+               alt="Especias marroquíes (foto de referencia, sustituir por foto real del local)" loading="lazy">
+        </div>
       </div>
       <div class="historia-copy">
-        <p class="kicker">Nuestra casa</p>
-        <h2 class="section-title">Una cocina que huele a hogar</h2>
-        <p>En Arab Dream cocinamos como en una casa marroquí: a fuego lento, con especias molidas al momento y el pan recién hecho.</p>
-        <p>Cada tajín, cada cuscús, cada vaso de té a la menta se sirve pensando en la sobremesa larga y la hospitalidad como parte del menú.</p>
+        <p class="kicker" data-reveal>Nuestra casa</p>
+        <h2 class="section-title" data-reveal>Una cocina que <em>huele a hogar</em></h2>
+        <p data-reveal>En Arab Dream cocinamos como en una casa marroquí: a fuego lento, con especias molidas al momento y el pan recién hecho.</p>
+        <p data-reveal>Cada tajín, cada cuscús, cada vaso de té a la menta se sirve pensando en la sobremesa larga y la hospitalidad como parte del menú.</p>
+        <div class="historia-pillars">
+          <div class="historia-pillar" data-reveal>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c2-4 6-6 8-6s6 2 8 6c-2 4-6 6-8 6s-6-2-8-6Z"/><circle cx="12" cy="12" r="2.4"/></svg></span>
+            <div><h3>Tradición</h3><p>Recetas de casa, sin atajos.</p></div>
+          </div>
+          <div class="historia-pillar" data-reveal>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v4M5 8l2 3M19 8l-2 3M4 14h16M6 14c0 4 2.5 7 6 7s6-3 6-7"/></svg></span>
+            <div><h3>Fuego lento</h3><p>Especias enteras, tiempo real.</p></div>
+          </div>
+          <div class="historia-pillar" data-reveal>
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v6a4 4 0 0 0 8 0V3M8 21h4M10 13v8"/></svg></span>
+            <div><h3>Hospitalidad</h3><p>Té a la menta y sobremesa larga.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <div class="mosaic-ribbon" aria-hidden="true"></div>
+
   <section id="carta">
     <div class="container">
-      <p class="kicker">La carta</p>
-      <h2 class="section-title">Una muestra de nuestros sabores</h2>
-      <p class="section-sub">Selección representativa de la carta completa. Precios en vigor en el restaurante.</p>
+      <div class="section-head center">
+        <p class="kicker" data-reveal>La carta</p>
+        <h2 class="section-title" data-reveal>Una muestra de <em>nuestros sabores</em></h2>
+        <p class="section-sub" data-reveal style="margin-inline:auto;">Selección representativa de la carta completa (170 referencias). Precios en vigor en el restaurante.</p>
+      </div>
 
       <div class="menu-categories">
-        <div class="menu-card">
-          <h3>Sopas</h3>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11h14M6 11c0 5 2.5 8 6 8s6-3 6-8M9 3c-1 1-1 2 0 3M13 3c-1 1-1 2 0 3"/></svg></span>
+            <h3>Sopas</h3>
+          </div>
           <ul>
             <li class="menu-row"><span><span class="name">Harira marroquí</span><span class="desc">Lentejas, garbanzos y especias</span></span><span class="price">4 €</span></li>
             <li class="menu-row"><span><span class="name">Harira completa</span><span class="desc">Con huevo y chebakia</span></span><span class="price">6 €</span></li>
           </ul>
         </div>
-        <div class="menu-card">
-          <h3>Tajín</h3>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18h16M6 18c0-5 3-9 6-9s6 4 6 9M9 9c0-3 1.5-5 3-6M9 9c-1.5-2-1.5-4-1-6"/></svg></span>
+            <h3>Tajín</h3>
+          </div>
           <ul>
             <li class="menu-row"><span><span class="name">Tajín de pollo</span><span class="desc">Especias de la casa</span></span><span class="price">8 €</span></li>
             <li class="menu-row"><span><span class="name">Tajín de cordero con verduras</span></span><span class="price">13 €</span></li>
           </ul>
         </div>
-        <div class="menu-card">
-          <h3>Cuscús</h3>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h16M6 10c0 6 2.5 10 6 10s6-4 6-10"/><ellipse cx="12" cy="10" rx="8" ry="3"/></svg></span>
+            <h3>Cuscús</h3>
+          </div>
           <ul>
             <li class="menu-row"><span><span class="name">Cuscús de pollo</span></span><span class="price">8,50 €</span></li>
             <li class="menu-row"><span><span class="name">Cuscús vegetal</span></span><span class="price">6,50 €</span></li>
           </ul>
         </div>
-        <div class="menu-card">
-          <h3>Dulces</h3>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4l8 8-8 8-8-8Z"/></svg></span>
+            <h3>Dulces</h3>
+          </div>
           <ul>
             <li class="menu-row"><span><span class="name">Baklawa</span></span><span class="price">1,50 €</span></li>
             <li class="menu-row"><span><span class="name">Chebakia</span></span><span class="price">1 €</span></li>
           </ul>
         </div>
-        <div class="menu-card">
-          <h3>Té e infusiones</h3>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8c0-2 1.5-3 4-3h6c2 0 3 1 3 3v2c0 4-2.5 6-6 6s-6-2-6-6V8h9M8 21h6"/></svg></span>
+            <h3>Té e infusiones</h3>
+          </div>
           <ul>
             <li class="menu-row"><span><span class="name">Té marroquí</span></span><span class="price">1,50 €</span></li>
             <li class="menu-row"><span><span class="name">Manzanilla</span></span><span class="price">1,50 €</span></li>
           </ul>
         </div>
+        <div class="menu-card" data-reveal>
+          <div class="menu-card-head">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v3c0 3-2 5-4 5M4 4c0 3 2 5 4 5m0 0c1.5 1 3 1 4 0M4 20h16M9 9v6M9 15c-2 1-3 2.5-3 5M15 9v6M15 15c2 1 3 2.5 3 5"/></svg></span>
+            <h3>Parrilla</h3>
+          </div>
+          <ul>
+            <li class="menu-row"><span><span class="name">Brochetas mixtas</span></span><span class="price">14 €</span></li>
+            <li class="menu-row"><span><span class="name">Kefta a la brasa</span></span><span class="price">7,50 €</span></li>
+          </ul>
+        </div>
       </div>
-      <p class="menu-note">Muestra de la carta completa (170 referencias) disponible en la web principal.</p>
+      <p class="menu-note" data-reveal>Carta completa (170 referencias) disponible en la web principal.</p>
     </div>
   </section>
 
+  <div class="mosaic-ribbon" aria-hidden="true"></div>
+
   <section id="galeria" class="pattern-bg">
     <div class="container">
-      <p class="kicker">Ambiente</p>
-      <h2 class="section-title">Rincones de la casa</h2>
-      <p class="section-sub">Fotos de referencia — sustituir por fotografías reales del restaurante.</p>
+      <div class="section-head center">
+        <p class="kicker" data-reveal>Ambiente</p>
+        <h2 class="section-title" data-reveal>Rincones de <em>la casa</em></h2>
+        <p class="section-sub" data-reveal style="margin-inline:auto;">Fotos de referencia — sustituir por fotografías reales del restaurante.</p>
+      </div>
       <div class="gallery">
-        <figure><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80" alt="Té a la menta (foto de referencia)" loading="lazy"></figure>
-        <figure><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80" alt="Mesa con platos marroquíes (foto de referencia)" loading="lazy"></figure>
-        <figure><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80" alt="Especias en el mercado (foto de referencia)" loading="lazy"></figure>
-        <figure><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Interior de estilo marroquí (foto de referencia)" loading="lazy"></figure>
+        <figure data-reveal><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80" alt="Té a la menta (foto de referencia)" loading="lazy"></figure>
+        <figure data-reveal><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80" alt="Mesa con platos marroquíes (foto de referencia)" loading="lazy"></figure>
+        <figure data-reveal><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80" alt="Especias en el mercado (foto de referencia)" loading="lazy"></figure>
+        <figure data-reveal><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Interior de estilo marroquí (foto de referencia)" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="mosaic-ribbon" aria-hidden="true"></div>
+
+  <section id="testimonios">
+    <div class="container">
+      <div class="section-head center">
+        <p class="kicker" data-reveal>Lo que dicen</p>
+        <h2 class="section-title" data-reveal>Clientes que <em>vuelven</em></h2>
+      </div>
+      <div class="testimonials">
+        <blockquote class="testimonial" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>&ldquo;Comimos con un amigo de Marruecos y tomamos té y postres. Probamos varios platos como lentejas, osobuco, falafel y tacos con pan árabe. ¡Todo muy rico! Y la decoración muy bonita.&rdquo;</p>
+          <p class="testimonial-attrib">Aba M. <span>· Reseña de Google</span></p>
+        </blockquote>
+        <blockquote class="testimonial" data-reveal>
+          <div class="stars">★★★★★</div>
+          <p>&ldquo;Este restaurante marroquí, recién inaugurado en la calle Manacor, sorprende por su sabor y su ambiente cuidado.&rdquo;</p>
+          <p class="testimonial-attrib">Irlanda M. <span>· Reseña de Google</span></p>
+        </blockquote>
+        <blockquote class="testimonial" data-reveal>
+          <div class="stars">★★★★☆</div>
+          <p>&ldquo;La comida estaba muy buena. El local estaba limpio y el servicio era bueno. Sin duda volveré a comer allí.&rdquo;</p>
+          <p class="testimonial-attrib">Kati K. <span>· Reseña de Google</span></p>
+        </blockquote>
       </div>
     </div>
   </section>
 
   <section id="reservas" class="reservas">
     <div class="container reservas-grid">
-      <div class="reservas-card">
+      <div class="reservas-card" data-reveal>
+        <span class="status-chip" data-open-status-chip><span class="dot"></span><span data-open-status-text>Consultando horario…</span></span>
         <p class="kicker" style="color:var(--terracota-dark)">Reservas</p>
-        <h2 class="section-title">Te guardamos una mesa</h2>
+        <h2 class="section-title">Te guardamos <em>una mesa</em></h2>
         <ul class="reservas-list">
           <li><strong>Dirección:</strong> C. de Manacor, 17 · Llevant, Palma</li>
           <li><strong>Teléfono:</strong> <a href="tel:+34871855520">871 85 55 20</a></li>
@@ -358,11 +709,11 @@
           <li><strong>Horario:</strong> Lunes a sábado, 9:00–22:00 · Domingo cerrado</li>
         </ul>
         <div class="reservas-cta">
-          <a href="https://wa.me/34871855520?text=Hola%20Arab%20Dream%2C%20me%20gustar%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
-          <a href="tel:+34871855520" class="btn btn-ghost">Llamar</a>
+          <a data-whatsapp-link href="https://wa.me/34871855520?text=Hola%20Arab%20Dream%2C%20me%20gustar%C3%ADa%20reservar%20mesa" target="_blank" rel="noopener" class="btn btn-primary">Reservar por WhatsApp</a>
+          <a href="tel:+34871855520" class="btn btn-gold">Llamar</a>
         </div>
       </div>
-      <div class="map-frame">
+      <div class="map-frame" data-reveal>
         <iframe title="Arab Dream Palma en Google Maps"
           src="https://www.google.com/maps?q=Arab%20Dream%20Palma%2C%20Carrer%20de%20Manacor%2017%2C%2007006%20Palma&output=embed"
           loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
@@ -372,11 +723,15 @@
 
 </main>
 
-<footer>
+<footer id="contacto">
   <div class="container footer-grid">
     <div>
       <h3>Arab Dream Palma</h3>
       <p>Gastronomía marroquí en el corazón de Palma.</p>
+      <div class="footer-social" aria-label="Redes sociales">
+        <a href="#" aria-label="Instagram de Arab Dream"><svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 2 .24 2.7.5.7.28 1.3.65 1.9 1.25.6.6.97 1.2 1.25 1.9.27.7.45 1.5.5 2.7.07 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.24 2-.5 2.7a5.4 5.4 0 0 1-1.25 1.9 5.4 5.4 0 0 1-1.9 1.25c-.7.27-1.5.45-2.7.5-1.2.07-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-2-.24-2.7-.5a5.4 5.4 0 0 1-1.9-1.25 5.4 5.4 0 0 1-1.25-1.9c-.27-.7-.45-1.5-.5-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.24-2 .5-2.7.28-.7.65-1.3 1.25-1.9A5.4 5.4 0 0 1 5.9 1.35c.7-.27 1.5-.45 2.7-.5C9.8.78 10.2.78 12 .78Zm0 3a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6Zm0 2.16a4.64 4.64 0 1 1 0 9.28 4.64 4.64 0 0 1 0-9.28Zm7.06-2.4a1.6 1.6 0 1 1-3.2 0 1.6 1.6 0 0 1 3.2 0Z"/></svg></a>
+        <a href="#" aria-label="Facebook de Arab Dream"><svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M13.5 21v-7.6h2.55l.38-2.95h-2.93V8.6c0-.85.24-1.44 1.46-1.44h1.56V4.5c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.17H8v2.95h2.44V21h3.06Z"/></svg></a>
+      </div>
     </div>
     <div>
       <h3>Contacto</h3>
@@ -398,9 +753,97 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© 2026 Arab Dream Palma. Propuesta visual "vintage paper" — mockup de comparación, no publicado.</p>
+    <p>© <span data-year>2026</span> Arab Dream Palma. Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  "use strict";
+  function safe(fn, name) { try { fn(); } catch (e) { console.warn("[" + name + "]", e); } }
+
+  function initNav() {
+    var nav = document.querySelector("[data-nav]");
+    if (nav) {
+      var onScroll = function () {
+        if (window.scrollY > 60) nav.classList.add("is-scrolled"); else nav.classList.remove("is-scrolled");
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+    var toggle = document.querySelector("[data-nav-toggle]");
+    var mobile = document.querySelector("[data-nav-mobile]");
+    if (!toggle || !mobile) return;
+    var close = function () {
+      toggle.setAttribute("aria-expanded", "false");
+      mobile.setAttribute("data-open", "false");
+      mobile.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+    var open = function () {
+      toggle.setAttribute("aria-expanded", "true");
+      mobile.setAttribute("data-open", "true");
+      mobile.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    toggle.addEventListener("click", function () {
+      var isOpen = toggle.getAttribute("aria-expanded") === "true";
+      if (isOpen) close(); else open();
+    });
+    Array.prototype.forEach.call(mobile.querySelectorAll("a"), function (a) { a.addEventListener("click", close); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  }
+
+  function initReveals() {
+    var els = document.querySelectorAll("[data-reveal]");
+    if (!els.length) return;
+    if (typeof IntersectionObserver === "undefined") {
+      Array.prototype.forEach.call(els, function (el) { el.classList.add("is-revealed"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-revealed"); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.01, rootMargin: "0px 0px -2% 0px" });
+    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    setTimeout(function () {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-reveal]:not(.is-revealed)"), function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-revealed");
+      });
+    }, 6000);
+  }
+
+  function initOpenStatus() {
+    var openDays = [1, 2, 3, 4, 5, 6];
+    var openTime = 9 * 60, closeTime = 22 * 60;
+    var now = new Date();
+    var minutesNow = now.getHours() * 60 + now.getMinutes();
+    var isOpen = openDays.indexOf(now.getDay()) !== -1 && minutesNow >= openTime && minutesNow < closeTime;
+    var label = isOpen ? "Abierto ahora" : "Cerrado ahora";
+    document.querySelectorAll("[data-open-status]").forEach(function (el) { el.textContent = label; });
+    var chip = document.querySelector("[data-open-status-chip]");
+    var chipText = document.querySelector("[data-open-status-text]");
+    if (chip) chip.classList.toggle("is-open", isOpen);
+    if (chipText) chipText.textContent = label;
+  }
+
+  function initFooterYear() {
+    var el = document.querySelector("[data-year]");
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
+  function boot() {
+    safe(initNav, "initNav");
+    safe(initReveals, "initReveals");
+    safe(initOpenStatus, "initOpenStatus");
+    safe(initFooterYear, "initFooterYear");
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+</script>
 
 </body>
 </html>
