@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar compra | TWR900</title>
+<meta name="description" content="Finaliza tu compra en TWR900: envío, pago y confirmación de pedido.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260725">
+</head>
+<body data-page-checkout>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="nav" data-nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+    <nav class="nav-menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="index.html#categorias">Asics</a>
+      <a href="guia-tallas.html">Guía de tallas</a>
+      <a href="nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema claro/oscuro">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg></span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13.8A9 9 0 1 1 10.2 3 7.2 7.2 0 0 0 21 13.8z"/></svg></span>
+      </button>
+      <a href="favoritos.html" class="btn-icon" aria-label="Favoritos" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.3-9.3-8.2C.9 9.6 1.6 6 4.6 4.6 7 3.5 9.6 4.3 12 7c2.4-2.7 5-3.5 7.4-2.4 3 1.4 3.7 5 1.9 8.2C18.7 16.7 12 21 12 21z"/></svg>
+        <span class="icon-badge" data-wish-badge>0</span>
+      </a>
+      <button type="button" class="btn-icon" data-open="cart" aria-label="Carrito" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+        <span class="icon-badge" data-cart-badge>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section-tight" style="padding-top: calc(var(--nav-h) + 2.4rem)">
+    <div class="container" style="max-width:1100px">
+
+      <div data-checkout-form-wrap>
+        <div class="section-head">
+          <span class="kicker">Último paso</span>
+          <h1 class="section-title">Finalizar compra</h1>
+        </div>
+        <div class="checkout-steps">
+          <div class="checkout-step is-active"><span class="num">1</span> Envío</div>
+          <div class="checkout-step is-active"><span class="num">2</span> Pago</div>
+          <div class="checkout-step is-active"><span class="num">3</span> Confirmación</div>
+        </div>
+
+        <div class="checkout-grid">
+          <form class="checkout-card" data-checkout-form novalidate style="display:flex;flex-direction:column;gap:1.6rem">
+            <div>
+              <h3 style="font-family:var(--font-body);text-transform:none;letter-spacing:0;font-size:1.1rem;margin-bottom:1rem">Datos de envío</h3>
+              <div style="display:flex;flex-direction:column;gap:1rem">
+                <div class="field-row">
+                  <div class="field"><label for="ch-name">Nombre completo</label><input id="ch-name" type="text" required></div>
+                  <div class="field"><label for="ch-email">Email</label><input id="ch-email" type="email" required></div>
+                </div>
+                <div class="field"><label for="ch-address">Dirección</label><input id="ch-address" type="text" required></div>
+                <div class="field-row">
+                  <div class="field"><label for="ch-city">Ciudad</label><input id="ch-city" type="text" required></div>
+                  <div class="field"><label for="ch-zip">Código postal</label><input id="ch-zip" type="text" required></div>
+                </div>
+                <div class="field-row">
+                  <div class="field"><label for="ch-country">País</label>
+                    <select id="ch-country"><option>España</option><option>Portugal</option><option>Francia</option><option>Italia</option><option>México</option><option>Argentina</option><option>Otro</option></select>
+                  </div>
+                  <div class="field"><label for="ch-phone">Teléfono</label><input id="ch-phone" type="tel" required></div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 style="font-family:var(--font-body);text-transform:none;letter-spacing:0;font-size:1.1rem;margin-bottom:1rem">Método de pago</h3>
+              <div class="pay-methods">
+                <button type="button" class="pay-method is-active" data-pay="card">💳 Tarjeta</button>
+                <button type="button" class="pay-method" data-pay="paypal">🅿️ PayPal</button>
+                <button type="button" class="pay-method" data-pay="transfer">🏦 Transferencia</button>
+              </div>
+              <div data-pay-fields="card" style="display:flex;flex-direction:column;gap:1rem">
+                <div class="field"><label for="ch-card">Número de tarjeta</label><input id="ch-card" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" required></div>
+                <div class="field-row">
+                  <div class="field"><label for="ch-exp">Caducidad</label><input id="ch-exp" type="text" placeholder="MM/AA" required></div>
+                  <div class="field"><label for="ch-cvv">CVV</label><input id="ch-cvv" type="text" inputmode="numeric" placeholder="123" required></div>
+                </div>
+              </div>
+              <div data-pay-fields="paypal" class="hidden"><p class="text-mute">Serás redirigido a PayPal para completar el pago de forma segura.</p></div>
+              <div data-pay-fields="transfer" class="hidden"><p class="text-mute">Recibirás nuestros datos bancarios por email para completar la transferencia.</p></div>
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-lg btn-block">Confirmar pedido</button>
+            <p class="field-hint" style="text-align:center">Este es un checkout de demostración: no se realiza ningún cargo real.</p>
+          </form>
+
+          <aside class="checkout-card" style="height:fit-content">
+            <h3 style="font-family:var(--font-body);text-transform:none;letter-spacing:0;font-size:1.1rem;margin-bottom:1rem">Resumen del pedido</h3>
+            <div data-checkout-summary></div>
+            <div style="margin-top:1rem">
+              <div class="cart-summary-row"><span>Subtotal</span><span data-checkout-subtotal>0,00 €</span></div>
+              <div class="cart-summary-row"><span>Envío</span><span data-checkout-shipping>Gratis</span></div>
+              <div class="cart-summary-row total"><span>Total</span><span data-checkout-total>0,00 €</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="order-confirm hidden" data-order-confirm>
+        <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></div>
+        <h2>¡Pedido confirmado!</h2>
+        <p class="text-mute">Te hemos enviado un email con los detalles de tu compra. Prepararemos tu pedido en las próximas 24h.</p>
+        <div class="order-number" data-order-number>#TWR000000</div>
+        <div style="margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="tienda.html" class="btn btn-primary">Seguir comprando</a>
+          <a href="index.html" class="btn btn-ghost">Volver al inicio</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:0;padding-top:0">
+      <span>© 2026 TWR900. Todos los derechos reservados.</span>
+      <span class="footer-payments">Visa · Mastercard · PayPal · Transferencia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim"></div>
+
+<div class="drawer" data-panel="cart" role="dialog" aria-modal="true" aria-label="Carrito de compra">
+  <div class="drawer-head"><h3>Tu carrito</h3><button type="button" class="btn-icon" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button></div>
+  <div class="drawer-body" data-cart-body></div>
+  <div class="drawer-foot" data-cart-foot></div>
+</div>
+
+<div class="toast" data-toast></div>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260725"></script>
+</body>
+</html>

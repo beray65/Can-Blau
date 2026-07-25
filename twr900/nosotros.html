@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre nosotros | TWR900</title>
+<meta name="description" content="TWR900 es una tienda especializada exclusivamente en botas Asics de lucha olímpica. Descubre nuestra historia, misión y equipo.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260725">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="nav nav-on-dark" data-nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+    <nav class="nav-menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="index.html#categorias">Asics</a>
+      <a href="guia-tallas.html">Guía de tallas</a>
+      <a href="nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema claro/oscuro">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg></span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13.8A9 9 0 1 1 10.2 3 7.2 7.2 0 0 0 21 13.8z"/></svg></span>
+      </button>
+      <button type="button" class="btn-icon" data-open="search" aria-label="Buscar productos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a href="cuenta.html" class="btn-icon" aria-label="Mi cuenta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </a>
+      <a href="favoritos.html" class="btn-icon" aria-label="Favoritos" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.3-9.3-8.2C.9 9.6 1.6 6 4.6 4.6 7 3.5 9.6 4.3 12 7c2.4-2.7 5-3.5 7.4-2.4 3 1.4 3.7 5 1.9 8.2C18.7 16.7 12 21 12 21z"/></svg>
+        <span class="icon-badge" data-wish-badge>0</span>
+      </a>
+      <button type="button" class="btn-icon" data-open="cart" aria-label="Carrito" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+        <span class="icon-badge" data-cart-badge>0</span>
+      </button>
+      <button type="button" class="btn-icon nav-burger" data-open="menu" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="about-hero" style="min-height:70vh; display:flex; align-items:flex-end; padding-top: var(--nav-h)">
+    <div class="hero-rings" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2;padding-block:4rem 5rem">
+      <span class="kicker">Sobre TWR900</span>
+      <h1 class="display-huge" style="max-width:16ch">Especialistas en un solo deporte</h1>
+      <p style="color:rgba(255,255,255,.72); max-width:56ch; font-size:1.1rem; margin-top:1.4rem">No somos una tienda de deporte generalista que también vende botas de lucha. Somos, únicamente, una tienda de lucha olímpica.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-split">
+      <div class="reveal">
+        <span class="kicker">Nuestra historia</span>
+        <h2 class="section-title" style="margin-bottom:1.2rem">De la lona al catálogo</h2>
+        <p class="section-sub">TWR900 nace en 2016 de la frustración de un grupo de exluchadores: encontrar botas de calidad para lucha olímpica en España era una odisea de importaciones y tallas a ciegas. Decidimos montar la tienda que a nosotros nos hubiera gustado tener.</p>
+        <p class="section-sub" style="margin-top:1rem">Hoy trabajamos directamente con Asics como distribuidor autorizado, asesoramos a clubes y selecciones autonómicas, y seguimos probando cada modelo nuevo sobre el tapiz antes de subirlo a la tienda.</p>
+        <div class="about-stats">
+          <div class="stat-card"><b>2016</b><span>Año de fundación</span></div>
+          <div class="stat-card"><b>12k+</b><span>Luchadores equipados</span></div>
+          <div class="stat-card"><b>40</b><span>Países con envío</span></div>
+          <div class="stat-card"><b>15</b><span>Clubes de competición</span></div>
+        </div>
+      </div>
+      <div class="mat-panel reveal">
+        <div class="mat-rings"></div>
+        <div class="mat-label"><b>Un solo deporte</b><span>Lucha olímpica, sin distracciones</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container" style="max-width:900px">
+      <p class="pull-quote reveal" style="max-width:none; text-align:center; margin-inline:auto; font-size:clamp(1.8rem,4vw,3rem)">“No vendemos calzado deportivo genérico. Vendemos herramientas de competición para un solo deporte: la lucha.”</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:820px">
+      <div class="section-head reveal">
+        <span class="kicker">Nuestra trayectoria</span>
+        <h2 class="section-title">Hitos de TWR900</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <span class="timeline-year">2016</span>
+          <div class="timeline-body"><h4>Fundación en Madrid</h4><p>Tres exluchadores abren un pequeño almacén y una tienda online centrada solo en calzado de lucha.</p></div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2019</span>
+          <div class="timeline-body"><h4>Distribuidor autorizado Asics</h4><p>Firmamos el acuerdo que nos convierte en distribuidor oficial de la gama de lucha de Asics en España.</p></div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2022</span>
+          <div class="timeline-body"><h4>Equipación de clubes</h4><p>Empezamos a trabajar con clubes y selecciones autonómicas, equipando a categorías completas.</p></div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <div class="timeline-body"><h4>Envíos a 40 países</h4><p>TWR900 llega a luchadores de toda Europa y Latinoamérica con envíos en 24–48h desde nuestro almacén.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Nuestros valores</span>
+        <h2 class="section-title">Por qué confiar en nosotros</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal"><div class="benefit-icon">🤼</div><h3>Sabemos de lucha</h3><p>Nuestro equipo compite o ha competido. Cada recomendación viene de la experiencia real en el tapiz.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">🎯</div><h3>Foco absoluto</h3><p>No vendemos running ni fútbol. Todo nuestro catálogo está pensado para un solo deporte.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">🤝</div><h3>Asesoramiento real</h3><p>Resolvemos dudas de talla y modelo por email o teléfono, con respuesta en menos de 24h.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-icon">🌍</div><h3>Alcance internacional</h3><p>Enviamos a 40 países sin perder el trato cercano de una tienda especializada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section newsletter">
+    <div class="hero-rings" aria-hidden="true"></div>
+    <div class="container newsletter-inner">
+      <h2>Únete a TWR900</h2>
+      <p>Recibe novedades, lanzamientos exclusivos y descuentos.</p>
+      <form class="newsletter-form" data-newsletter-form>
+        <label class="sr-only" for="newsletter-email-2">Correo electrónico</label>
+        <input id="newsletter-email-2" type="email" required placeholder="tu@email.com">
+        <button type="submit" class="btn btn-accent">Suscribirse</button>
+      </form>
+      <p class="newsletter-note">Sin spam. Puedes darte de baja cuando quieras.</p>
+      <p class="newsletter-success" data-newsletter-success>✓ ¡Gracias! Revisa tu bandeja de entrada.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+        <p>Tienda especializada exclusivamente en botas Asics de lucha olímpica. Freestyle, grecorromana y folkstyle.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.8 3v10.6a3.4 3.4 0 1 1-2.9-3.36V7a6.3 6.3 0 1 0 5.8 6.3V9.7a6 6 0 0 0 3.9 1.4V8a6 6 0 0 1-3.9-1.4A6 6 0 0 1 15.4 3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5.5" width="20" height="13" rx="4"/><polygon points="10 9.2 15.8 12 10 14.8" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Tienda</h5>
+        <ul>
+          <li><a href="tienda.html">Todos los productos</a></li>
+          <li><a href="tienda.html?categoria=ex-eo">Asics EX-EO</a></li>
+          <li><a href="tienda.html?categoria=snapdown">Asics Snapdown</a></li>
+          <li><a href="tienda.html?categoria=aggressor">Asics Aggressor</a></li>
+          <li><a href="comparar.html">Comparador</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Ayuda</h5>
+        <ul>
+          <li><a href="politicas.html#envios">Envíos</a></li>
+          <li><a href="politicas.html#devoluciones">Devoluciones</a></li>
+          <li><a href="politicas.html#privacidad">Política de privacidad</a></li>
+          <li><a href="politicas.html#faq">FAQ</a></li>
+          <li><a href="guia-tallas.html">Guía de tallas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="mailto:hola@twr900.com">hola@twr900.com</a></li>
+          <li><a href="tel:+34900100900">+34 900 100 900</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TWR900. Todos los derechos reservados.</span>
+      <span class="footer-payments">Visa · Mastercard · PayPal · Transferencia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim"></div>
+
+<div class="drawer" data-panel="cart" role="dialog" aria-modal="true" aria-label="Carrito de compra">
+  <div class="drawer-head"><h3>Tu carrito</h3><button type="button" class="btn-icon" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button></div>
+  <div class="drawer-body" data-cart-body></div>
+  <div class="drawer-foot" data-cart-foot></div>
+</div>
+
+<div class="search-overlay" data-panel="search" role="dialog" aria-modal="true" aria-label="Buscar productos">
+  <div class="search-overlay-head container">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="26" height="26"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Buscar botas, colecciones, colores…" autocomplete="off">
+    <button type="button" class="btn-icon" data-close aria-label="Cerrar búsqueda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+  </div>
+  <div class="container search-results" data-search-results></div>
+</div>
+
+<div class="mobile-menu" data-panel="menu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+    <button type="button" class="btn-icon" data-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+  </div>
+  <nav class="mobile-menu-links" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="index.html#categorias">Asics</a>
+    <a href="guia-tallas.html">Guía de tallas</a>
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="favoritos.html" class="btn btn-ghost btn-sm">Favoritos</a>
+    <a href="comparar.html" class="btn btn-ghost btn-sm">Comparar</a>
+    <a href="cuenta.html" class="btn btn-ghost btn-sm">Cuenta</a>
+    <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle>Modo claro/oscuro</button>
+  </div>
+</div>
+
+<div class="toast" data-toast></div>
+
+<div class="compare-bar" data-compare-bar>
+  <span><span data-compare-bar-count>0</span> en comparador</span>
+  <a href="comparar.html" class="btn btn-accent btn-sm">Comparar</a>
+</div>
+
+<script defer src="lib/gsap.min.js"></script>
+<script defer src="lib/ScrollTrigger.min.js"></script>
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260725"></script>
+</body>
+</html>

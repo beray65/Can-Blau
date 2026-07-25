@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi cuenta | TWR900</title>
+<meta name="description" content="Inicia sesión o crea una cuenta en TWR900 para agilizar tus compras y consultar tus pedidos.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260725">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="nav" data-nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+    <nav class="nav-menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="index.html#categorias">Asics</a>
+      <a href="guia-tallas.html">Guía de tallas</a>
+      <a href="nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema claro/oscuro">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg></span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13.8A9 9 0 1 1 10.2 3 7.2 7.2 0 0 0 21 13.8z"/></svg></span>
+      </button>
+      <a href="favoritos.html" class="btn-icon" aria-label="Favoritos" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.3-9.3-8.2C.9 9.6 1.6 6 4.6 4.6 7 3.5 9.6 4.3 12 7c2.4-2.7 5-3.5 7.4-2.4 3 1.4 3.7 5 1.9 8.2C18.7 16.7 12 21 12 21z"/></svg>
+        <span class="icon-badge" data-wish-badge>0</span>
+      </a>
+      <button type="button" class="btn-icon" data-open="cart" aria-label="Carrito" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+        <span class="icon-badge" data-cart-badge>0</span>
+      </button>
+      <button type="button" class="btn-icon nav-burger" data-open="menu" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section-tight" style="padding-top: calc(var(--nav-h) + 3rem); min-height: 80vh; display:flex; align-items:center">
+    <div class="container" style="max-width:440px">
+      <div class="checkout-card">
+        <h1 class="sr-only">Mi cuenta — TWR900</h1>
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab is-active" data-auth-tab="login">Iniciar sesión</button>
+          <button type="button" class="auth-tab" data-auth-tab="register">Crear cuenta</button>
+        </div>
+
+        <form class="auth-panel is-active" data-auth-panel="login" data-auth-form>
+          <div class="field"><label for="lg-email">Email</label><input id="lg-email" type="email" required></div>
+          <div class="field"><label for="lg-pass">Contraseña</label><input id="lg-pass" type="password" required minlength="6"></div>
+          <button type="submit" class="btn btn-accent btn-block btn-lg">Entrar</button>
+          <p class="field-hint" style="text-align:center">¿Olvidaste tu contraseña? <a href="#" style="text-decoration:underline">Recupérala aquí</a></p>
+        </form>
+
+        <form class="auth-panel" data-auth-panel="register" data-auth-form>
+          <div class="field"><label for="rg-name">Nombre</label><input id="rg-name" type="text" required></div>
+          <div class="field"><label for="rg-email">Email</label><input id="rg-email" type="email" required></div>
+          <div class="field"><label for="rg-pass">Contraseña</label><input id="rg-pass" type="password" required minlength="6"></div>
+          <button type="submit" class="btn btn-accent btn-block btn-lg">Crear cuenta</button>
+          <p class="field-hint" style="text-align:center">Al registrarte aceptas nuestra <a href="politicas.html#privacidad" style="text-decoration:underline">política de privacidad</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:0;padding-top:0">
+      <span>© 2026 TWR900. Todos los derechos reservados.</span>
+      <span class="footer-payments">Visa · Mastercard · PayPal · Transferencia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim"></div>
+
+<div class="drawer" data-panel="cart" role="dialog" aria-modal="true" aria-label="Carrito de compra">
+  <div class="drawer-head"><h3>Tu carrito</h3><button type="button" class="btn-icon" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button></div>
+  <div class="drawer-body" data-cart-body></div>
+  <div class="drawer-foot" data-cart-foot></div>
+</div>
+
+<div class="mobile-menu" data-panel="menu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-logo">TWR<span class="dot">900</span></a>
+    <button type="button" class="btn-icon" data-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+  </div>
+  <nav class="mobile-menu-links" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="index.html#categorias">Asics</a>
+    <a href="guia-tallas.html">Guía de tallas</a>
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="favoritos.html" class="btn btn-ghost btn-sm">Favoritos</a>
+    <a href="comparar.html" class="btn btn-ghost btn-sm">Comparar</a>
+    <a href="cuenta.html" class="btn btn-ghost btn-sm">Cuenta</a>
+    <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle>Modo claro/oscuro</button>
+  </div>
+</div>
+
+<div class="toast" data-toast></div>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260725"></script>
+</body>
+</html>
