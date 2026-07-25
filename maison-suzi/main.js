@@ -216,15 +216,23 @@
       var n = items.length;
       items.forEach(function (el, i) {
         var peak = (i + 0.5) / n;
-        var win = 1.3 / n;
+        // Window matched to the peak spacing (1/n): at the midpoint between
+        // two peaks both items sit at exactly 50% opacity — a clean
+        // crossfade handoff instead of the old 1.3/n, which kept both
+        // images near-full opacity at once and looked like a hard collision.
+        var win = 1 / n;
         var local = Math.max(-1, Math.min(1, (progress - peak) / win));
-        var z = -Math.abs(local) * FAR;
-        var op = 1 - Math.abs(local);
+        var t = Math.abs(local);
+        var eased = t * t * (3 - 2 * t); // smoothstep: gentler than linear
+        var z = -eased * FAR;
+        var op = 1 - eased;
+        var blur = eased * 7;
         var x = cssVarPx(el, "--x");
         var y = cssVarPx(el, "--y");
         el.style.transform = "translate(-50%,-50%) translate3d(" + x + "px," + y + "px," + z + "px)";
         el.style.opacity = op.toFixed(3);
-        el.style.pointerEvents = op > 0.5 ? "auto" : "none";
+        el.style.filter = eased > 0.02 ? "blur(" + blur.toFixed(2) + "px)" : "none";
+        el.style.pointerEvents = op > 0.6 ? "auto" : "none";
       });
     }
     function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
