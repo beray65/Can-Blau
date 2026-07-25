@@ -186,62 +186,6 @@
   }
 
   /* -----------------------------------------------------------
-     Flythrough — scroll-pinned 3D depth effect (progressive
-     enhancement over the plain static grid in the CSS default state)
-     ----------------------------------------------------------- */
-  function initFlythrough() {
-    var region = $("[data-fly-region]");
-    var pin = $("[data-fly-pin]");
-    var stage = $("[data-fly-stage]");
-    if (!region || !pin || !stage) return;
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    region.classList.add("fly-active");
-    var items = $$("[data-fly-item]", stage);
-    if (!items.length) return;
-    var FAR = 1600;
-    var raf = null;
-
-    function cssVarPx(el, name) {
-      var n = parseFloat(getComputedStyle(el).getPropertyValue(name));
-      return isNaN(n) ? 0 : n;
-    }
-
-    function update() {
-      raf = null;
-      var rect = region.getBoundingClientRect();
-      var total = rect.height - window.innerHeight;
-      if (total <= 0) return;
-      var progress = Math.min(1, Math.max(0, -rect.top / total));
-      var n = items.length;
-      items.forEach(function (el, i) {
-        var peak = (i + 0.5) / n;
-        // Window matched to the peak spacing (1/n): at the midpoint between
-        // two peaks both items sit at exactly 50% opacity — a clean
-        // crossfade handoff instead of the old 1.3/n, which kept both
-        // images near-full opacity at once and looked like a hard collision.
-        var win = 1 / n;
-        var local = Math.max(-1, Math.min(1, (progress - peak) / win));
-        var t = Math.abs(local);
-        var eased = t * t * (3 - 2 * t); // smoothstep: gentler than linear
-        var z = -eased * FAR;
-        var op = 1 - eased;
-        var blur = eased * 7;
-        var x = cssVarPx(el, "--x");
-        var y = cssVarPx(el, "--y");
-        el.style.transform = "translate(-50%,-50%) translate3d(" + x + "px," + y + "px," + z + "px)";
-        el.style.opacity = op.toFixed(3);
-        el.style.filter = eased > 0.02 ? "blur(" + blur.toFixed(2) + "px)" : "none";
-        el.style.pointerEvents = op > 0.6 ? "auto" : "none";
-      });
-    }
-    function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    update();
-  }
-
-  /* -----------------------------------------------------------
      Hero shader — ambient WebGL "smoke" in the brand's cream/gold
      tones, layered over .hero-mesh (which stays as the always-on
      fallback background). Skips entirely without WebGL or under
@@ -700,7 +644,6 @@ void main() {
     safe(initNav, "initNav");
     safe(initSmoothAnchors, "initSmoothAnchors");
     safe(initReveals, "initReveals");
-    safe(initFlythrough, "initFlythrough");
     safe(initCursor, "initCursor");
     safe(initTilt, "initTilt");
     safe(initMagnetic, "initMagnetic");
