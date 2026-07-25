@@ -494,6 +494,10 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   aspect-ratio: 4 / 5;
   box-shadow: 0 30px 60px -30px rgba(46,27,18,0.35);
 }
+.story-frame img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%;
+  animation: heroAmbientZoom 32s ease-in-out infinite alternate;
+}
 .story-figure { position: relative; }
 .story-badge {
   position: absolute; left: 1.4rem; bottom: 1.4rem;
@@ -596,6 +600,18 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   padding: 2rem;
   box-shadow: 0 30px 60px -30px rgba(46,27,18,0.3);
 }
+.packaging-art svg { animation: packagingFloat 7s ease-in-out infinite; }
+@keyframes packagingFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+.packaging-art .sparkle { animation: sparkleTwinkle 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.packaging-art .sparkle:nth-of-type(2) { animation-delay: .7s; }
+.packaging-art .sparkle:nth-of-type(3) { animation-delay: 1.4s; }
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
 
 /* --- Process --- */
 .process { padding-block: clamp(5rem, 10vw, 8rem); background: var(--paper); }
@@ -615,8 +631,34 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   border: 1px solid var(--line-soft);
   transition: transform .5s var(--ease-soft), box-shadow .5s var(--ease-soft), border-color .3s;
 }
+.process-card::before {
+  content: ""; position: absolute; top: 0; left: 1.4rem; right: 1.4rem; height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, var(--gold-2), var(--gold));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--ease-soft);
+}
 .process-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -26px rgba(46,27,18,0.3); border-color: var(--line); }
-.process-icon { color: var(--gold); display: inline-flex; margin-bottom: 1.2rem; }
+.process-card:hover::before { transform: scaleX(1); }
+/* Connecting arrows between steps — only where the grid is a single row of 4. */
+@media (min-width: 1280px) {
+  .process-card:not(:last-child)::after {
+    content: "";
+    position: absolute; top: 2.6rem; right: -1.15rem;
+    width: .6rem; height: .6rem;
+    border-top: 1.5px solid var(--gold-2);
+    border-right: 1.5px solid var(--gold-2);
+    transform: rotate(45deg);
+    opacity: .7;
+  }
+}
+.process-icon {
+  color: var(--gold); display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(160deg, var(--cream-2), var(--paper));
+  box-shadow: inset 0 0 0 1px var(--line-soft);
+  margin-bottom: 1.2rem;
+}
 .process-n {
   position: absolute; top: 1.6rem; right: 1.6rem;
   font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--line);
@@ -684,6 +726,8 @@ html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-mesh { animation: none; }
   .hero-photo img { animation: none; }
+  .story-frame img { animation: none; }
+  .packaging-art svg, .packaging-art .sparkle { animation: none; }
   .scroll-cue span { animation: none; }
   [data-reveal] { transition-duration: .35s; }
 }
