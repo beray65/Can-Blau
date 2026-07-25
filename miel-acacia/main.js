@@ -152,6 +152,32 @@
   }
 
   // -----------------------------------------------------------------
+  // Hero cursor spotlight
+  // -----------------------------------------------------------------
+  function initHeroSpotlight() {
+    if (!fineHover) return;
+    var hero = $("[data-hero]");
+    var spot = $("[data-hero-spotlight]");
+    if (!hero || !spot) return;
+    var raf = null;
+    hero.addEventListener("mousemove", function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        var rect = hero.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) * 100;
+        var y = ((e.clientY - rect.top) / rect.height) * 100;
+        hero.style.setProperty("--mx", x + "%");
+        hero.style.setProperty("--my", y + "%");
+        spot.classList.add("is-active");
+        raf = null;
+      });
+    });
+    hero.addEventListener("mouseleave", function () {
+      spot.classList.remove("is-active");
+    });
+  }
+
+  // -----------------------------------------------------------------
   // Tilt on product cards
   // -----------------------------------------------------------------
   function initTilt() {
@@ -437,6 +463,7 @@
     safe(initSmoothScroll, "initSmoothScroll");
     safe(initReveals, "initReveals");
     safe(initCountUp, "initCountUp");
+    safe(initHeroSpotlight, "initHeroSpotlight");
     safe(initTilt, "initTilt");
     safe(initAccordion, "initAccordion");
     safe(bindGenericWhatsapp, "bindGenericWhatsapp");

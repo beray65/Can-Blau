@@ -71,9 +71,24 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="inicio">
+  <section class="hero" id="inicio" data-hero>
     <div class="hero-mesh" aria-hidden="true"></div>
     <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-spotlight" data-hero-spotlight aria-hidden="true"></div>
+    <div class="pollen" aria-hidden="true">
+      <span style="left:6%; animation-duration:11s; animation-delay:0s;"></span>
+      <span style="left:14%; animation-duration:9s; animation-delay:1.2s;"></span>
+      <span style="left:22%; animation-duration:13s; animation-delay:.4s;"></span>
+      <span style="left:31%; animation-duration:10s; animation-delay:2.5s;"></span>
+      <span style="left:40%; animation-duration:12s; animation-delay:.8s;"></span>
+      <span style="left:49%; animation-duration:8s; animation-delay:3.1s;"></span>
+      <span style="left:58%; animation-duration:14s; animation-delay:1.6s;"></span>
+      <span style="left:66%; animation-duration:9.5s; animation-delay:2.1s;"></span>
+      <span style="left:74%; animation-duration:11.5s; animation-delay:.2s;"></span>
+      <span style="left:82%; animation-duration:10.5s; animation-delay:3.6s;"></span>
+      <span style="left:90%; animation-duration:13.5s; animation-delay:1s;"></span>
+      <span style="left:96%; animation-duration:9s; animation-delay:2.8s;"></span>
+    </div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <p class="kicker">Miel monofloral · Sierra de Gredos</p>
@@ -103,12 +118,34 @@
           <path class="hc-line" d="M210,75.36 L244.64,95.36 L244.64,135.36 L210,155.36 L175.36,135.36 L175.36,95.36 Z"/>
           <path class="hc-glow" d="M150,110 L184.64,130 L184.64,170 L150,190 L115.36,170 L115.36,130 Z"/>
         </svg>
+        <div class="hero-float-badge">
+          <strong>4.9</strong>
+          <div>
+            <span class="stars">★★★★★</span>
+            <small>+120 pedidos</small>
+          </div>
+        </div>
       </div>
     </div>
     <svg class="hero-drip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0,40 C180,80 320,10 480,45 C640,80 760,15 960,42 C1140,68 1300,18 1440,48 L1440,90 L0,90 Z" fill="#140F09"/>
     </svg>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Miel 100% pura</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Sin pasteurizar</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Extracción en frío</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Envasado a mano</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Origen único · Sierra de Gredos</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Miel 100% pura</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Sin pasteurizar</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Extracción en frío</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Envasado a mano</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Origen único · Sierra de Gredos</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
 
   <!-- HISTORIA -->
   <section class="story" id="historia">
@@ -164,13 +201,17 @@
 
         <article class="card product-card reveal" data-tilt data-product data-id="p-250" data-name="Tarro 250 g" data-price="6.90">
           <span class="product-badge">Para probar</span>
-          <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-            <rect x="22" y="66" width="76" height="76" rx="10" class="jar-fill"/>
-            <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-            <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-            <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-            <line x1="32" y1="70" x2="32" y2="138" class="jar-shine"/>
-          </svg>
+          <div class="product-jar-wrap">
+            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
+              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
+              <rect x="22" y="66" width="76" height="76" rx="10" class="jar-fill"/>
+              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
+              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
+              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
+              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
+              <line x1="32" y1="70" x2="32" y2="138" class="jar-shine"/>
+            </svg>
+          </div>
           <div class="product-body">
             <h3>Tarro 250 g</h3>
             <p class="product-size">250 g · tarro de cristal</p>
@@ -189,13 +230,17 @@
 
         <article class="card product-card reveal" data-tilt data-product data-id="p-500" data-name="Tarro 500 g" data-price="11.50">
           <span class="product-badge">Más pedido</span>
-          <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-            <rect x="22" y="58" width="76" height="84" rx="10" class="jar-fill"/>
-            <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-            <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-            <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-            <line x1="32" y1="62" x2="32" y2="138" class="jar-shine"/>
-          </svg>
+          <div class="product-jar-wrap">
+            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
+              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
+              <rect x="22" y="58" width="76" height="84" rx="10" class="jar-fill"/>
+              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
+              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
+              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
+              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
+              <line x1="32" y1="62" x2="32" y2="138" class="jar-shine"/>
+            </svg>
+          </div>
           <div class="product-body">
             <h3>Tarro 500 g</h3>
             <p class="product-size">500 g · tarro de cristal</p>
@@ -214,13 +259,17 @@
 
         <article class="card product-card reveal" data-tilt data-product data-id="p-1000" data-name="Tarro 1 kg" data-price="19.90">
           <span class="product-badge">Ahorro</span>
-          <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-            <rect x="22" y="48" width="76" height="94" rx="10" class="jar-fill"/>
-            <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-            <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-            <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-            <line x1="32" y1="52" x2="32" y2="138" class="jar-shine"/>
-          </svg>
+          <div class="product-jar-wrap">
+            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
+              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
+              <rect x="22" y="48" width="76" height="94" rx="10" class="jar-fill"/>
+              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
+              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
+              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
+              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
+              <line x1="32" y1="52" x2="32" y2="138" class="jar-shine"/>
+            </svg>
+          </div>
           <div class="product-body">
             <h3>Tarro 1 kg</h3>
             <p class="product-size">1000 g · tarro de cristal</p>
@@ -239,15 +288,19 @@
 
         <article class="card product-card reveal" data-tilt data-product data-id="p-panal" data-name="Panal virgen 300 g" data-price="14.90">
           <span class="product-badge">Edición limitada</span>
-          <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
-            <rect x="22" y="62" width="76" height="80" rx="10" class="jar-fill"/>
-            <rect x="34" y="78" width="14" height="14" class="jar-comb" transform="rotate(30 41 85)"/>
-            <rect x="58" y="92" width="14" height="14" class="jar-comb" transform="rotate(30 65 99)"/>
-            <rect x="76" y="70" width="14" height="14" class="jar-comb" transform="rotate(30 83 77)"/>
-            <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
-            <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
-            <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
-          </svg>
+          <div class="product-jar-wrap">
+            <svg class="product-jar" viewBox="0 0 120 160" aria-hidden="true">
+              <ellipse cx="60" cy="150" rx="30" ry="6" class="jar-shadow"/>
+              <rect x="22" y="62" width="76" height="80" rx="10" class="jar-fill"/>
+              <rect x="34" y="78" width="14" height="14" class="jar-comb" transform="rotate(30 41 85)"/>
+              <rect x="58" y="92" width="14" height="14" class="jar-comb" transform="rotate(30 65 99)"/>
+              <rect x="76" y="70" width="14" height="14" class="jar-comb" transform="rotate(30 83 77)"/>
+              <rect x="18" y="34" width="84" height="112" rx="14" class="jar-glass"/>
+              <path class="jar-seal" d="M60,90 L68,94.6 L68,103.9 L60,108.6 L52,103.9 L52,94.6 Z"/>
+              <rect x="28" y="24" width="64" height="10" rx="4" class="jar-lid-rim"/>
+              <rect x="34" y="10" width="52" height="18" rx="5" class="jar-lid"/>
+            </svg>
+          </div>
           <div class="product-body">
             <h3>Panal virgen 300 g</h3>
             <p class="product-size">300 g · con cera de panal</p>
@@ -267,6 +320,8 @@
       </div>
     </div>
   </section>
+
+  <div class="ornament-divider" aria-hidden="true"><span></span></div>
 
   <!-- PROCESO -->
   <section class="process" id="proceso">
@@ -297,6 +352,8 @@
     </div>
   </section>
 
+  <div class="ornament-divider" aria-hidden="true"><span></span></div>
+
   <!-- OPINIONES -->
   <section class="testimonials" id="opiniones">
     <div class="container">
@@ -308,17 +365,17 @@
         <div class="card testimonial-card reveal">
           <span class="quote-mark">“</span>
           <p class="quote">Es la única miel que mis hijos aceptan en el vaso de leche sin arrugar la nariz. Clarísima y nada empalagosa.</p>
-          <div class="testimonial-author"><b>Marta R.</b><span>Clienta desde 2022</span></div>
+          <div class="testimonial-author"><span class="avatar">M</span><div class="who"><b>Marta R.</b><span>Clienta desde 2022</span></div></div>
         </div>
         <div class="card testimonial-card reveal">
           <span class="quote-mark">“</span>
           <p class="quote">La pedí para el obrador y ahora es la que uso en todos los glaseados. No cristaliza y el sabor es muy limpio.</p>
-          <div class="testimonial-author"><b>Diego I.</b><span>Pastelero</span></div>
+          <div class="testimonial-author"><span class="avatar">D</span><div class="who"><b>Diego I.</b><span>Pastelero</span></div></div>
         </div>
         <div class="card testimonial-card reveal">
           <span class="quote-mark">“</span>
           <p class="quote">Se nota que no está mezclada con nada. El panal virgen es una pasada, lo pongo directo en la tabla de quesos.</p>
-          <div class="testimonial-author"><b>Lucía F.</b><span>Clienta desde 2023</span></div>
+          <div class="testimonial-author"><span class="avatar">L</span><div class="who"><b>Lucía F.</b><span>Clienta desde 2023</span></div></div>
         </div>
       </div>
     </div>
