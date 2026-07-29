@@ -30,7 +30,7 @@
 
     var stored = null;
     try { stored = localStorage.getItem(STORAGE_KEY); } catch (_) {}
-    apply(stored === "light" || stored === "dark" ? stored : "dark");
+    apply(stored === "light" || stored === "dark" ? stored : "light");
 
     toggleBtns.forEach(function (btn) {
       btn.addEventListener("click", function () {
