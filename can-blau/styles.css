@@ -16,40 +16,44 @@
   --radius-lg: 26px;
 
   color-scheme: dark;
-  --bg:          #0e0c09;
-  --bg-2:        #16130d;
-  --surface:     #1c1811;
-  --surface-2:   #241f16;
-  --text:        #f3ede0;
-  --text-soft:   #ddd1b8;
-  --text-mute:   #96896e;
-  --accent:      #c9a15a;
-  --accent-2:    #8f6f38;
-  --accent-ink:  #241a06;
-  --accent-soft: rgba(201, 161, 90, 0.16);
-  --line:        rgba(243, 237, 224, 0.12);
-  --line-strong: rgba(243, 237, 224, 0.24);
-  --shadow-rgb:  0, 0, 0;
-  --blueprint:   #7f97a8;
+  --bg:          #0a0e1a;
+  --bg-2:        #0f1425;
+  --surface:     #131933;
+  --surface-2:   #1a2140;
+  --text:        #eef0f8;
+  --text-soft:   #c7cce0;
+  --text-mute:   #8890ac;
+  --accent:      #e2402c;
+  --accent-2:    #ab2c1f;
+  --accent-ink:  #ffffff;
+  --accent-soft: rgba(226, 64, 44, 0.16);
+  --navy:        #3b4b96;
+  --navy-soft:   rgba(59, 75, 150, 0.22);
+  --line:        rgba(238, 240, 248, 0.12);
+  --line-strong: rgba(238, 240, 248, 0.24);
+  --shadow-rgb:  2, 4, 12;
+  --blueprint:   #8393d6;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg:          #faf6ee;
-  --bg-2:        #f2e9d7;
+  --bg:          #f6f7fb;
+  --bg-2:        #eceff8;
   --surface:     #ffffff;
-  --surface-2:   #f6efe0;
-  --text:        #1c1911;
-  --text-soft:   #3c3527;
-  --text-mute:   #756b58;
-  --accent:      #9c7a3c;
-  --accent-2:    #7a5d2c;
-  --accent-ink:  #fbf4e4;
-  --accent-soft: rgba(156, 122, 60, 0.12);
-  --line:        rgba(28, 25, 17, 0.12);
-  --line-strong: rgba(28, 25, 17, 0.24);
-  --shadow-rgb:  28, 25, 17;
-  --blueprint:   #5c7488;
+  --surface-2:   #eef1fa;
+  --text:        #141b3d;
+  --text-soft:   #363f66;
+  --text-mute:   #666f94;
+  --accent:      #d5311e;
+  --accent-2:    #a2261a;
+  --accent-ink:  #ffffff;
+  --accent-soft: rgba(213, 49, 30, 0.10);
+  --navy:        #1e2a6e;
+  --navy-soft:   rgba(30, 42, 110, 0.10);
+  --line:        rgba(20, 27, 61, 0.12);
+  --line-strong: rgba(20, 27, 61, 0.22);
+  --shadow-rgb:  20, 27, 61;
+  --blueprint:   #4a58a6;
 }
 
 @property --mesh-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
@@ -186,7 +190,7 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.08; letter-spacing: -0.01em;
   color: var(--accent-ink);
 }
 .btn-primary:hover {
-  box-shadow: 0 22px 46px -12px rgba(201, 161, 90, 0.45), 0 8px 20px rgba(var(--shadow-rgb), 0.18);
+  box-shadow: 0 22px 46px -12px rgba(226, 64, 44, 0.45), 0 8px 20px rgba(var(--shadow-rgb), 0.18);
 }
 
 .btn-ghost {
@@ -285,8 +289,9 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.08; letter-spacing: -0.01em;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: 100%; }
 
-.brand { display: flex; align-items: baseline; gap: .5rem; font-family: var(--font-display); }
-.brand-mark { font-size: 1.4rem; font-weight: 700; letter-spacing: .01em; }
+.brand { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); }
+.brand-glyph { width: 20px; height: 18px; flex-shrink: 0; fill: var(--accent); }
+.brand-mark { font-size: 1.3rem; font-weight: 700; letter-spacing: .04em; }
 .brand-mark em { color: var(--accent); font-style: italic; font-weight: 500; }
 .brand-sub {
   display: none;
@@ -358,8 +363,8 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.08; letter-spacing: -0.01em;
 .hero-mesh {
   position: absolute; inset: -15%; z-index: -2;
   background:
-    radial-gradient(48% 42% at var(--mesh-x) var(--mesh-y), rgba(201,161,90,.30), transparent 68%),
-    conic-gradient(from var(--mesh-angle), rgba(201,161,90,.14), rgba(143,111,56,.05), rgba(201,161,90,.12), rgba(201,161,90,.14));
+    radial-gradient(48% 42% at var(--mesh-x) var(--mesh-y), rgba(226,64,44,.26), transparent 68%),
+    conic-gradient(from var(--mesh-angle), rgba(226,64,44,.13), rgba(59,75,150,.10), rgba(226,64,44,.11), rgba(226,64,44,.13));
   filter: blur(90px) saturate(120%);
   opacity: .8;
   animation: meshShift 26s linear infinite;

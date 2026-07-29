@@ -2,10 +2,9 @@
   "use strict";
 
   window.__BRAND__ = {
-    name: "Can Blau",
-    legalName: "Can Blau Reformas Integrales",
-    tagline: "Reformas integrales de alta gama en Mallorca, Ibiza y Barcelona",
-    foundedYear: 2011,
+    name: "Pibacon",
+    legalName: "Pirámide Balear Construcción",
+    tagline: "Reformas integrales de alta gama en Mallorca",
 
     nav: [
       { href: "#servicios", label: "Servicios" },
@@ -95,18 +94,18 @@
         style: "villa"
       },
       {
-        id: "eixample",
-        name: "Ático en el Eixample",
-        location: "Barcelona",
+        id: "santa-catalina",
+        name: "Ático en Santa Catalina",
+        location: "Palma",
         sqm: "185 m²",
         duration: "6 meses",
-        summary: "Reforma integral de un ático modernista con recuperación de suelos hidráulicos.",
+        summary: "Reforma integral de un ático de estilo modernista con recuperación de suelos hidráulicos.",
         style: "atico"
       },
       {
-        id: "santa-eularia",
-        name: "Villa en Santa Eulària",
-        location: "Ibiza",
+        id: "port-andratx",
+        name: "Villa en Port d'Andratx",
+        location: "Port d'Andratx",
         sqm: "420 m²",
         duration: "11 meses",
         summary: "Ampliación y reforma de una villa frente al mar con piscina infinita y spa privado.",
@@ -121,28 +120,28 @@
         location: "Palma de Mallorca"
       },
       {
-        quote: "Buscábamos un único interlocutor para no perseguir a cinco gremios distintos. Con Can Blau tuvimos exactamente eso durante los once meses de obra.",
+        quote: "Buscábamos un único interlocutor para no perseguir a cinco gremios distintos. Con Pibacon tuvimos exactamente eso durante los once meses de obra.",
         name: "Philippe R.",
-        location: "Santa Eulària des Riu"
+        location: "Port d'Andratx"
       },
       {
         quote: "El nivel de detalle en la carpintería y la piedra natural está a la altura de cualquier estudio internacional, con el trato cercano de un equipo local.",
         name: "Laura & Jordi",
-        location: "Barcelona"
+        location: "Sóller"
       }
     ],
 
-    serviceAreas: ["Mallorca", "Ibiza", "Barcelona", "Costa Brava"],
+    serviceAreas: ["Palma", "Calvià", "Andratx", "Sóller"],
 
     contact: {
-      phone: "+34 971 22 33 44",
-      phoneHref: "+34971223344",
-      whatsapp: "+34 622 33 44 55",
-      whatsappHref: "34622334455",
-      email: "hola@canblau.com",
-      addressPalma: "Carrer de Sant Feliu 12, 07012 Palma, Illes Balears",
-      addressBcn: "Carrer de Mallorca 220, 08008 Barcelona",
-      instagram: "https://instagram.com/canblau.reformas"
+      phone: "+34 971 403 001",
+      phoneHref: "+34971403001",
+      whatsapp: "+34 616 947 867",
+      whatsappHref: "34616947867",
+      hours: "Lunes – Viernes: 08:00 – 18:00",
+      address: "Calle 16 de Julio 59, local 7 · Palma de Mallorca",
+      facebook: "https://www.facebook.com/piramide.balear/",
+      instagram: "https://www.instagram.com/piramidebalearconstruccion/"
     }
   };
 })();
