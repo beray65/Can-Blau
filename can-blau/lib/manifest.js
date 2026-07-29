@@ -14,8 +14,10 @@
       { href: "#contacto", label: "Contacto" }
     ],
 
+    foundedYear: 1995,
+
     stats: [
-      { value: 9, suffix: "+", label: "Años reformando en Mallorca" },
+      { value: 30, suffix: "+", label: "Años de trayectoria en Mallorca" },
       { value: 4.4, suffix: " ★", label: "Valoración media en Google" },
       { value: 20, suffix: "+", label: "Oficios bajo un mismo equipo" }
     ],
@@ -56,6 +58,18 @@
         name: "Pintura y acabados",
         copy: "Pintura de interiores y exteriores, montaje de muebles y últimos detalles antes de la entrega llave en mano.",
         icon: "roller"
+      },
+      {
+        id: "mantenimientos",
+        name: "Mantenimientos",
+        copy: "Trabajos de mantenimiento en la construcción, desde pequeñas incidencias hasta el proyecto más complicado.",
+        icon: "wrench"
+      },
+      {
+        id: "permisos",
+        name: "Permisos de obra",
+        copy: "Solicitud y gestión de todos los permisos necesarios para cumplir con la normativa vigente.",
+        icon: "pm"
       }
     ],
 
