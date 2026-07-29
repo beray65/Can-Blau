@@ -4,7 +4,7 @@
   window.__BRAND__ = {
     name: "Pibacon",
     legalName: "Pirámide Balear Construcción",
-    tagline: "Reformas integrales en Mallorca",
+    tagline: "Construcción y reformas integrales en Mallorca",
 
     nav: [
       { href: "#servicios", label: "Servicios" },
@@ -24,32 +24,32 @@
       {
         id: "integral",
         name: "Reforma integral",
-        copy: "Construcción de viviendas, reformas integrales, excavaciones y remodelaciones completas, con una sola dirección de obra.",
+        copy: "Reformas integrales de construcción: planificación, diseño, ejecución y entrega, con un equipo propio de principio a fin.",
         icon: "house"
       },
       {
-        id: "albanileria",
-        name: "Albañilería y tabiquería",
-        copy: "Tabiquería, instalación y reparación de pladur, revocos y enlucidos para cerrar cada fase de la obra.",
-        icon: "wall"
+        id: "construccion",
+        name: "Construcción de viviendas",
+        copy: "Viviendas unifamiliares y plurifamiliares, de la cimentación a la entrega llave en mano.",
+        icon: "facade"
       },
       {
-        id: "suelos",
-        name: "Suelos y alicatados",
-        copy: "Instalación y reparación de suelos, cambio e instalación de baldosas y azulejos en cocinas, baños y estancias.",
-        icon: "tile"
-      },
-      {
-        id: "fontaneria",
-        name: "Fontanería y climatización",
-        copy: "Instalación y reparación de elementos de fontanería, climatización e instalación de ventiladores.",
-        icon: "bath"
-      },
-      {
-        id: "electricidad",
-        name: "Electricidad",
-        copy: "Instalaciones y reparaciones eléctricas integradas en el conjunto de la obra, sin depender de un gremio externo.",
+        id: "instalaciones",
+        name: "Instalaciones",
+        copy: "Electricidad, gas, fontanería, climatización y telecomunicaciones, integradas en el conjunto de la obra.",
         icon: "bolt"
+      },
+      {
+        id: "energia",
+        name: "Energía solar y eficiencia",
+        copy: "Paneles solares, sistemas de calefacción y refrigeración eficientes e iluminación LED para reducir el consumo.",
+        icon: "sun"
+      },
+      {
+        id: "albanileria",
+        name: "Albañilería, tabiquería y suelos",
+        copy: "Tabiquería, pladur, revocos y enlucidos, instalación de suelos y alicatados en cada estancia.",
+        icon: "wall"
       },
       {
         id: "pintura",
