@@ -297,10 +297,9 @@ h1, h2 { line-height: 1.05; }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: 100%; }
 
-.brand { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); }
-.brand-glyph { width: 20px; height: 18px; flex-shrink: 0; fill: var(--accent); }
-.brand-mark { font-size: 1.3rem; font-weight: 700; letter-spacing: .04em; }
-.brand-mark em { color: var(--accent); font-style: italic; font-weight: 500; }
+.brand { display: flex; align-items: center; gap: .7rem; font-family: var(--font-display); }
+.brand-logo { height: 38px; width: auto; flex-shrink: 0; }
+.brand-logo-footer { height: 52px; }
 .brand-sub {
   display: none;
   font-family: var(--font-body); font-size: .68rem; letter-spacing: .16em;
