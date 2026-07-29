@@ -492,14 +492,6 @@
     </div>
   </section>
 
-  <!-- Real photo banner -->
-  <section class="real-banner" data-reveal>
-    <img src="assets/img/proyecto-real-fachada.webp" alt="Fachada de celosía cerámica en una construcción de Pibacon en Mallorca" loading="lazy" decoding="async">
-    <div class="real-banner-tag">
-      <span class="dot"></span>Obra real de Pibacon
-    </div>
-  </section>
-
   <!-- About / Estudio -->
   <section class="section" id="estudio" style="background:var(--bg-2); border-block:1px solid var(--line);">
     <div class="container about-grid">
@@ -525,10 +517,22 @@
           </div>
         </div>
       </div>
-      <figure class="about-photo" data-reveal data-reveal-delay="1">
-        <img src="assets/img/proyecto-real-escalera.webp" alt="Escalera de mármol y salón reformados por Pibacon en una vivienda de Mallorca" loading="lazy" decoding="async">
-        <figcaption>Proyecto real de Pibacon · reseña verificada en Google</figcaption>
-      </figure>
+      <div data-reveal data-reveal-delay="1" aria-hidden="true">
+        <svg class="about-art" viewBox="0 0 600 640" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="var(--line-strong)" stroke-width="1.4">
+            <rect x="40" y="40" width="520" height="560"/>
+            <path d="M40 300h520M300 40v560"/>
+            <path d="M40 160h180M40 460h180M380 160h180M380 460h180"/>
+          </g>
+          <g stroke="var(--accent)" stroke-width="2" fill="none">
+            <circle cx="300" cy="300" r="90"/>
+            <path d="M300 210v-40M300 390v40M210 300h-40M390 300h40"/>
+            <path d="M300 300l70 -70" stroke-dasharray="4 6"/>
+          </g>
+          <circle cx="300" cy="300" r="5" fill="var(--accent)"/>
+          <text x="300" y="600" font-family="Inter, sans-serif" font-size="13" letter-spacing="3" text-anchor="middle" fill="var(--text-mute)">PIBACON · OFICINA TÉCNICA</text>
+        </svg>
+      </div>
     </div>
   </section>
 
