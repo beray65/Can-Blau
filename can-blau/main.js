@@ -162,20 +162,22 @@
     $$("[data-count-to]").forEach(function (el) {
       var target = parseFloat(el.dataset.countTo);
       if (isNaN(target)) return;
+      var decimals = (el.dataset.countTo.split(".")[1] || "").length;
+      var pow = Math.pow(10, decimals);
       var suffix = el.dataset.countSuffix || "";
       var duration = 1500;
       var triggered = false;
       function trigger() {
         if (triggered) return;
         triggered = true;
-        if (reduced) { el.textContent = target.toLocaleString("es-ES") + suffix; return; }
+        if (reduced) { el.textContent = target.toLocaleString("es-ES", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix; return; }
         var start = null;
         function frame(ts) {
           if (!start) start = ts;
           var p = Math.min(1, (ts - start) / duration);
           var eased = 1 - Math.pow(1 - p, 3);
-          var val = Math.round(target * eased);
-          el.textContent = val.toLocaleString("es-ES") + suffix;
+          var val = Math.round(target * eased * pow) / pow;
+          el.textContent = val.toLocaleString("es-ES", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
           if (p < 1) requestAnimationFrame(frame);
         }
         requestAnimationFrame(frame);

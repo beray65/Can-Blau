@@ -4,7 +4,7 @@
   window.__BRAND__ = {
     name: "Pibacon",
     legalName: "Pirámide Balear Construcción",
-    tagline: "Reformas integrales de alta gama en Mallorca",
+    tagline: "Reformas integrales en Mallorca",
 
     nav: [
       { href: "#servicios", label: "Servicios" },
@@ -15,48 +15,47 @@
     ],
 
     stats: [
-      { value: 15, suffix: "", label: "Años de trayectoria" },
-      { value: 120, suffix: "+", label: "Proyectos entregados" },
-      { value: 4900, suffix: " m²", label: "Superficie reformada" },
-      { value: 98, suffix: "%", label: "Clientes que repiten o recomiendan" }
+      { value: 9, suffix: "+", label: "Años reformando en Mallorca" },
+      { value: 4.4, suffix: " ★", label: "Valoración media en Google" },
+      { value: 20, suffix: "+", label: "Oficios bajo un mismo equipo" }
     ],
 
     services: [
       {
         id: "integral",
         name: "Reforma integral",
-        copy: "Rehabilitación completa de viviendas y fincas, desde la estructura hasta el último acabado, con una sola dirección de obra.",
+        copy: "Construcción de viviendas, reformas integrales, excavaciones y remodelaciones completas, con una sola dirección de obra.",
         icon: "house"
       },
       {
-        id: "cocinas",
-        name: "Cocinas de autor",
-        copy: "Diseño e instalación de cocinas a medida: isla central, piedra natural, carpintería lacada y electrodomésticos integrados.",
-        icon: "kitchen"
+        id: "albanileria",
+        name: "Albañilería y tabiquería",
+        copy: "Tabiquería, instalación y reparación de pladur, revocos y enlucidos para cerrar cada fase de la obra.",
+        icon: "wall"
       },
       {
-        id: "banos",
-        name: "Baños & spa privado",
-        copy: "Baños tratados como espacios de bienestar: mármol, suelo radiante, iluminación indirecta y grifería de firma.",
+        id: "suelos",
+        name: "Suelos y alicatados",
+        copy: "Instalación y reparación de suelos, cambio e instalación de baldosas y azulejos en cocinas, baños y estancias.",
+        icon: "tile"
+      },
+      {
+        id: "fontaneria",
+        name: "Fontanería y climatización",
+        copy: "Instalación y reparación de elementos de fontanería, climatización e instalación de ventiladores.",
         icon: "bath"
       },
       {
-        id: "fachadas",
-        name: "Fachadas y envolventes",
-        copy: "Recuperación de fachadas de piedra, aislamiento térmico exterior y carpintería de altas prestaciones.",
-        icon: "facade"
+        id: "electricidad",
+        name: "Electricidad",
+        copy: "Instalaciones y reparaciones eléctricas integradas en el conjunto de la obra, sin depender de un gremio externo.",
+        icon: "bolt"
       },
       {
-        id: "interiorismo",
-        name: "Interiorismo a medida",
-        copy: "Proyecto de interiorismo integral: materialidad, mobiliario a medida y dirección artística de cada estancia.",
-        icon: "interior"
-      },
-      {
-        id: "pm",
-        name: "Project management",
-        copy: "Gestión integral de licencias, industriales y calendario. Un único interlocutor durante toda la obra.",
-        icon: "pm"
+        id: "pintura",
+        name: "Pintura y acabados",
+        copy: "Pintura de interiores y exteriores, montaje de muebles y últimos detalles antes de la entrega llave en mano.",
+        icon: "roller"
       }
     ],
 
@@ -113,21 +112,23 @@
       }
     ],
 
+    googleRating: 4.4,
+
     testimonials: [
       {
-        quote: "Nos entregaron la finca con dos semanas de antelación y sin una sola desviación sobre el presupuesto cerrado. Se nota que dirigen la obra ellos mismos.",
-        name: "Marta S.",
-        location: "Palma de Mallorca"
+        quote: "Un oásis en la isla… muy dispuestos, excelente calidad, flexibles, se ajustan un 99% a precios y tiempos —algo impensable en Baleares—. Sólo puedo decir cosas buenas de ellos.",
+        name: "Miguel Ángel Gallego",
+        location: "Reseña de Google"
       },
       {
-        quote: "Buscábamos un único interlocutor para no perseguir a cinco gremios distintos. Con Pibacon tuvimos exactamente eso durante los once meses de obra.",
-        name: "Philippe R.",
-        location: "Port d'Andratx"
+        quote: "No puedo decir más que palabras positivas sobre Pibacon. Han reformado mi vivienda y el resultado ha sido espectacular. Además, la calidad humana de Baltasar, Edu, Sergio y todo el equipo. Gracias.",
+        name: "Marc Nadal",
+        location: "Reseña de Google"
       },
       {
-        quote: "El nivel de detalle en la carpintería y la piedra natural está a la altura de cualquier estudio internacional, con el trato cercano de un equipo local.",
-        name: "Laura & Jordi",
-        location: "Sóller"
+        quote: "No puedo estar más contento con la reforma que han hecho en mi casa. Empezaron el día acordado, acabaron en el plazo acordado y siempre dispuestos a hacer modificaciones durante la obra.",
+        name: "Edgar Matas",
+        location: "Reseña de Google"
       }
     ],
 

@@ -442,10 +442,10 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.08; letter-spacing: -0.01em;
   background: var(--bg-2);
 }
 .stats-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem;
+  display: grid; grid-template-columns: repeat(1, 1fr); gap: 2.5rem 1.5rem;
   padding-block: clamp(2.5rem, 5vw, 3.5rem);
 }
-@media (min-width: 720px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 540px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
 .stat { text-align: center; }
 .stat-value {
   font-family: var(--font-display); font-weight: 700;
@@ -591,14 +591,35 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.08; letter-spacing: -0.01em;
 
 .about-art { width: 100%; height: auto; }
 
+.about-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -30px rgba(var(--shadow-rgb), 0.45);
+}
+.about-photo img { width: 100%; height: auto; display: block; }
+.about-photo figcaption {
+  padding: .9rem 1.2rem;
+  background: var(--surface);
+  font-size: .78rem; color: var(--text-mute); letter-spacing: .02em;
+}
+
 /* --- Testimonials --- */
+.google-rating {
+  margin-top: 1.2rem; display: flex; align-items: center; justify-content: center; gap: .6rem;
+  font-size: .88rem; color: var(--text-mute);
+}
+.google-rating strong { color: var(--text); font-family: var(--font-display); font-size: 1.05rem; }
+.google-rating-stars, .testimonial-stars { display: inline-flex; gap: .15rem; color: var(--accent); }
+.google-rating-stars .icon, .testimonial-stars .icon { width: 15px; height: 15px; }
+
 .testimonials-grid { display: grid; gap: 1.6rem; }
 @media (min-width: 960px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
-.testimonial { padding: 2.2rem; display: flex; flex-direction: column; gap: 1.6rem; justify-content: space-between; }
+.testimonial { padding: 2.2rem; display: flex; flex-direction: column; gap: 1rem; justify-content: flex-start; }
 .testimonial-quote { font-family: var(--font-display); font-style: italic; font-size: 1.12rem; line-height: 1.5; color: var(--text-soft); }
 .testimonial-quote::before { content: open-quote; color: var(--accent); }
 .testimonial-quote::after { content: close-quote; color: var(--accent); }
-.testimonial-author { display: flex; align-items: center; gap: .8rem; }
+.testimonial-author { display: flex; align-items: center; gap: .8rem; margin-top: auto; padding-top: .4rem; }
 .testimonial-avatar {
   width: 42px; height: 42px; border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
