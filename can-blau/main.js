@@ -140,7 +140,7 @@
   /* ---------------- Hero parallax ---------------- */
   function initParallax() {
     if (reduced) return;
-    var art = $(".hero-visual");
+    var art = $(".hero-photo");
     var hero = $(".hero");
     if (!art || !hero) return;
     var raf = null;
@@ -148,7 +148,7 @@
       var r = hero.getBoundingClientRect();
       if (r.bottom > 0 && r.top < window.innerHeight) {
         var p = 1 - Math.max(0, Math.min(1, r.top / window.innerHeight));
-        art.style.transform = "translateY(" + (p * -26) + "px)";
+        art.style.transform = "translateY(" + (p * 34) + "px)";
       }
       raf = null;
     }
