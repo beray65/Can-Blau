@@ -16,30 +16,6 @@
     try { fn(); } catch (e) { console.warn("[" + name + "] failed:", e); }
   }
 
-  /* ---------------- Theme (dark/light) ---------------- */
-  function initTheme() {
-    var root = document.documentElement;
-    var STORAGE_KEY = "cb-theme";
-    var toggleBtns = $$("[data-theme-toggle]");
-
-    function apply(theme) {
-      root.setAttribute("data-theme", theme);
-      try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) {}
-      toggleBtns.forEach(function (b) { b.setAttribute("aria-pressed", theme === "light" ? "true" : "false"); });
-    }
-
-    var stored = null;
-    try { stored = localStorage.getItem(STORAGE_KEY); } catch (_) {}
-    apply(stored === "light" || stored === "dark" ? stored : "light");
-
-    toggleBtns.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var current = root.getAttribute("data-theme");
-        apply(current === "dark" ? "light" : "dark");
-      });
-    });
-  }
-
   /* ---------------- Nav ---------------- */
   function initNav() {
     var nav = $(".nav");
@@ -73,6 +49,111 @@
         if (el.tagName === "A") closeMobile();
       });
     });
+  }
+
+  /* ---------------- Scroll spy (active nav link) ---------------- */
+  function initScrollSpy() {
+    var links = $$(".nav-link[href^='#']");
+    if (!links.length) return;
+    var map = {};
+    links.forEach(function (a) {
+      var id = a.getAttribute("href").slice(1);
+      var section = document.getElementById(id);
+      if (section) map[id] = a;
+    });
+    var ids = Object.keys(map);
+    if (!ids.length) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.id;
+        if (entry.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove("is-active"); });
+          map[id].classList.add("is-active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    ids.forEach(function (id) { io.observe(document.getElementById(id)); });
+  }
+
+  /* ---------------- Custom cursor ---------------- */
+  function initCursor() {
+    if (!fineHover || reduced) return;
+    var dot = document.createElement("div");
+    var ring = document.createElement("div");
+    dot.className = "cursor-dot";
+    ring.className = "cursor-ring";
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+    document.documentElement.classList.add("has-cursor");
+
+    var rx = 0, ry = 0, tx = 0, ty = 0;
+    window.addEventListener("mousemove", function (e) {
+      tx = e.clientX; ty = e.clientY;
+      dot.style.transform = "translate(" + tx + "px," + ty + "px)";
+    });
+    (function loop() {
+      rx += (tx - rx) * 0.18; ry += (ty - ry) * 0.18;
+      ring.style.transform = "translate(" + rx + "px," + ry + "px)";
+      requestAnimationFrame(loop);
+    })();
+
+    var hoverables = "a, button, [data-ba], input, textarea, select, .has-tilt";
+    document.addEventListener("mouseover", function (e) {
+      if (e.target.closest && e.target.closest(hoverables)) ring.classList.add("is-active");
+    });
+    document.addEventListener("mouseout", function (e) {
+      if (e.target.closest && e.target.closest(hoverables)) ring.classList.remove("is-active");
+    });
+    document.addEventListener("mousedown", function () { ring.classList.add("is-pressed"); });
+    document.addEventListener("mouseup", function () { ring.classList.remove("is-pressed"); });
+    document.documentElement.addEventListener("mouseleave", function () {
+      dot.style.opacity = "0"; ring.style.opacity = "0";
+    });
+    document.documentElement.addEventListener("mouseenter", function () {
+      dot.style.opacity = "1"; ring.style.opacity = "1";
+    });
+  }
+
+  /* ---------------- Magnetic buttons ---------------- */
+  function initMagnetic() {
+    if (!fineHover || reduced) return;
+    $$(".btn-primary, .btn-ghost").forEach(function (btn) {
+      var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+      btn.addEventListener("mousemove", function (e) {
+        var r = btn.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - 0.5) * 14;
+        ty = ((e.clientY - r.top) / r.height - 0.5) * 10;
+        if (!raf) raf = requestAnimationFrame(loop);
+      });
+      btn.addEventListener("mouseleave", function () {
+        tx = 0; ty = 0;
+        if (!raf) raf = requestAnimationFrame(loop);
+      });
+      function loop() {
+        cx += (tx - cx) * 0.25; cy += (ty - cy) * 0.25;
+        btn.style.transform = "translate(" + cx.toFixed(2) + "px," + cy.toFixed(2) + "px)";
+        raf = (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) ? requestAnimationFrame(loop) : null;
+      }
+    });
+  }
+
+  /* ---------------- Hero parallax ---------------- */
+  function initParallax() {
+    if (reduced) return;
+    var art = $(".hero-visual");
+    var hero = $(".hero");
+    if (!art || !hero) return;
+    var raf = null;
+    function update() {
+      var r = hero.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) {
+        var p = 1 - Math.max(0, Math.min(1, r.top / window.innerHeight));
+        art.style.transform = "translateY(" + (p * -26) + "px)";
+      }
+      raf = null;
+    }
+    window.addEventListener("scroll", function () { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+    update();
   }
 
   /* ---------------- Smooth anchors ---------------- */
@@ -274,8 +355,11 @@
   }
 
   function boot() {
-    safe(initTheme, "initTheme");
     safe(initNav, "initNav");
+    safe(initScrollSpy, "initScrollSpy");
+    safe(initCursor, "initCursor");
+    safe(initMagnetic, "initMagnetic");
+    safe(initParallax, "initParallax");
     safe(initSmoothAnchors, "initSmoothAnchors");
     safe(initScrollProgress, "initScrollProgress");
     safe(initReveals, "initReveals");
