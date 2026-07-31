@@ -305,6 +305,126 @@
     });
   }
 
+  /* ---------------- Contact section shader (procedural silk) ---------------- */
+  function initContactShader() {
+    var canvas = document.getElementById("contact-shader");
+    if (!canvas) return;
+    var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (!gl) return;
+
+    var vertSrc = "attribute vec2 aPos;\nvoid main(){ gl_Position = vec4(aPos, 0.0, 1.0); }";
+
+    var fragSrc = [
+      "precision highp float;",
+      "uniform vec2 uResolution;",
+      "uniform float uTime;",
+
+      "vec2 hash2(vec2 p) {",
+      "  p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));",
+      "  return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);",
+      "}",
+      "float noise(vec2 p) {",
+      "  vec2 i = floor(p);",
+      "  vec2 f = fract(p);",
+      "  vec2 u = f * f * (3.0 - 2.0 * f);",
+      "  return mix(",
+      "    mix(dot(hash2(i + vec2(0.0,0.0)), f - vec2(0.0,0.0)), dot(hash2(i + vec2(1.0,0.0)), f - vec2(1.0,0.0)), u.x),",
+      "    mix(dot(hash2(i + vec2(0.0,1.0)), f - vec2(0.0,1.0)), dot(hash2(i + vec2(1.0,1.0)), f - vec2(1.0,1.0)), u.x),",
+      "    u.y) + 0.5;",
+      "}",
+      "float fbm(vec2 p) {",
+      "  float v = 0.0;",
+      "  float amp = 0.5;",
+      "  for (int i = 0; i < 4; i++) {",
+      "    v += amp * noise(p);",
+      "    p *= 2.0;",
+      "    amp *= 0.5;",
+      "  }",
+      "  return v;",
+      "}",
+
+      "void main() {",
+      "  vec2 uv = gl_FragCoord.xy / uResolution.xy;",
+      "  float aspect = uResolution.x / uResolution.y;",
+      "  vec2 p = vec2(uv.x * aspect, uv.y) * 1.6;",
+
+      "  float t = uTime * 0.02;",
+      "  vec2 flow = vec2(fbm(p * 0.8 + vec2(t, -t * 0.6)), fbm(p * 0.8 + vec2(-t * 0.5, t * 0.7)));",
+      "  vec2 pw = p + (flow - 0.5) * 1.4;",
+
+      "  float folds = fbm(pw * 1.1);",
+      "  float shade = smoothstep(0.15, 0.85, folds);",
+
+      "  vec3 lightGray = vec3(0.93, 0.935, 0.945);",
+      "  vec3 darkGray = vec3(0.55, 0.56, 0.60);",
+      "  vec3 col = mix(lightGray, darkGray, shade);",
+
+      "  float sheen = fbm(pw * 0.5 + vec2(uTime * 0.01, 0.0));",
+      "  col += smoothstep(0.6, 0.95, sheen) * 0.12;",
+
+      "  gl_FragColor = vec4(col, 1.0);",
+      "}"
+    ].join("\n");
+
+    function compile(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+        console.warn("[initContactShader] shader compile failed:", gl.getShaderInfoLog(s));
+      }
+      return s;
+    }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, vertSrc));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fragSrc));
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.warn("[initContactShader] program link failed:", gl.getProgramInfoLog(prog));
+      return;
+    }
+    gl.useProgram(prog);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    var aPos = gl.getAttribLocation(prog, "aPos");
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+    var uRes = gl.getUniformLocation(prog, "uResolution");
+    var uTime = gl.getUniformLocation(prog, "uTime");
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, canvas.clientWidth * dpr);
+      var h = Math.max(1, canvas.clientHeight * dpr);
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w; canvas.height = h;
+        gl.viewport(0, 0, w, h);
+      }
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+    }
+    window.addEventListener("resize", resize);
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { visible = entry.isIntersecting; });
+    }, { threshold: 0.01 });
+    io.observe(canvas);
+
+    var visible = true;
+    var t0 = performance.now();
+    function frame(now) {
+      resize();
+      gl.uniform1f(uTime, (now - t0) / 1000);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+      if (!reduced && visible) requestAnimationFrame(frame);
+      else if (!reduced) setTimeout(function () { requestAnimationFrame(frame); }, 400);
+    }
+    resize();
+    frame(performance.now());
+  }
+
   /* ---------------- Contact form ---------------- */
   function initContactForm() {
     var form = $("[data-contact-form]");
@@ -366,6 +486,7 @@
     safe(initTilt, "initTilt");
     safe(initCountUp, "initCountUp");
     safe(initBeforeAfter, "initBeforeAfter");
+    safe(initContactShader, "initContactShader");
     safe(initContactForm, "initContactForm");
     safe(initFloatingSelect, "initFloatingSelect");
     safe(initYear, "initYear");
