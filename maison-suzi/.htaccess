@@ -73,6 +73,8 @@
   AddType font/woff2 .woff2
   AddType font/woff .woff
   AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddType text/plain .txt
 </IfModule>
 
 # ----- Gzip compression for text assets -----
