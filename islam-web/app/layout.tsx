@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Amiri } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { PaperGrain } from "@/components/layout/paper-grain";
 
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
+          <PaperGrain />
           {children}
         </ThemeProvider>
       </body>
