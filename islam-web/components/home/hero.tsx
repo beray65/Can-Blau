@@ -1,8 +1,14 @@
 import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, BookCheckIcon, QuoteIcon, ShieldCheckIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { GeometricPattern } from "@/components/layout/geometric-pattern";
+
+const trustSignals = [
+  { icon: QuoteIcon, label: "Cada fuente citada" },
+  { icon: ShieldCheckIcon, label: "Contenido revisado" },
+  { icon: BookCheckIcon, label: "Sin publicidad" },
+];
 
 export function Hero({ locale }: { locale: string }) {
   return (
@@ -36,6 +42,15 @@ export function Hero({ locale }: { locale: string }) {
             <Link href={`/${locale}/coran`}>Leer el Corán</Link>
           </Button>
         </div>
+
+        <ul className="animate-in fade-in duration-700 delay-500 mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          {trustSignals.map((signal) => (
+            <li key={signal.label} className="flex items-center gap-1.5">
+              <signal.icon className="size-4 text-primary" aria-hidden />
+              {signal.label}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

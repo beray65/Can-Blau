@@ -13,13 +13,32 @@ import { navItems } from "@/lib/nav";
 
 export function FeatureGrid({ locale }: { locale: string }) {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mb-12 text-center">
+        <p className="mb-2 text-sm font-medium tracking-wide text-primary uppercase">
+          Explora
+        </p>
+        <h2 className="font-display text-3xl font-semibold text-balance">
+          Todo lo que necesitas para aprender
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-muted-foreground text-balance">
+          Seis secciones, una sola fuente de confianza: el contenido siempre
+          citado y revisado.
+        </p>
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {navItems.map((item) => (
+        {navItems.map((item, i) => (
           <Card
             key={item.href}
-            className="group border-border/60 transition-all duration-250 hover:-translate-y-1 hover:border-primary/20 hover:shadow-md"
+            className="group relative border-border/60 transition-all duration-250 hover:-translate-y-1 hover:border-primary/20 hover:shadow-md"
           >
+            <span
+              aria-hidden
+              className="absolute top-6 right-6 font-display text-2xl text-muted-foreground/25"
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
             <CardHeader>
               <div className="mb-2 flex size-11 items-center justify-center rounded-full bg-secondary text-primary">
                 <item.icon className="size-5" />

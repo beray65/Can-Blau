@@ -1,74 +1,142 @@
-import Image from "next/image";
+import {
+  BadgeCheckIcon,
+  CompassIcon,
+  HandCoinsIcon,
+  MoonIcon,
+  MapPinIcon,
+  InfinityIcon,
+  FeatherIcon,
+  BookMarkedIcon,
+  FootprintsIcon,
+  ScaleIcon,
+  HourglassIcon,
+  type LucideIcon,
+} from "lucide-react";
 
-const pilaresDelIslam = [
-  "Shahada — el testimonio de fe",
-  "Salat — la oración",
-  "Zakat — la limosna obligatoria",
-  "Sawm — el ayuno de Ramadán",
-  "Hajj — la peregrinación a La Meca",
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/ui/tabs";
+
+type Pillar = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const pilaresDelIslam: Pillar[] = [
+  {
+    title: "Shahada — el testimonio de fe",
+    description: "El testimonio de que no hay más dios que Allah y que Mahoma es Su mensajero.",
+    icon: BadgeCheckIcon,
+  },
+  {
+    title: "Salat — la oración",
+    description: "Las cinco oraciones diarias obligatorias, orientadas hacia la Qibla.",
+    icon: CompassIcon,
+  },
+  {
+    title: "Zakat — la limosna obligatoria",
+    description: "Una parte fija de la riqueza que se entrega a quienes lo necesitan.",
+    icon: HandCoinsIcon,
+  },
+  {
+    title: "Sawm — el ayuno de Ramadán",
+    description: "Abstenerse de comer y beber desde el amanecer hasta el ocaso durante Ramadán.",
+    icon: MoonIcon,
+  },
+  {
+    title: "Hajj — la peregrinación a La Meca",
+    description: "El viaje a La Meca, obligatorio una vez en la vida para quien tenga la capacidad.",
+    icon: MapPinIcon,
+  },
 ];
 
-const pilaresDeLaFe = [
-  "Creer en Allah",
-  "Creer en Sus ángeles",
-  "Creer en Sus libros revelados",
-  "Creer en Sus mensajeros",
-  "Creer en el Día del Juicio",
-  "Creer en el decreto divino (Qadar)",
+const pilaresDeLaFe: Pillar[] = [
+  {
+    title: "Fe en Allah",
+    description: "La creencia en la unicidad absoluta de Dios como único Creador.",
+    icon: InfinityIcon,
+  },
+  {
+    title: "Fe en los ángeles",
+    description: "Seres creados por Dios que cumplen Sus órdenes sin desobedecerle jamás.",
+    icon: FeatherIcon,
+  },
+  {
+    title: "Fe en los libros revelados",
+    description: "La Torá, los Salmos, el Evangelio y, como revelación final, el Corán.",
+    icon: BookMarkedIcon,
+  },
+  {
+    title: "Fe en los profetas",
+    description: "Todos los mensajeros enviados por Dios a lo largo de la historia.",
+    icon: FootprintsIcon,
+  },
+  {
+    title: "Fe en el decreto divino",
+    description: "El conocimiento y control absoluto de Dios sobre todo lo que sucede (Qadar).",
+    icon: ScaleIcon,
+  },
+  {
+    title: "Fe en el Día del Juicio",
+    description: "La vida después de la muerte, en la que cada persona rendirá cuentas.",
+    icon: HourglassIcon,
+  },
 ];
+
+function PillarList({ pillars }: { pillars: Pillar[] }) {
+  return (
+    <ol className="flex flex-col gap-px overflow-hidden rounded-lg bg-border/60">
+      {pillars.map((pillar, i) => (
+        <li
+          key={pillar.title}
+          className="flex gap-4 bg-card p-5 transition-colors duration-250 hover:bg-secondary/40"
+        >
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+            <pillar.icon className="size-5" />
+          </div>
+          <div>
+            <p className="font-display text-base font-semibold">
+              <span className="mr-1.5 text-primary">{i + 1}.</span>
+              {pillar.title}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {pillar.description}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 export function Pillars() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="grid gap-8 sm:grid-cols-2">
-        <div className="overflow-hidden rounded-xl border border-border/60 bg-card">
-          <Image
-            src="/images/pilares-del-islam.png"
-            alt="Ilustración de los cinco pilares del Islam: Shahada (profesión de fe), Salah (oración), Zakat (caridad obligatoria), Sawm (ayuno de Ramadán) y Hajj (peregrinación a La Meca)."
-            width={1024}
-            height={559}
-            className="h-auto w-full"
-            sizes="(min-width: 1024px) 528px, 100vw"
-          />
-          <div className="p-8 sm:p-10">
-            <h2 className="mb-4 font-display text-2xl font-semibold">
-              Los 5 pilares del Islam
-            </h2>
-            <ol className="space-y-2 text-muted-foreground">
-              {pilaresDelIslam.map((pilar, i) => (
-                <li key={pilar} className="flex gap-3">
-                  <span className="font-display text-primary">{i + 1}.</span>
-                  {pilar}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-
-        <div className="overflow-hidden rounded-xl border border-border/60 bg-card">
-          <Image
-            src="/images/pilares-de-la-fe.png"
-            alt="Ilustración de los seis pilares de la fe: creer en Dios, en los ángeles, en los libros sagrados, en los profetas, en el decreto divino (Qadar) y en el Día del Juicio."
-            width={1672}
-            height={941}
-            className="h-auto w-full"
-            sizes="(min-width: 1024px) 528px, 100vw"
-          />
-          <div className="p-8 sm:p-10">
-            <h2 className="mb-4 font-display text-2xl font-semibold">
-              Los 6 pilares de la fe
-            </h2>
-            <ol className="space-y-2 text-muted-foreground">
-              {pilaresDeLaFe.map((pilar, i) => (
-                <li key={pilar} className="flex gap-3">
-                  <span className="font-display text-primary">{i + 1}.</span>
-                  {pilar}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
+    <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mb-10 text-center">
+        <p className="mb-2 text-sm font-medium tracking-wide text-primary uppercase">
+          Fundamentos
+        </p>
+        <h2 className="font-display text-3xl font-semibold text-balance">
+          Los pilares del Islam y de la fe
+        </h2>
       </div>
+
+      <Tabs defaultValue="islam">
+        <TabsList className="mx-auto mb-8 flex w-fit">
+          <TabsTrigger value="islam">5 pilares del Islam</TabsTrigger>
+          <TabsTrigger value="fe">6 pilares de la fe</TabsTrigger>
+        </TabsList>
+        <TabsContent value="islam">
+          <PillarList pillars={pilaresDelIslam} />
+        </TabsContent>
+        <TabsContent value="fe">
+          <PillarList pillars={pilaresDeLaFe} />
+        </TabsContent>
+      </Tabs>
     </section>
   );
 }
