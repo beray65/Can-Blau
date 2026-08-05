@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const pilaresDelIslam = [
   "Shahada — el testimonio de fe",
   "Salat — la oración",
@@ -18,6 +20,16 @@ const pilaresDeLaFe = [
 export function Pillars() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div className="mb-10 overflow-hidden rounded-xl border border-border/60">
+        <Image
+          src="/images/pilares-del-islam.png"
+          alt="Ilustración de los cinco pilares del Islam: Shahada (profesión de fe), Salah (oración), Zakat (caridad obligatoria), Sawm (ayuno de Ramadán) y Hajj (peregrinación a La Meca)."
+          width={1024}
+          height={559}
+          className="h-auto w-full"
+          sizes="(min-width: 1152px) 1088px, 100vw"
+        />
+      </div>
       <div className="grid gap-10 rounded-xl border border-border/60 bg-card p-8 sm:grid-cols-2 sm:p-10">
         <div>
           <h2 className="mb-4 font-display text-2xl font-semibold">
