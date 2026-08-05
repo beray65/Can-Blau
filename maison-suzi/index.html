@@ -29,7 +29,7 @@
      separate request, no CORS/file:// issues, nothing to preload here. -->
 
 <link rel="preload" as="image" href="assets/img/naked-cake.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20260722y">
+<link rel="stylesheet" href="styles.css?v=20260722z">
 
 <!-- Datos estructurados para buscadores. Sin dirección física (reparto a domicilio);
      añádela aquí si en el futuro tienes un local u obrador con dirección fija. -->
@@ -110,10 +110,6 @@
 <section class="hero" id="inicio">
   <div class="hero-art" aria-hidden="true">
     <div class="hero-mesh"></div>
-    <!-- Enhanced only: WebGL "smoke" in the brand's cream/gold tones, fades in
-         over .hero-mesh once JS + WebGL are available; otherwise stays hidden
-         and .hero-mesh alone remains the hero background, exactly as before. -->
-    <canvas class="hero-shader" data-hero-shader></canvas>
     <div class="hero-grain"></div>
   </div>
 
@@ -382,20 +378,19 @@
             <stop offset="100%" stop-color="#F1E6D3"/>
           </linearGradient>
           <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#EAD9AE"/>
-            <stop offset="50%" stop-color="#D9B667"/>
-            <stop offset="100%" stop-color="#C9A24B"/>
+            <stop offset="0%" stop-color="#F1E6D3"/>
+            <stop offset="100%" stop-color="#E4D9C4"/>
           </linearGradient>
           <radialGradient id="seal" cx="35%" cy="30%" r="75%">
             <stop offset="0%" stop-color="#FFFCF4"/>
             <stop offset="100%" stop-color="#FAF6EF"/>
           </radialGradient>
           <filter id="boxShadow" x="-30%" y="-10%" width="160%" height="140%">
-            <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2E1B12" flood-opacity="0.22"/>
+            <feDropShadow dx="0" dy="14" stdDeviation="11" flood-color="#2E1B12" flood-opacity="0.16"/>
           </filter>
         </defs>
 
-        <ellipse cx="160" cy="272" rx="118" ry="14" fill="#2E1B12" opacity="0.08"/>
+        <ellipse cx="160" cy="272" rx="118" ry="14" fill="#2E1B12" opacity="0.06"/>
 
         <g filter="url(#boxShadow)">
           <!-- caja isométrica: cara superior + dos caras laterales -->
@@ -404,20 +399,16 @@
           <path d="M262 140 L160 192 L160 268 L262 216 Z" fill="url(#boxRight)" stroke="#E4D9C4" stroke-width="1"/>
 
           <!-- cinta -->
-          <path d="M108 114 L212 166 L212 190 L108 138 Z" fill="url(#ribbon)" opacity="0.92"/>
-          <path d="M148 176 L148 268 L172 268 L172 176 Z" fill="url(#ribbon)" opacity="0.92"/>
-          <path d="M148 176 L172 176 L212 166 L212 190 L172 200 Z" fill="url(#ribbon)" opacity="0.75"/>
-          <path d="M148 176 L172 176 L108 138 L108 114 L148 152 Z" fill="url(#ribbon)" opacity="0.6"/>
+          <path d="M108 114 L212 166 L212 190 L108 138 Z" fill="url(#ribbon)" opacity="0.95"/>
+          <path d="M148 176 L148 268 L172 268 L172 176 Z" fill="url(#ribbon)" opacity="0.95"/>
+          <path d="M148 176 L172 176 L212 166 L212 190 L172 200 Z" fill="url(#ribbon)" opacity="0.8"/>
+          <path d="M148 176 L172 176 L108 138 L108 114 L148 152 Z" fill="url(#ribbon)" opacity="0.65"/>
         </g>
 
         <!-- pegatina redonda -->
         <circle cx="160" cy="176" r="34" fill="url(#seal)" stroke="#C9A24B" stroke-width="1.4"/>
         <circle cx="160" cy="176" r="34" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
         <text x="160" y="185" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="26" text-anchor="middle" fill="#8F6425">MS</text>
-
-        <circle class="sparkle" cx="242" cy="96" r="2.4" fill="#D9B667"/>
-        <circle class="sparkle" cx="70" cy="204" r="1.8" fill="#D9B667"/>
-        <circle class="sparkle" cx="256" cy="200" r="1.6" fill="#8A3B3B" opacity="0.55"/>
       </svg>
     </div>
   </div>
@@ -532,6 +523,6 @@
 </footer>
 
 <script defer src="lib/manifest.js"></script>
-<script defer src="main.js?v=20260722y"></script>
+<script defer src="main.js?v=20260722z"></script>
 </body>
 </html>
