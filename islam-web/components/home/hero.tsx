@@ -1,9 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon, BookCheckIcon, QuoteIcon, ShieldCheckIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { GeometricPattern } from "@/components/layout/geometric-pattern";
-import { SilkShader } from "@/components/layout/silk-shader";
 
 const trustSignals = [
   { icon: QuoteIcon, label: "Cada fuente citada" },
@@ -14,11 +13,17 @@ const trustSignals = [
 export function Hero({ locale }: { locale: string }) {
   return (
     <section className="relative overflow-hidden">
-      <SilkShader className="absolute inset-0" />
-      {/* Scrim: keeps hero text at safe contrast against the shader's
-          brighter regions, in both themes. */}
-      <div aria-hidden className="absolute inset-0 bg-background/75" />
-      <GeometricPattern />
+      <Image
+        src="/images/mezquita-hero.jpg"
+        alt=""
+        aria-hidden
+        fill
+        priority
+        sizes="100vw"
+        className="scale-110 object-cover opacity-70 blur-xl dark:opacity-50"
+      />
+      {/* Scrim: keeps hero text at safe contrast over the photo, in both themes. */}
+      <div aria-hidden className="absolute inset-0 bg-background/60" />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-24 text-center sm:py-32">
         <h1 className="animate-in fade-in slide-in-from-bottom-2 duration-700 font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
