@@ -19,6 +19,7 @@ import {
   TabsTrigger,
   TabsContent,
 } from "@/components/ui/tabs";
+import { Reveal } from "@/components/layout/reveal";
 
 type Pillar = {
   title: string;
@@ -116,27 +117,29 @@ function PillarList({ pillars }: { pillars: Pillar[] }) {
 export function Pillars() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-24">
-      <div className="mb-10 text-center">
+      <Reveal className="mb-10 text-center">
         <p className="mb-2 text-sm font-medium tracking-wide text-primary uppercase">
           Fundamentos
         </p>
         <h2 className="font-display text-3xl font-semibold text-balance">
           Los pilares del Islam y de la fe
         </h2>
-      </div>
+      </Reveal>
 
-      <Tabs defaultValue="islam">
-        <TabsList className="mx-auto mb-8 flex w-fit">
-          <TabsTrigger value="islam">5 pilares del Islam</TabsTrigger>
-          <TabsTrigger value="fe">6 pilares de la fe</TabsTrigger>
-        </TabsList>
-        <TabsContent value="islam">
-          <PillarList pillars={pilaresDelIslam} />
-        </TabsContent>
-        <TabsContent value="fe">
-          <PillarList pillars={pilaresDeLaFe} />
-        </TabsContent>
-      </Tabs>
+      <Reveal delay={80}>
+        <Tabs defaultValue="islam">
+          <TabsList className="mx-auto mb-8 flex w-fit">
+            <TabsTrigger value="islam">5 pilares del Islam</TabsTrigger>
+            <TabsTrigger value="fe">6 pilares de la fe</TabsTrigger>
+          </TabsList>
+          <TabsContent value="islam">
+            <PillarList pillars={pilaresDelIslam} />
+          </TabsContent>
+          <TabsContent value="fe">
+            <PillarList pillars={pilaresDeLaFe} />
+          </TabsContent>
+        </Tabs>
+      </Reveal>
     </section>
   );
 }

@@ -2,11 +2,12 @@ import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/layout/reveal";
 
 export function CtaBand({ locale }: { locale: string }) {
   return (
     <section className="bg-primary text-primary-foreground">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 px-4 py-16 text-center sm:px-6">
+      <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-5 px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-semibold text-balance sm:text-3xl">
           Empieza tu lectura de hoy
         </h2>
@@ -24,7 +25,7 @@ export function CtaBand({ locale }: { locale: string }) {
             <ArrowRightIcon />
           </Link>
         </Button>
-      </div>
+      </Reveal>
     </section>
   );
 }
