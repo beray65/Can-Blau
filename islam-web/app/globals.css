@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Tokens del sistema de diseño (DESIGN_SYSTEM.md).
+ * Los valores marcados "inferido" no estaban en el brief original;
+ * se añaden porque shadcn/ui (Dialog, Select, Command) los requiere.
+ */
+:root {
+  --radius: 1.125rem; /* 18px, sube a 20px en tarjetas grandes */
+
+  --background: #fafaf8;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff; /* inferido */
+  --popover-foreground: #1f2937; /* inferido */
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  --secondary: #dff6f2;
+  --secondary-foreground: #0f766e;
+  --muted: #dff6f2;
+  --muted-foreground: #6b7280;
+  --accent: #d4af37;
+  --accent-foreground: #1f2937;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff; /* inferido */
+  --success: #16a34a;
+  --border: #e5e7eb;
+  --input: #e5e7eb; /* inferido, igual a --border */
+  --ring: #0f766e; /* inferido, igual a --primary */
+}
+
+.dark {
+  --background: #0b1120;
+  --foreground: #f8fafc;
+  --card: #111827;
+  --card-foreground: #f8fafc;
+  --popover: #111827; /* inferido */
+  --popover-foreground: #f8fafc; /* inferido */
+  --primary: #10b981;
+  --primary-foreground: #0b1120;
+  --secondary: #111827; /* inferido */
+  --secondary-foreground: #f8fafc;
+  --muted: #1f2937; /* inferido */
+  --muted-foreground: #9ca3af; /* inferido */
+  --accent: #d4af37;
+  --accent-foreground: #0b1120;
+  --destructive: #dc2626;
+  --destructive-foreground: #f8fafc; /* inferido */
+  --success: #16a34a;
+  --border: #1f2937; /* inferido */
+  --input: #1f2937; /* inferido */
+  --ring: #10b981; /* inferido, igual a --primary en modo oscuro */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-arabic: var(--font-arabic);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  /* Texto árabe: solo se usa envuelto en dir="rtl" lang="ar" */
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
