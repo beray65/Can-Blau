@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/hero";
 import { FeatureGrid } from "@/components/home/feature-grid";
+import { HowItWorks } from "@/components/home/how-it-works";
 import { Pillars } from "@/components/home/pillars";
 import { CtaBand } from "@/components/home/cta-band";
 
@@ -14,6 +15,7 @@ export default async function HomePage({
     <>
       <Hero locale={locale} />
       <FeatureGrid locale={locale} />
+      <HowItWorks />
       <div className="bg-secondary/15">
         <Pillars />
       </div>
