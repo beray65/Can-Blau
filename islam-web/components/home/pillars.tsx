@@ -116,7 +116,7 @@ function PillarList({ pillars }: { pillars: Pillar[] }) {
 
 export function Pillars() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-24">
+    <section id="pilares" className="mx-auto max-w-4xl scroll-mt-20 px-4 py-20 sm:px-6 sm:py-24">
       <Reveal className="mb-10 text-center">
         <p className="mb-2 text-sm font-medium tracking-wide text-primary uppercase">
           Fundamentos

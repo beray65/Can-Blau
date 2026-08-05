@@ -33,7 +33,7 @@ export function Hero({ locale }: { locale: string }) {
         </p>
         <div className="animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg">
-            <Link href={`/${locale}/coran`}>
+            <Link href="#pilares">
               Comenzar a aprender
               <ArrowRightIcon />
             </Link>

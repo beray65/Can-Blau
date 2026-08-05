@@ -34,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${display.variable} ${body.variable} ${arabic.variable}`}
     >
       <body className="min-h-screen antialiased">
