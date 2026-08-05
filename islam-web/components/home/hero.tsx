@@ -3,6 +3,7 @@ import { ArrowRightIcon, BookCheckIcon, QuoteIcon, ShieldCheckIcon } from "lucid
 
 import { Button } from "@/components/ui/button";
 import { GeometricPattern } from "@/components/layout/geometric-pattern";
+import { SilkShader } from "@/components/layout/silk-shader";
 
 const trustSignals = [
   { icon: QuoteIcon, label: "Cada fuente citada" },
@@ -13,14 +14,10 @@ const trustSignals = [
 export function Hero({ locale }: { locale: string }) {
   return (
     <section className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--secondary)_0%,_var(--background)_60%)]"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_color-mix(in_srgb,var(--accent)_18%,transparent)_0%,_transparent_55%)]"
-      />
+      <SilkShader className="absolute inset-0" />
+      {/* Scrim: keeps hero text at safe contrast against the shader's
+          brighter regions, in both themes. */}
+      <div aria-hidden className="absolute inset-0 bg-background/75" />
       <GeometricPattern />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-24 text-center sm:py-32">
