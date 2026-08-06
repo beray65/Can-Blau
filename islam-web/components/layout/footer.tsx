@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { MoonStarIcon } from "lucide-react";
 
 import { navItems, secondaryNavItems } from "@/lib/nav";
 
@@ -15,7 +15,14 @@ export function Footer({ locale }: { locale: string }) {
               href={`/${locale}`}
               className="flex items-center gap-2 font-display text-lg font-semibold"
             >
-              <MoonStarIcon className="size-5 text-primary" aria-hidden />
+              <Image
+                src="/images/logo-sirat.png"
+                alt=""
+                aria-hidden
+                width={28}
+                height={28}
+                className="size-7"
+              />
               Sirat
             </Link>
             <p className="font-display text-base italic text-muted-foreground">
@@ -46,10 +53,10 @@ export function Footer({ locale }: { locale: string }) {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="mailto:hola@nur.app"
+                  href="mailto:hola@sirat.app"
                   className="transition-colors duration-250 hover:text-foreground"
                 >
-                  hola@nur.app
+                  hola@sirat.app
                 </a>
               </li>
             </ul>

@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { MenuIcon, MoonStarIcon, SearchIcon } from "lucide-react";
+import { MenuIcon, SearchIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -46,7 +47,15 @@ export function Header({ locale }: { locale: string }) {
           href={`/${locale}`}
           className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight"
         >
-          <MoonStarIcon className="size-5 text-primary" aria-hidden />
+          <Image
+            src="/images/logo-sirat.png"
+            alt=""
+            aria-hidden
+            width={32}
+            height={32}
+            className="size-8"
+            priority
+          />
           Sirat
         </Link>
 

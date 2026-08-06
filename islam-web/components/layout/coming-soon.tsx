@@ -29,7 +29,7 @@ export function ComingSoon({
           <Link href={`/${locale}`}>Volver al inicio</Link>
         </Button>
         <a
-          href="mailto:hola@nur.app?subject=Avísame%20cuando%20esté%20listo"
+          href="mailto:hola@sirat.app?subject=Avísame%20cuando%20esté%20listo"
           className="text-sm text-muted-foreground underline underline-offset-4 transition-colors duration-250 hover:text-foreground"
         >
           Avísame cuando esté listo
