@@ -3,6 +3,7 @@ import { FeatureGrid } from "@/components/home/feature-grid";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { Pillars } from "@/components/home/pillars";
 import { CtaBand } from "@/components/home/cta-band";
+import { SilkShader } from "@/components/layout/silk-shader";
 
 export default async function HomePage({
   params,
@@ -16,8 +17,12 @@ export default async function HomePage({
       <Hero locale={locale} />
       <FeatureGrid locale={locale} />
       <HowItWorks />
-      <div className="bg-secondary/15">
-        <Pillars />
+      <div className="relative overflow-hidden bg-secondary/15">
+        <SilkShader className="absolute inset-0 opacity-25 dark:opacity-15" />
+        <div aria-hidden className="absolute inset-0 bg-background/85" />
+        <div className="relative">
+          <Pillars />
+        </div>
       </div>
       <CtaBand locale={locale} />
     </>
