@@ -16,7 +16,7 @@ export function Footer({ locale }: { locale: string }) {
               className="flex items-center gap-2 font-display text-lg font-semibold"
             >
               <MoonStarIcon className="size-5 text-primary" aria-hidden />
-              Nur
+              Sirat
             </Link>
             <p className="font-display text-base italic text-muted-foreground">
               &ldquo;¿Acaso no reflexionan sobre el Corán?&rdquo;
@@ -71,7 +71,7 @@ export function Footer({ locale }: { locale: string }) {
         </div>
 
         <p className="mt-10 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Nur. Contenido citado con su fuente y
+          © {new Date().getFullYear()} Sirat. Contenido citado con su fuente y
           traductor en cada aleya, hadiz o dua.
         </p>
       </div>

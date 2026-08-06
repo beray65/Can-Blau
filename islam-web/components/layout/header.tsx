@@ -47,7 +47,7 @@ export function Header({ locale }: { locale: string }) {
           className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight"
         >
           <MoonStarIcon className="size-5 text-primary" aria-hidden />
-          Nur
+          Sirat
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

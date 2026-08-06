@@ -1,4 +1,4 @@
-# Nur — web de aprendizaje del Islam en español
+# Sirat — web de aprendizaje del Islam en español
 
 Ver `CLAUDE.md` para el brief completo del proyecto y el roadmap de fases, y
 `DESIGN_SYSTEM.md` para los tokens visuales.
