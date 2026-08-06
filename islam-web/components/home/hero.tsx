@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRightIcon, BookCheckIcon, QuoteIcon, ShieldCheckIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { GeometricPattern } from "@/components/layout/geometric-pattern";
 
 const trustSignals = [
   { icon: QuoteIcon, label: "Cada fuente citada" },
@@ -20,10 +21,11 @@ export function Hero({ locale }: { locale: string }) {
         fill
         priority
         sizes="100vw"
-        className="scale-110 object-cover opacity-70 blur-xl dark:opacity-50"
+        className="scale-110 object-cover opacity-95 blur-md dark:opacity-80"
       />
+      <GeometricPattern className="opacity-70 mix-blend-overlay dark:opacity-40" />
       {/* Scrim: keeps hero text at safe contrast over the photo, in both themes. */}
-      <div aria-hidden className="absolute inset-0 bg-background/60" />
+      <div aria-hidden className="absolute inset-0 bg-background/40" />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 py-24 text-center sm:py-32">
         <h1 className="animate-in fade-in slide-in-from-bottom-2 duration-700 font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
