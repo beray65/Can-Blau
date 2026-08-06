@@ -18,8 +18,8 @@ export default async function HomePage({
       <FeatureGrid locale={locale} />
       <HowItWorks />
       <div className="relative overflow-hidden bg-secondary/15">
-        <SilkShader className="absolute inset-0 opacity-25 dark:opacity-15" />
-        <div aria-hidden className="absolute inset-0 bg-background/85" />
+        <SilkShader className="absolute inset-0 opacity-80 dark:opacity-60" />
+        <div aria-hidden className="absolute inset-0 bg-background/45 dark:bg-background/55" />
         <div className="relative">
           <Pillars />
         </div>
