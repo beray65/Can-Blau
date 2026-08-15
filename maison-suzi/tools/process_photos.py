@@ -10,13 +10,13 @@ os.makedirs(DST, exist_ok=True)
 
 # (source filename, output name, max long-edge px, quality)
 JOBS = [
-    ("8cdf4bb4-IMG_9348.png", "naked-cake.webp", 1800, 82),
+    ("85c3de25-IMG_9758.jpeg", "naked-cake.webp", 1800, 82),
     ("804579f1-IMG_9334.png", "eclair.webp", 1300, 82),
-    ("9deeb651-IMG_9346.png", "tiramisu.webp", 1300, 82),
+    ("e0848a78-IMG_9756.jpeg", "tiramisu.webp", 1300, 82),
     ("3278fa3d-IMG_9328.jpeg", "birthday-cake.webp", 1300, 82),
-    ("7f35932c-d5d49265315b46c08902ac93c84a73c9.jpeg", "tartaletas.webp", 1600, 82),
-    ("320fcf40-IMG_9349.png", "cheesecake.webp", 1300, 82),
-    ("d8d87ae0-IMG_9332.jpeg", "vasito-frambuesa.webp", 1300, 82),
+    ("55c7c4ee-IMG_9753.jpeg", "tartaletas.webp", 1600, 82),
+    ("70bbcfb7-IMG_9759.jpeg", "cheesecake.webp", 1300, 82),
+    ("f7043d41-IMG_9754.jpeg", "vasito-frambuesa.webp", 1300, 82),
 ]
 
 def grade(im: Image.Image) -> Image.Image:
@@ -45,12 +45,15 @@ def resize_cap(im: Image.Image, max_edge: int) -> Image.Image:
 # Manual pre-crop boxes (left, top, right, bottom) to trim distracting background
 # elements (e.g. a knife block, or an exported numbered label badge) before grading.
 _badge = lambda w, h: (0, 135, w, h)  # top-left "0N" label badge on the AI-enhanced set
+# The new tiramisu shot is a wide row of 7 cups; tighten to the center few so the
+# site's portrait (4:5) crops read as an intentional close shot, not a random sliver.
+_center_narrow = lambda w, h: (int(w * 0.21), 0, int(w * 0.79), h)
 PRECROP_FN = {
     "3f5b719e-IMG_9330.jpeg": _badge,
     "f2ea3e5d-IMG_9331.jpeg": _badge,
     "ab6cabca-IMG_9333.jpeg": _badge,
     "70f31e25-IMG_9329.jpeg": _badge,
-    "d8d87ae0-IMG_9332.jpeg": _badge,
+    "e0848a78-IMG_9756.jpeg": _center_narrow,
 }
 
 for src_name, out_name, max_edge, quality in JOBS:
@@ -67,10 +70,10 @@ for src_name, out_name, max_edge, quality in JOBS:
     print(f"{out_name}: {im.size[0]}x{im.size[1]} -> {kb:.0f} KB")
 
 # Extra: a tight macro crop of the naked cake's top tier for a gallery "detail" shot.
-im = Image.open(os.path.join(SRC, "8cdf4bb4-IMG_9348.png"))
+im = Image.open(os.path.join(SRC, "85c3de25-IMG_9758.jpeg"))
 im = ImageOps.exif_transpose(im).convert("RGB")
 w, h = im.size
-box = (int(w*0.08), int(h*0.20), int(w*0.92), int(h*0.55))
+box = (int(w*0.06), int(h*0.28), int(w*0.94), int(h*0.52))
 detail = im.crop(box)
 detail = grade(detail)
 detail = resize_cap(detail, 1300)
