@@ -684,11 +684,16 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 @media (hover: hover) and (pointer: fine) { .cursor { display: block; } }
 .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; will-change: transform; }
 .cursor-dot { width: 5px; height: 5px; margin: -2.5px; background: var(--cream); border-radius: 50%; }
-.cursor-ring {
-  width: 30px; height: 30px; margin: -15px; border: 1px solid var(--cream); border-radius: 50%;
-  transition: width .35s var(--ease-out), height .35s var(--ease-out), margin .35s var(--ease-out);
+/* .cursor-ring is moved every frame via JS (translate3d); its size change lives
+   on the inner element instead, so growing on hover is a transform (composited),
+   never a width/height layout+paint. */
+.cursor-ring { width: 30px; height: 30px; margin: -15px; }
+.cursor-ring-inner {
+  display: block; width: 100%; height: 100%;
+  border: 1px solid var(--cream); border-radius: 50%;
+  transition: transform .35s var(--ease-out);
 }
-.cursor.is-interactive .cursor-ring { width: 48px; height: 48px; margin: -24px; }
+.cursor.is-interactive .cursor-ring-inner { transform: scale(1.6); }
 html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
 
 /* =============================================================
