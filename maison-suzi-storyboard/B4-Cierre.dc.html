@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--ink:#2E1B12;--ink-mute:#6E5A48;--burgundy:#8A3B3B;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);font-family:"Jost",sans-serif;}
+em{font-style:italic;color:var(--burgundy);}
+.mono{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;border:1px solid var(--burgundy);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:32px;color:var(--burgundy);}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:20px 40px;border-radius:999px;background:var(--burgundy);color:var(--cream);font-size:19px;font-weight:500;}
+</style>
+</helmet>
+<div style="width:1080px;height:1920px;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;">
+
+  <span class="mono">MS</span>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--ink);margin:0;font-weight:500;">Maison <em>Suzi</em></h1>
+
+  <span class="btn" style="margin-top:16px;">Pide por WhatsApp</span>
+  <p style="font-size:17px;color:var(--ink-mute);margin:0;letter-spacing:0.03em;">@maisonsuzi</p>
+
+</div>
+</x-dc>
+</body>
+</html>

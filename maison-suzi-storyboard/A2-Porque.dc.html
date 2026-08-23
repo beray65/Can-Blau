@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--cream-2:#F1E6D3;--ink:#2E1B12;--ink-soft:#4A3226;--ink-mute:#6E5A48;--burgundy:#8A3B3B;--burgundy-light:#CEADAD;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);font-family:"Jost",sans-serif;}
+h1,h2{font-family:"Cormorant Garamond",serif;color:var(--ink);margin:0;font-weight:500;text-wrap:balance;}
+em{font-style:italic;color:var(--burgundy);font-weight:500;}
+.kicker{font-size:13px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--burgundy);}
+.cap{position:absolute;left:20px;bottom:16px;right:20px;font-size:11px;line-height:1.5;color:rgba(255,255,255,0.55);}
+</style>
+</helmet>
+<div style="width:1600px;height:900px;background:var(--cream);display:grid;grid-template-columns:0.95fr 1.05fr;font-family:'Jost',sans-serif;">
+
+  <div style="padding:80px 64px;display:flex;flex-direction:column;justify-content:center;gap:26px;">
+    <p class="kicker">El porqué</p>
+    <h1 style="font-size:52px;line-height:1.08;max-width:11ch;">Lo que compras en una pastelería industrial no es lo que <em>horneamos</em> nosotros.</h1>
+    <p style="font-size:19px;line-height:1.65;color:var(--ink-mute);max-width:46ch;">
+      Nada de líneas de producción ni conservantes. Cada tarta, cada eclair,
+      cada vasito se hornea por encargo, con ingredientes frescos y el tiempo
+      que hace falta — desde una cocina pequeña, no desde una fábrica.
+    </p>
+  </div>
+
+  <div style="position:relative;overflow:hidden;background:radial-gradient(110% 90% at 30% 20%, #F7EFDD 0%, #E7D9BE 60%, #D8C6A3 100%);">
+    <p class="cap" style="color:rgba(46,27,18,0.45);">FOTO: tarta de queso clásica, base dorada horneada lentamente, cubierta con una fina capa de mermelada de moras y unas moras frescas encima — luz suave y natural sobre un plato blanco.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

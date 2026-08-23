@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--cream-2:#F1E6D3;--ink:#2E1B12;--ink-soft:#4A3226;--ink-mute:#6E5A48;--burgundy:#8A3B3B;--burgundy-light:#CEADAD;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);color:var(--ink-soft);font-family:"Jost",sans-serif;}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--ink);margin:0;font-weight:500;}
+em{font-style:italic;color:var(--burgundy);font-weight:500;}
+a{color:var(--burgundy);text-decoration:none;}
+.kicker{font-size:12px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--cream);opacity:0.85;}
+.mono{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--cream);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;color:var(--cream);flex:none;}
+.cap{font-size:11px;line-height:1.5;color:rgba(255,255,255,0.5);font-family:"Jost",sans-serif;max-width:360px;}
+</style>
+</helmet>
+<div style="width:1600px;height:900px;position:relative;background:radial-gradient(120% 100% at 78% 30%, #4A3226 0%, #2E1B12 62%);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:48px;font-family:'Jost',sans-serif;">
+
+  <div style="display:flex;align-items:center;gap:14px;">
+    <span class="mono">MS</span>
+    <span class="kicker">Maison Suzi</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:18px;max-width:900px;">
+    <h1 style="font-size:96px;color:var(--cream);line-height:0.98;letter-spacing:-0.01em;">Maison <em style="color:var(--burgundy-light);">Suzi</em></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--burgundy-light);margin:0;">Horneado con pasión.</p>
+  </div>
+
+  <div style="display:flex;justify-content:flex-end;">
+    <p class="cap">FOTO: naked cake de dos pisos con higos partidos, frambuesas, moras, arándanos y hoja de oro sobre una tabla de mármol gris — al fondo, ollas de cobre y madera oscura desenfocadas.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

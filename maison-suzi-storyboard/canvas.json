@@ -1,0 +1,22 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1600, "h": 900, "title": "1 · Apertura" },
+    { "file": "A2-Porque.dc.html", "x": 1700, "y": 0, "w": 1600, "h": 900, "title": "2 · El porqué" },
+    { "file": "A3-Historia.dc.html", "x": 3400, "y": 0, "w": 1600, "h": 900, "title": "3 · La historia" },
+    { "file": "A4-Catalogo.dc.html", "x": 5100, "y": 0, "w": 1600, "h": 900, "title": "4 · El catálogo" },
+    { "file": "A5-Detalle.dc.html", "x": 6800, "y": 0, "w": 1600, "h": 900, "title": "5 · El detalle" },
+    { "file": "A6-ComoPedir.dc.html", "x": 8500, "y": 0, "w": 1600, "h": 900, "title": "6 · Cómo pedir" },
+    { "file": "A7-Frase.dc.html", "x": 10200, "y": 0, "w": 1600, "h": 900, "title": "7 · La frase" },
+    { "file": "A8-Cierre.dc.html", "x": 11900, "y": 0, "w": 1600, "h": 900, "title": "8 · Cierre / CTA" },
+
+    { "file": "B1-Gancho.dc.html", "x": 0, "y": 1150, "w": 1080, "h": 1920, "title": "1 · Gancho (0-3s)" },
+    { "file": "B2-Mosaico.dc.html", "x": 1180, "y": 1150, "w": 1080, "h": 1920, "title": "2 · Ritmo rápido (3-9s)" },
+    { "file": "B3-Emocional.dc.html", "x": 2360, "y": 1150, "w": 1080, "h": 1920, "title": "3 · Gancho emocional (9-12s)" },
+    { "file": "B4-Cierre.dc.html", "x": 3540, "y": 1150, "w": 1080, "h": 1920, "title": "4 · Cierre / CTA (12-15s)" }
+  ],
+  "annotations": [
+    { "id": "section-a-title", "x": 0, "y": -110, "w": 900, "text": "STORYBOARD — PRESENTACIÓN / PITCH\n8 escenas · formato horizontal 16:9" },
+    { "id": "section-b-title", "x": 0, "y": 1040, "w": 900, "text": "STORYBOARD — REDES SOCIALES (CORTO)\n4 escenas · formato vertical 9:16, ~15 segundos" }
+  ],
+  "launch": { "view": "canvas" }
+}

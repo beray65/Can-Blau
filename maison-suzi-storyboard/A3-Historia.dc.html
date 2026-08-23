@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--cream-2:#F1E6D3;--ink:#2E1B12;--ink-soft:#4A3226;--ink-mute:#6E5A48;--burgundy:#8A3B3B;--burgundy-light:#CEADAD;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);font-family:"Jost",sans-serif;}
+h1,h2{font-family:"Cormorant Garamond",serif;color:var(--ink);margin:0;font-weight:500;text-wrap:balance;}
+em{font-style:italic;color:var(--burgundy);font-weight:500;}
+.kicker{font-size:13px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--burgundy);}
+.cap{position:absolute;left:20px;bottom:16px;right:20px;font-size:11px;line-height:1.5;color:rgba(255,255,255,0.6);}
+</style>
+</helmet>
+<div style="width:1600px;height:900px;background:var(--cream);display:grid;grid-template-columns:1fr 1fr;font-family:'Jost',sans-serif;">
+
+  <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#5C4534 0%, #3A2416 70%);">
+    <p class="cap">FOTO: Suzan y su hijo en la cocina de casa, manos con harina, luz cálida de tarde entrando por la ventana — un momento cotidiano, no posado.</p>
+  </div>
+
+  <div style="padding:80px 64px;display:flex;flex-direction:column;justify-content:center;gap:24px;">
+    <p class="kicker">Nuestra historia</p>
+    <h1 style="font-size:44px;line-height:1.12;max-width:14ch;">Todo empezó en una cocina pequeña, <em>con mucho amor.</em></h1>
+    <p style="font-size:18px;line-height:1.65;color:var(--ink-mute);max-width:44ch;">
+      Lo que empezó como un gusto de familia se ha convertido en un sueño
+      compartido con su hijo — llevar ese mismo cariño a la mesa de otras
+      personas.
+    </p>
+    <blockquote style="margin:8px 0 0;padding-left:20px;border-left:2px solid var(--burgundy);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);max-width:34ch;">
+      "No vendemos solo dulces. Compartimos lo que más nos gusta hacer."
+    </blockquote>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

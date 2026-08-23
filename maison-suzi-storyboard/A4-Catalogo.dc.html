@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--cream-2:#F1E6D3;--ink:#2E1B12;--ink-soft:#4A3226;--ink-mute:#6E5A48;--burgundy:#8A3B3B;--burgundy-light:#CEADAD;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);font-family:"Jost",sans-serif;}
+h1{font-family:"Cormorant Garamond",serif;color:var(--ink);margin:0;font-weight:500;}
+em{font-style:italic;color:var(--burgundy);font-weight:500;}
+.kicker{font-size:13px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--burgundy);}
+.card{display:flex;flex-direction:column;gap:12px;}
+.thumb{position:relative;border-radius:14px;overflow:hidden;height:420px;}
+.cap{position:absolute;left:12px;bottom:10px;right:12px;font-size:9.5px;line-height:1.4;color:rgba(255,255,255,0.6);}
+.pname{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--ink);}
+</style>
+</helmet>
+<div style="width:1600px;height:900px;background:var(--cream);padding:56px 64px;font-family:'Jost',sans-serif;display:flex;flex-direction:column;gap:32px;">
+
+  <div>
+    <p class="kicker">Nuestros dulces</p>
+    <h1 style="font-size:40px;">Cada receta, hecha <em>a mano</em>.</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;">
+
+    <div class="card">
+      <div class="thumb" style="background:radial-gradient(120% 100% at 30% 20%,#4A3226,#2E1B12);">
+        <p class="cap">Naked cake: dos pisos, higos, frambuesas y hoja de oro.</p>
+      </div>
+      <p class="pname">Naked cake de frutos rojos</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb" style="background:linear-gradient(160deg,#F0E4CC,#D8C6A3);">
+        <p class="cap" style="color:rgba(46,27,18,0.5);">Tarta de queso clásica con mermelada de moras.</p>
+      </div>
+      <p class="pname">Tarta de queso clásica</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb" style="background:linear-gradient(160deg,#3A3A38,#232220);">
+        <p class="cap">Tiramisú en vasito, cacao y garnish de physalis.</p>
+      </div>
+      <p class="pname">Tiramisú clásico</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb" style="background:linear-gradient(160deg,#FBF6EC,#E9DDC2);">
+        <p class="cap" style="color:rgba(46,27,18,0.5);">Seis tartaletas de fruta: frambuesa, arándano, lima.</p>
+      </div>
+      <p class="pname">Tartaletas de temporada</p>
+    </div>
+
+    <div class="card">
+      <div class="thumb" style="background:linear-gradient(160deg,#6E5A48,#4A3226);">
+        <p class="cap">Vasito de cheesecake, coulis de frambuesa y macaron.</p>
+      </div>
+      <p class="pname">Vasito de cheesecake</p>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

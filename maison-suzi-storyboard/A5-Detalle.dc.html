@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{--cream:#FAF6EF;--cream-2:#F1E6D3;--ink:#2E1B12;--ink-soft:#4A3226;--ink-mute:#6E5A48;--burgundy:#8A3B3B;--burgundy-light:#CEADAD;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream-2);font-family:"Jost",sans-serif;}
+h1{font-family:"Cormorant Garamond",serif;color:var(--ink);margin:0;font-weight:500;text-wrap:balance;}
+em{font-style:italic;color:var(--burgundy);font-weight:500;}
+.kicker{font-size:13px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--burgundy);}
+.cap{position:absolute;left:20px;bottom:16px;right:20px;font-size:11px;line-height:1.5;color:rgba(46,27,18,0.5);}
+</style>
+</helmet>
+<div style="width:1600px;height:900px;background:var(--cream-2);display:grid;grid-template-columns:0.9fr 1.1fr;font-family:'Jost',sans-serif;">
+
+  <div style="padding:80px 64px;display:flex;flex-direction:column;justify-content:center;gap:24px;">
+    <p class="kicker">El detalle</p>
+    <h1 style="font-size:44px;line-height:1.12;max-width:12ch;">Presentado con <em>el mismo cuidado</em> que horneamos.</h1>
+    <p style="font-size:18px;line-height:1.65;color:var(--ink-mute);max-width:42ch;">
+      Cada pedido sale de casa en una caja blanca cerrada con una cinta color
+      crema y nuestra pegatina redonda Maison Suzi — un pequeño gesto para que,
+      al abrirlo, sea tan bonito como lo que hay dentro.
+    </p>
+  </div>
+
+  <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#FFFFFF,#F1E6D3);display:flex;align-items:center;justify-content:center;">
+    <div style="width:280px;height:200px;background:linear-gradient(160deg,#FFFFFF,#E7D9BE);border-radius:6px;position:relative;box-shadow:0 24px 50px -30px rgba(46,27,18,0.35);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#FAF6EF;border:1.4px solid var(--burgundy);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--burgundy);">MS</span>
+      </div>
+      <div style="position:absolute;top:0;left:50%;width:26px;height:100%;background:#F1E6D3;transform:translateX(-50%);opacity:0.9;"></div>
+    </div>
+    <p class="cap">FOTO: caja blanca cerrada con cinta color crema y la pegatina redonda del monograma MS, sobre una superficie clara.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
