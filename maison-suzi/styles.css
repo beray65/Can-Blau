@@ -679,9 +679,9 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
 .testimonial figcaption { font-size: .85rem; color: var(--ink-mute); }
 
 /* --- FAQ --- */
-.faq { padding-block: clamp(5rem, 10vw, 8rem); background: var(--paper); }
+.faq { padding-block: clamp(5rem, 10vw, 8rem); background: var(--cream-2); }
 .faq-list { max-width: 46rem; margin: 2.6rem auto 0; display: flex; flex-direction: column; gap: .9rem; }
-.faq-item { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; }
+.faq-item { background: var(--paper); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; }
 .faq-item summary {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   padding: 1.2rem 1.5rem; cursor: pointer; list-style: none;
