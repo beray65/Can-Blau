@@ -152,7 +152,6 @@ em { font-style: italic; color: var(--gold); font-weight: 500; }
 .gallery .kicker, .gallery .section-title,
 .process .kicker, .process .section-title,
 .testimonials .kicker, .testimonials .section-title,
-.faq .kicker, .faq .section-title,
 .contact .kicker, .contact .section-title, .contact .section-lede {
   text-align: center;
   margin-inline: auto;
@@ -677,20 +676,6 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   font-size: 1.15rem; line-height: 1.5; color: var(--ink); margin: 0;
 }
 .testimonial figcaption { font-size: .85rem; color: var(--ink-mute); }
-
-/* --- FAQ --- */
-.faq { padding-block: clamp(5rem, 10vw, 8rem); background: var(--cream-2); }
-.faq-list {
-  max-width: 46rem; margin: 2.6rem auto 0;
-  display: grid; grid-template-columns: 1fr; gap: 1.6rem;
-}
-@media (min-width: 640px) { .faq-list { grid-template-columns: 1fr 1fr; } }
-.faq-item {
-  background: var(--paper); border: 1px solid var(--line-soft); border-radius: var(--radius-sm);
-  padding: 1.6rem 1.7rem;
-}
-.faq-item h3 { font-size: 1.1rem; margin-bottom: .5rem; }
-.faq-item p { margin: 0; font-size: .95rem; line-height: 1.6; color: var(--ink-mute); }
 
 /* --- Contact --- */
 .contact { padding-block: clamp(5rem, 10vw, 9rem); }
