@@ -23,21 +23,27 @@ def grade(im: Image.Image) -> Image.Image:
     im = ImageOps.exif_transpose(im).convert("RGB")
     # Subtle warmth shift toward the site's gold/chocolate palette
     r, g, b = im.split()
-    r = r.point(lambda v: min(255, int(v * 1.025)))
-    b = b.point(lambda v: int(v * 0.975))
+    r = r.point(lambda v: min(255, int(v * 1.02)))
+    b = b.point(lambda v: int(v * 0.98))
     im = Image.merge("RGB", (r, g, b))
-    # Softer than before on purpose: the old settings (contrast 1.08, color 1.14,
-    # a strong unsharp pass) pushed these into "glossy stock photo" territory,
-    # which reads as generic rather than "hecho en casa". Less punch, more grain.
-    im = ImageEnhance.Contrast(im).enhance(1.03)
-    im = ImageEnhance.Color(im).enhance(1.04)
-    im = im.filter(ImageFilter.UnsharpMask(radius=1.2, percent=28, threshold=3))
+    # A first pass at this (contrast 1.03, color 1.04) turned out too subtle to
+    # actually see. The real issue isn't color anyway — it's that the source
+    # photo is lit and staged like a studio shoot (dramatic rim light, propped
+    # bokeh background); grading can only push against that, not undo it. So:
+    # push much harder. Flatten the contrast well below 1 (studio shots lean on
+    # deep blacks and blown highlights — a phone photo in a kitchen doesn't),
+    # desaturate below 1 instead of boosting, and make the grain visible instead
+    # of barely-there.
+    im = ImageEnhance.Contrast(im).enhance(0.88)
+    im = ImageEnhance.Color(im).enhance(0.86)
+    im = ImageEnhance.Brightness(im).enhance(1.04)
+    im = im.filter(ImageFilter.UnsharpMask(radius=1.0, percent=15, threshold=4))
     im = add_grain(im)
     return im
 
-def add_grain(im: Image.Image, sigma: int = 18, amount: float = 0.10) -> Image.Image:
-    """A light film-like grain so the photo reads as a real capture instead of
-    a too-clean render — subtle, felt more than seen."""
+def add_grain(im: Image.Image, sigma: int = 22, amount: float = 0.22) -> Image.Image:
+    """Visible film-like grain so the photo reads as a real capture instead of
+    a too-clean render."""
     noise = Image.effect_noise(im.size, sigma).convert("RGB")
     textured = ImageChops.overlay(im, noise)
     return Image.blend(im, textured, amount)
