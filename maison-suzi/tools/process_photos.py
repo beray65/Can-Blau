@@ -2,7 +2,7 @@
 """Dev-time only: color-grade and export the client's real product photos as WebP.
 Not shipped to production; assets/img/*.webp are the deliverable."""
 import os
-from PIL import Image, ImageEnhance, ImageOps, ImageFilter
+from PIL import Image, ImageEnhance, ImageOps, ImageFilter, ImageChops
 
 SRC = os.path.join(os.path.dirname(__file__), "..", "assets", "photos", "source")
 DST = os.path.join(os.path.dirname(__file__), "..", "assets", "img")
@@ -23,14 +23,24 @@ def grade(im: Image.Image) -> Image.Image:
     im = ImageOps.exif_transpose(im).convert("RGB")
     # Subtle warmth shift toward the site's gold/chocolate palette
     r, g, b = im.split()
-    r = r.point(lambda v: min(255, int(v * 1.035)))
-    b = b.point(lambda v: int(v * 0.965))
+    r = r.point(lambda v: min(255, int(v * 1.025)))
+    b = b.point(lambda v: int(v * 0.975))
     im = Image.merge("RGB", (r, g, b))
-    im = ImageEnhance.Contrast(im).enhance(1.08)
-    im = ImageEnhance.Color(im).enhance(1.14)
-    im = ImageEnhance.Brightness(im).enhance(1.02)
-    im = im.filter(ImageFilter.UnsharpMask(radius=1.4, percent=60, threshold=2))
+    # Softer than before on purpose: the old settings (contrast 1.08, color 1.14,
+    # a strong unsharp pass) pushed these into "glossy stock photo" territory,
+    # which reads as generic rather than "hecho en casa". Less punch, more grain.
+    im = ImageEnhance.Contrast(im).enhance(1.03)
+    im = ImageEnhance.Color(im).enhance(1.04)
+    im = im.filter(ImageFilter.UnsharpMask(radius=1.2, percent=28, threshold=3))
+    im = add_grain(im)
     return im
+
+def add_grain(im: Image.Image, sigma: int = 18, amount: float = 0.10) -> Image.Image:
+    """A light film-like grain so the photo reads as a real capture instead of
+    a too-clean render — subtle, felt more than seen."""
+    noise = Image.effect_noise(im.size, sigma).convert("RGB")
+    textured = ImageChops.overlay(im, noise)
+    return Image.blend(im, textured, amount)
 
 def resize_cap(im: Image.Image, max_edge: int) -> Image.Image:
     w, h = im.size
