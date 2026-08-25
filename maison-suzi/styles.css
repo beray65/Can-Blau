@@ -389,18 +389,18 @@ html.nav-open .nav-mobile { clip-path: inset(0); }
   100% { transform: scale(1.08) translate(-1.5%, 1.5%); }
 }
 
-/* Hero background — a real clip from Suzan's kitchen, heavily blurred/
-   dimmed/desaturated so it reads as atmosphere, not footage. No video
-   support, no JS, or reduced-motion: opacity stays 0 and the plain
-   .hero-mesh gradient underneath is the entire experience. */
-.hero-video {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+/* "Veta Cálida" — a slow, seeded generative marbling of the brand's own
+   palette, standing in for the static gradient above once it's ready.
+   No canvas support, no JS, or reduced-motion: opacity stays 0 and the
+   plain .hero-mesh gradient underneath is the entire experience. */
+.hero-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
   opacity: 0; pointer-events: none;
-  filter: blur(3px) brightness(0.95) saturate(0.9);
-  transform: scale(1.02); /* keep the blurred edge off the frame */
+  filter: blur(48px);
+  transform: scale(1.06); /* keep the blurred edge off the frame */
   transition: opacity 1.8s var(--ease-soft);
 }
-.hero-video.is-active { opacity: 0.62; }
+.hero-canvas.is-active { opacity: 0.7; }
 
 .hero-grain {
   position: absolute; inset: 0; opacity: 0.5; mix-blend-mode: multiply; pointer-events: none;
@@ -741,7 +741,7 @@ html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
   .hero-mesh { animation: none; }
-  .hero-video { display: none; }
+  .hero-canvas { display: none; }
   .hero-photo img { animation: none; }
   .story-frame img { animation: none; }
   .scroll-cue span { animation: none; }
