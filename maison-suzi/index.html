@@ -29,7 +29,7 @@
      separate request, no CORS/file:// issues, nothing to preload here. -->
 
 <link rel="preload" as="image" href="assets/img/naked-cake.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20260824f">
+<link rel="stylesheet" href="styles.css?v=20260825a">
 
 <!-- Datos estructurados para buscadores. Sin dirección física (reparto a domicilio);
      añádela aquí si en el futuro tienes un local u obrador con dirección fija. -->
@@ -110,7 +110,10 @@
 <section class="hero" id="inicio">
   <div class="hero-art" aria-hidden="true">
     <div class="hero-mesh"></div>
-    <canvas class="hero-canvas" data-hero-canvas></canvas>
+    <video class="hero-video" data-hero-video muted loop playsinline preload="auto">
+      <source src="assets/video/hero-cheesecake.webm" type="video/webm">
+      <source src="assets/video/hero-cheesecake.mp4" type="video/mp4">
+    </video>
     <div class="hero-grain"></div>
   </div>
 
@@ -558,6 +561,6 @@
 </footer>
 
 <script defer src="lib/manifest.js"></script>
-<script defer src="main.js?v=20260824f"></script>
+<script defer src="main.js?v=20260825a"></script>
 </body>
 </html>

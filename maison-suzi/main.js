@@ -209,139 +209,32 @@
   }
 
   /* -----------------------------------------------------------
-     Hero background — "Veta Cálida": a slow, seeded marbling of
-     the brand's own cream/chocolate/burgundy palette, replacing
-     the static .hero-mesh gradient once the first frame is ready.
-     Two drifting value-noise fields set the surface; color comes
-     from position and how close the fields sit to one another —
-     no particles, no shine, just a slow, soft surface in motion.
-     Deliberately hand-rolled (no p5.js/CDN): this project keeps
-     zero external runtime dependencies so it still works offline
-     and over file://.
+     Hero background — EXPERIMENT: a real clip from Suzan's kitchen,
+     heavily blurred/dimmed/desaturated, standing in for the
+     "Veta Cálida" generative canvas behind the static .hero-mesh
+     gradient. Plays muted/looped, pauses via IntersectionObserver
+     when the hero scrolls out of view. No video support, no JS,
+     or reduced-motion: opacity stays 0 and the plain gradient is
+     the entire experience.
      ----------------------------------------------------------- */
-  function initHeroCanvas() {
-    var canvas = $("[data-hero-canvas]");
-    var stage = canvas && canvas.closest(".hero-art");
-    if (!canvas || !stage || !canvas.getContext) return;
+  function initHeroVideo() {
+    var video = $("[data-hero-video]");
+    var stage = video && video.closest(".hero-art");
+    if (!video || !stage) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var ctx = canvas.getContext("2d", { alpha: false });
-    if (!ctx) return;
 
-    /* Deterministic seed -> classic Perlin noise, no dependency. */
-    var SEED = 20260824;
-    function mulberry32(a) {
-      return function () {
-        a |= 0; a = (a + 0x6D2B79F5) | 0;
-        var t = Math.imul(a ^ (a >>> 15), 1 | a);
-        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-      };
-    }
-    var rand = mulberry32(SEED);
-    var perm = new Uint8Array(512);
-    (function () {
-      var p = new Uint8Array(256);
-      for (var i = 0; i < 256; i++) p[i] = i;
-      for (var i = 255; i > 0; i--) {
-        var j = Math.floor(rand() * (i + 1));
-        var tmp = p[i]; p[i] = p[j]; p[j] = tmp;
-      }
-      for (var i = 0; i < 512; i++) perm[i] = p[i & 255];
-    })();
-    function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
-    function lerp(a, b, t) { return a + t * (b - a); }
-    function grad(hash, x, y) {
-      var h = hash & 7, u = h < 4 ? x : y, v = h < 4 ? y : x;
-      return ((h & 1) ? -u : u) + ((h & 2) ? -2 * v : 2 * v);
-    }
-    function noise2(x, y) {
-      var X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
-      x -= Math.floor(x); y -= Math.floor(y);
-      var u = fade(x), v = fade(y);
-      var a = perm[X] + Y, aa = perm[a], ab = perm[a + 1];
-      var b = perm[X + 1] + Y, ba = perm[b], bb = perm[b + 1];
-      return lerp(
-        lerp(grad(perm[aa], x, y), grad(perm[ba], x - 1, y), u),
-        lerp(grad(perm[ab], x, y - 1), grad(perm[bb], x - 1, y - 1), u),
-        v
-      );
-    }
-
-    /* Brand palette, as plain RGB triples (matches styles.css tokens). */
-    var CREAM = [250, 246, 239], CREAM_2 = [241, 230, 211];
-    var INK_SOFT = [74, 50, 38], BURGUNDY_LIGHT = [206, 173, 173];
-    function mix(a, b, t) {
-      return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
-    }
-    function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-    function smoothstep(a, b, x) { var t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); }
-
-    /* Low-res offscreen buffer, scaled up — cheap per-frame cost and the
-       upscale blur itself reads as soft marbling rather than sharp noise. */
-    var BW = 96, BH = 60;
-    var buf = document.createElement("canvas");
-    buf.width = BW; buf.height = BH;
-    var bctx = buf.getContext("2d");
-    var img = bctx.createImageData(BW, BH);
-
-    var running = false, rafId = null, started = false;
-
-    function resize() {
-      var r = stage.getBoundingClientRect();
-      canvas.width = Math.max(1, Math.round(r.width));
-      canvas.height = Math.max(1, Math.round(r.height));
-    }
-
-    function frame(tMs) {
-      if (!running) return;
-      var t = tMs * 0.00004;
-      var data = img.data, i = 0;
-      for (var y = 0; y < BH; y++) {
-        for (var x = 0; x < BW; x++, i += 4) {
-          var n1 = noise2(x * 0.055, y * 0.07 + t * 22);
-          var n2 = noise2(x * 0.11 - t * 16, y * 0.13 + t * 9);
-          var v = clamp01((n1 * 0.65 + n2 * 0.35 + 1) / 2);
-
-          var col = mix(CREAM, CREAM_2, smoothstep(0.35, 0.68, v));
-          if (v < 0.22) col = mix(INK_SOFT, col, v / 0.22 * 0.65 + 0.35);
-          var seam = 1 - clamp01(Math.abs(n1 - n2) / 0.05);
-          if (seam > 0) col = mix(col, BURGUNDY_LIGHT, seam * 0.16);
-
-          data[i] = col[0]; data[i + 1] = col[1]; data[i + 2] = col[2]; data[i + 3] = 255;
-        }
-      }
-      bctx.putImageData(img, 0, 0);
-      ctx.imageSmoothingEnabled = true;
-      ctx.drawImage(buf, 0, 0, BW, BH, 0, 0, canvas.width, canvas.height);
-
-      if (!started) { started = true; canvas.classList.add("is-active"); }
-      rafId = requestAnimationFrame(frame);
-    }
-
-    function start() {
-      if (running) return;
-      running = true;
-      resize();
-      rafId = requestAnimationFrame(frame);
-    }
-    function stop() {
-      running = false;
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = null;
-    }
+    var started = false;
+    video.addEventListener("loadeddata", function () {
+      if (!started) { started = true; video.classList.add("is-active"); }
+    });
 
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) start(); else stop();
+        if (entry.isIntersecting) video.play().catch(function () {});
+        else video.pause();
       });
     }, { threshold: 0 });
     io.observe(stage);
-
-    var resizeTimer = null;
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(resize, 200);
-    }, { passive: true });
   }
 
   /* -----------------------------------------------------------
@@ -459,7 +352,7 @@
     safe(initNav, "initNav");
     safe(initSmoothAnchors, "initSmoothAnchors");
     safe(initReveals, "initReveals");
-    safe(initHeroCanvas, "initHeroCanvas");
+    safe(initHeroVideo, "initHeroVideo");
     safe(initCursor, "initCursor");
     safe(initTilt, "initTilt");
     safe(initMagnetic, "initMagnetic");
