@@ -13,7 +13,7 @@ JOBS = [
     ("85c3de25-IMG_9758.jpeg", "naked-cake.webp", 1800, 82),
     ("804579f1-IMG_9334.png", "eclair.webp", 1300, 82),
     ("e0848a78-IMG_9756.jpeg", "tiramisu.webp", 1300, 82),
-    ("3278fa3d-IMG_9328.jpeg", "birthday-cake.webp", 1300, 82),
+    ("e8a8c7c5-cheesecake-kinder.jpg", "cheesecake-kinder.webp", 1300, 82),
     ("55c7c4ee-IMG_9753.jpeg", "tartaletas.webp", 1600, 82),
     ("70bbcfb7-IMG_9759.jpeg", "cheesecake.webp", 1300, 82),
     ("f7043d41-IMG_9754.jpeg", "vasito-frambuesa.webp", 1300, 82),
@@ -48,12 +48,16 @@ _badge = lambda w, h: (0, 135, w, h)  # top-left "0N" label badge on the AI-enha
 # The new tiramisu shot is a wide row of 7 cups; tighten to the center few so the
 # site's portrait (4:5) crops read as an intentional close shot, not a random sliver.
 _center_narrow = lambda w, h: (int(w * 0.21), 0, int(w * 0.79), h)
+# The Kinder-cheesecake shot has a lot of empty table/wall above the plate; trim
+# down to the plate itself so the product reads as a tight, intentional shot.
+_kinder_tight = lambda w, h: (int(w * 0.03), int(h * 0.28), int(w * 0.99), int(h * 0.99))
 PRECROP_FN = {
     "3f5b719e-IMG_9330.jpeg": _badge,
     "f2ea3e5d-IMG_9331.jpeg": _badge,
     "ab6cabca-IMG_9333.jpeg": _badge,
     "70f31e25-IMG_9329.jpeg": _badge,
     "e0848a78-IMG_9756.jpeg": _center_narrow,
+    "e8a8c7c5-cheesecake-kinder.jpg": _kinder_tight,
 }
 
 for src_name, out_name, max_edge, quality in JOBS:

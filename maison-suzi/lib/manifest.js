@@ -15,8 +15,7 @@
 
     categories: [
       { id: "tartas", name: "Tartas & naked cakes" },
-      { id: "individuales", name: "Eclairs, tartaletas & vasitos" },
-      { id: "cumple", name: "Pasteles de cumpleaños" }
+      { id: "individuales", name: "Eclairs, tartaletas & vasitos" }
     ],
 
     products: [
@@ -35,6 +34,14 @@
         desc: "Capas ligeras, crema suave y un jardín de frutas de temporada.",
         icon: "layer-cake",
         photo: "assets/img/naked-cake.webp"
+      },
+      {
+        id: "cheesecake-kinder",
+        category: "tartas",
+        name: "Cheesecake de Kinder",
+        desc: "Cheesecake cremoso bañado en caramelo, coronado con un trozo de Kinder.",
+        icon: "cheesecake",
+        photo: "assets/img/cheesecake-kinder.webp"
       },
       {
         id: "eclair",
@@ -67,14 +74,6 @@
         desc: "Base de galleta, cheesecake cremoso y coulis de frambuesa casero.",
         icon: "cup",
         photo: "assets/img/vasito-frambuesa.webp"
-      },
-      {
-        id: "cumpleanos",
-        category: "cumple",
-        name: "Pastel de cumpleaños a medida",
-        desc: "Diseñado contigo: rellenos, colores y decoración para tu ocasión.",
-        icon: "birthday",
-        photo: "assets/img/birthday-cake.webp"
       }
     ],
 
