@@ -132,10 +132,14 @@ h1, h2, h3 {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
   font-size: 1.7rem;
   letter-spacing: 0.05em;
 }
+.logo-icon { height: 38px; width: auto; display: block; }
 .logo span { color: var(--accent); }
 
 .nav-menu {
