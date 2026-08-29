@@ -11,15 +11,15 @@
   --text: #f5f5f7;
   --text-muted: #9a9aa3;
 
-  --accent: #818cf8;
-  --accent-solid: #6366f1;
-  --accent-solid-hover: #7c81f7;
-  --accent-contrast: #ffffff;
+  --accent: #ff9a52;
+  --accent-solid: #ff6a1a;
+  --accent-solid-hover: #ff8642;
+  --accent-contrast: #1a0e04;
 
-  --accent-0: #6366f1;
+  --accent-0: #ff6a1a;
   --accent-1: #ff5b6e;
   --accent-2: #4fd1ff;
-  --accent-3: #ff9f45;
+  --accent-3: #ffd166;
 
   --radius-lg: 18px;
   --radius-md: 12px;
@@ -301,8 +301,8 @@ h1, h2, h3 {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(129, 140, 248, 0.5);
-  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(255, 154, 82, 0.5);
+  background: rgba(255, 106, 26, 0.18);
   padding: 10px 20px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -311,7 +311,7 @@ h1, h2, h3 {
   color: #fff;
   transition: background 0.15s ease;
 }
-.hero-card-cta:hover { background: rgba(99, 102, 241, 0.3); }
+.hero-card-cta:hover { background: rgba(255, 106, 26, 0.32); }
 
 .hero-badge-logo {
   position: absolute;
@@ -345,7 +345,7 @@ h1, h2, h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 20px rgba(255, 106, 26, 0.35);
   transition: background 0.15s ease, transform 0.15s ease;
 }
 .hero-badge-cta:hover { background: var(--accent-solid-hover); transform: translateY(-2px); }
@@ -450,7 +450,7 @@ h1, h2, h3 {
 
 .card-image img { width: 100%; height: 100%; object-fit: cover; }
 
-.card-image.accent-0 { background: radial-gradient(circle at 30% 25%, rgba(99, 102, 241, 0.28), transparent 65%), var(--bg-alt); color: var(--accent-0); }
+.card-image.accent-0 { background: radial-gradient(circle at 30% 25%, rgba(255, 106, 26, 0.28), transparent 65%), var(--bg-alt); color: var(--accent-0); }
 .card-image.accent-1 { background: radial-gradient(circle at 30% 25%, rgba(255, 91, 110, 0.22), transparent 65%), var(--bg-alt); color: var(--accent-1); }
 .card-image.accent-2 { background: radial-gradient(circle at 30% 25%, rgba(79, 209, 255, 0.22), transparent 65%), var(--bg-alt); color: var(--accent-2); }
 .card-image.accent-3 { background: radial-gradient(circle at 30% 25%, rgba(255, 159, 69, 0.22), transparent 65%), var(--bg-alt); color: var(--accent-3); }
