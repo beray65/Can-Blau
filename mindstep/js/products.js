@@ -1,82 +1,57 @@
 // ============================================================
-// CATÁLOGO DE PRODUCTOS — esto es lo primero que vas a querer
-// cambiar. Son datos de EJEMPLO para que veas cómo luce el sitio.
+// CATÁLOGO DE PRODUCTOS
+//
+// Actualizado con tu modelo real: Nike Mind, en 3 colores.
+// Los precios y talles son PLACEHOLDER (marcados abajo) — pasame
+// los reales y los cambio en un toque.
 //
 // Para agregar/editar un producto, copiá un bloque { ... } y
 // completá sus campos:
 //
-//   name       -> nombre del modelo, ej: "Nike Victori One Slide"
-//   color      -> color / detalle, ej: "Negro / Blanco"
+//   name       -> nombre del modelo, ej: "Nike Mind"
+//   color      -> color / detalle, ej: "Negro"
 //   price      -> precio en números, sin puntos ni "$", ej: 15000
 //   sizes      -> talles disponibles, ej: [38, 39, 40, 41]
 //   condition  -> "nuevo" o "poco-uso"
-//   image      -> (opcional) ruta a una foto real, ej:
-//                 "assets/productos/victori-one-negro.jpg"
-//                 Si no ponés "image", se muestra un ícono de
-//                 muestra en su lugar.
+//   images     -> lista de rutas a fotos reales, ej:
+//                 ["assets/productos/nike-mind-negro-1.jpg",
+//                  "assets/productos/nike-mind-negro-2.jpg"]
+//                 Podés poner 1 o varias (se muestran puntitos
+//                 para pasar de una a otra). Si dejás [], se
+//                 muestra un ícono de muestra en su lugar.
 //   accent     -> número del 0 al 3, solo cambia el color de
 //                 fondo del ícono de muestra (no importa si
-//                 usás foto real).
+//                 ya tenés fotos reales cargadas).
 // ============================================================
 const PRODUCTS = [
   {
     id: 1,
-    name: "Nike Victori One Slide",
-    color: "Negro / Blanco",
-    price: 15000,
-    sizes: [38, 39, 40, 41, 42, 43, 44, 45],
+    name: "Nike Mind",
+    color: "Negro",
+    price: 15000, // TODO: precio real
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    image: "",
+    images: [],
     accent: 0,
   },
   {
     id: 2,
-    name: "Nike Benassi JDI",
-    color: "Negro",
-    price: 18000,
-    sizes: [37, 38, 39, 40, 41, 42, 43, 44],
+    name: "Nike Mind",
+    color: "Gris",
+    price: 15000, // TODO: precio real
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    image: "",
-    accent: 1,
-  },
-  {
-    id: 3,
-    name: "Nike Off-Court Slide",
-    color: "Gris / Volt",
-    price: 16500,
-    sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
-    condition: "nuevo",
-    image: "",
+    images: [],
     accent: 2,
   },
   {
-    id: 4,
-    name: "Nike Kawa Shower Slide",
-    color: "Azul / Blanco",
-    price: 14000,
-    sizes: [35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
-    condition: "poco-uso",
-    image: "",
-    accent: 3,
-  },
-  {
-    id: 5,
-    name: "Nike Victori One Slide",
-    color: "University Red",
-    price: 15000,
-    sizes: [38, 39, 40, 41, 42, 43, 44, 45],
+    id: 3,
+    name: "Nike Mind",
+    color: "Rojo",
+    price: 15000, // TODO: precio real
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    image: "",
-    accent: 0,
-  },
-  {
-    id: 6,
-    name: "Nike Sunray Adjust 6",
-    color: "Negro (con velcro)",
-    price: 17000,
-    sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44],
-    condition: "nuevo",
-    image: "",
+    images: [],
     accent: 1,
   },
 ];

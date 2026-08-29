@@ -38,16 +38,26 @@ function genericMessage() {
   return `Hola! Quiero consultar por las chanclas Nike disponibles en ${CONFIG.storeName}.`;
 }
 
-function productCardHTML(product) {
-  const imageContent = product.image
-    ? `<img src="${product.image}" alt="${product.name}" loading="lazy">`
-    : `${SANDAL_ICON}<span class="badge-sample">Imagen de muestra</span>`;
+function productImagesHTML(product) {
+  const images = product.images || [];
+  if (!images.length) {
+    return `${SANDAL_ICON}<span class="badge-sample">Imagen de muestra</span>`;
+  }
+  const dots =
+    images.length > 1
+      ? `<div class="image-dots">${images
+          .map((_, i) => `<button type="button" class="image-dot${i === 0 ? " is-active" : ""}" data-index="${i}" aria-label="Ver foto ${i + 1}"></button>`)
+          .join("")}</div>`
+      : "";
+  return `<img src="${images[0]}" alt="${product.name}" loading="lazy">${dots}`;
+}
 
+function productCardHTML(product) {
   return `
     <article class="card">
-      <div class="card-image accent-${product.accent % 4}">
+      <div class="card-image accent-${product.accent % 4}" data-product-id="${product.id}">
         <span class="badge-condition ${product.condition}">${conditionLabel(product.condition)}</span>
-        ${imageContent}
+        ${productImagesHTML(product)}
       </div>
       <div class="card-body">
         <h3>${product.name}</h3>
@@ -187,6 +197,28 @@ function setupStickyHeader() {
   });
 }
 
+function setupImageSwitcher() {
+  const grid = document.getElementById("product-grid");
+  if (!grid) return;
+
+  grid.addEventListener("click", (event) => {
+    const dot = event.target.closest(".image-dot");
+    if (!dot) return;
+
+    const cardImage = dot.closest(".card-image");
+    const product = PRODUCTS.find((p) => p.id === Number(cardImage?.dataset.productId));
+    if (!product || !product.images) return;
+
+    const index = Number(dot.dataset.index);
+    const img = cardImage.querySelector("img");
+    if (img) img.src = product.images[index];
+
+    cardImage.querySelectorAll(".image-dot").forEach((d, i) => {
+      d.classList.toggle("is-active", i === index);
+    });
+  });
+}
+
 function setupWhatsAppIcons() {
   document.querySelectorAll("[data-whatsapp-icon]").forEach((el) => {
     el.innerHTML = WHATSAPP_ICON;
@@ -199,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFilters();
   setupWhatsAppLinks();
   setupWhatsAppIcons();
+  setupImageSwitcher();
   setupMobileNav();
   setupStickyHeader();
   setupNavUnderline();

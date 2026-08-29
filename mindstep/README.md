@@ -31,17 +31,17 @@ Todos los botones de "Consultar" y el botón flotante de WhatsApp usan ese núme
 
 ### 2. Los productos
 
-Abrí `js/products.js`. Ahí están los 6 productos de ejemplo. Para cada chancla
-real que quieras publicar, copiá un bloque `{ ... }` y completá:
+Abrí `js/products.js`. Ahí están tus 3 Nike Mind (Negro/Gris/Rojo) con precio
+y talles placeholder. Para cada producto, completá:
 
 | Campo       | Qué va                                                      |
 |-------------|--------------------------------------------------------------|
-| `name`      | Nombre del modelo, ej. `"Nike Victori One Slide"`            |
-| `color`     | Color/detalle, ej. `"Negro / Blanco"`                        |
+| `name`      | Nombre del modelo, ej. `"Nike Mind"`                          |
+| `color`     | Color/detalle, ej. `"Negro"`                                 |
 | `price`     | Precio en número, sin puntos ni `$`, ej. `15000`              |
 | `sizes`     | Talles disponibles, ej. `[38, 39, 40, 41]`                   |
 | `condition` | `"nuevo"` o `"poco-uso"`                                      |
-| `image`     | Ruta a una foto real (ver siguiente punto) o `""` para usar el ícono de muestra |
+| `images`    | Lista de rutas a fotos reales (ver siguiente punto) o `[]` para usar el ícono de muestra |
 | `accent`    | Número del 0 al 3, solo cambia el color de fondo del ícono de muestra |
 
 Podés agregar o borrar productos libremente, el catálogo se genera solo a
@@ -53,14 +53,24 @@ Cuando tengas las fotos:
 
 1. Copialas dentro de `assets/productos/` (ya existe la carpeta).
 2. En el producto correspondiente de `js/products.js`, completá el campo
-   `image`, por ejemplo:
+   `images` con una o varias rutas, por ejemplo:
 
    ```js
-   image: "assets/productos/victori-one-negro.jpg",
+   images: [
+     "assets/productos/nike-mind-negro-1.jpg",
+     "assets/productos/nike-mind-negro-2.jpg",
+   ],
    ```
 
-Mientras `image` esté vacío (`""`), se muestra un ícono de chancla de muestra
-con la etiqueta "Imagen de muestra" para que sepas cuáles te faltan.
+Si cargás más de una foto por producto, en la card aparecen puntitos para
+pasar de una a otra. Mientras `images` esté vacío (`[]`), se muestra un
+ícono de chancla de muestra con la etiqueta "Imagen de muestra" para que
+sepas a cuáles les faltan fotos.
+
+**Importante sobre subir fotos en el chat**: si me las pegás directamente en
+el mensaje, a veces no me quedan accesibles como archivo para copiarlas al
+proyecto. Si ves que no las agrego, probá adjuntarlas como archivo (botón de
+adjuntar/clip) en lugar de pegarlas.
 
 ## Otras cosas editables
 
