@@ -135,12 +135,28 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-display);
   font-size: 1.7rem;
-  letter-spacing: 0.05em;
 }
 .logo-icon { height: 38px; width: auto; display: block; }
-.logo span { color: var(--accent); }
+
+.logo-text {
+  font-family: "Anton", var(--font-display);
+  display: inline-block;
+  transform: skewX(-8deg);
+  letter-spacing: 0.01em;
+}
+.logo-text .mind {
+  background: linear-gradient(90deg, #b5450f, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logo-text .step {
+  background: linear-gradient(90deg, #ffffff, #cfcfcf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .nav-menu {
   display: flex;
@@ -236,11 +252,11 @@ h1, h2, h3 {
 
 .hero-photo {
   position: absolute;
-  inset: 0;
+  inset: -20px;
   background-image: url("../assets/productos/nike-mind-grupo.jpg");
   background-size: cover;
   background-position: center 35%;
-  filter: grayscale(0.35) brightness(0.45) contrast(1.1);
+  filter: grayscale(0.35) brightness(0.45) contrast(1.1) blur(5px);
 }
 
 .hero-topo-canvas {
@@ -574,11 +590,9 @@ h1, h2, h3 {
 .footer-inner { text-align: center; }
 
 .footer-brand {
-  font-family: var(--font-display);
   font-size: 1.4rem;
   margin-bottom: 16px;
 }
-.footer-brand span { color: var(--accent); }
 
 .footer-disclaimer {
   color: var(--text-muted);
