@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindStep | Reventa de chanclas Nike originales</title>
+  <meta name="description" content="Catálogo de chanclas Nike originales en reventa. Consultá disponibilidad y talles por WhatsApp.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#inicio" class="logo">MIND<span>STEP</span></a>
+
+      <nav id="nav-menu" class="nav-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-accent nav-cta" data-whatsapp-generic target="_blank" rel="noopener">Escribinos</a>
+      </nav>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Reventa de calzado urbano</p>
+        <h1>CHANCLAS NIKE<br>100% ORIGINALES</h1>
+        <p class="hero-subtitle">
+          Modelos seleccionados, precios claros y atención directa.
+          Consultá stock y talles por WhatsApp en segundos.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-accent">Ver catálogo</a>
+          <a class="btn btn-outline" data-whatsapp-generic target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR (editá estos puntos según tu operación real) -->
+    <section class="trust-bar">
+      <div class="container trust-inner">
+        <div class="trust-item"><span>✅</span> Productos originales</div>
+        <div class="trust-item"><span>💬</span> Atención directa por WhatsApp</div>
+        <div class="trust-item"><span>📦</span> Coordinamos entrega o envío</div>
+        <div class="trust-item"><span>🔄</span> Consultas sin compromiso</div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="catalog">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Disponible ahora</p>
+          <h2>Catálogo</h2>
+        </div>
+
+        <div class="filters">
+          <input
+            type="text"
+            id="filter-search"
+            class="filter-input"
+            placeholder="Buscar modelo o color..."
+          >
+          <select id="filter-size" class="filter-select">
+            <option value="">Todos los talles</option>
+          </select>
+          <select id="filter-condition" class="filter-select">
+            <option value="">Todos los estados</option>
+            <option value="nuevo">Nuevo</option>
+            <option value="poco-uso">Poco uso</option>
+          </select>
+        </div>
+
+        <div id="product-grid" class="product-grid">
+          <!-- Las cards se generan automáticamente desde js/products.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="about">
+      <div class="container about-inner">
+        <div>
+          <p class="eyebrow">Nosotros</p>
+          <h2>¿Por qué comprar en MindStep?</h2>
+          <p class="about-text">
+            Somos un emprendimiento de reventa enfocado en chanclas y sandalias Nike.
+            Revisamos cada par antes de publicarlo y respondemos todas las consultas
+            por WhatsApp para que sepas exactamente qué estás comprando: talle, estado
+            y tiempos de entrega.
+          </p>
+        </div>
+        <ul class="about-list">
+          <li>Verificamos el estado de cada par antes de publicarlo</li>
+          <li>Te confirmamos stock real antes de coordinar el pago</li>
+          <li>Coordinación de entrega o envío según tu zona</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+      <div class="container contact-inner">
+        <h2>¿Tenés dudas sobre un modelo?</h2>
+        <p>Escribinos por WhatsApp y te respondemos a la brevedad.</p>
+        <a class="btn btn-accent btn-lg" data-whatsapp-generic target="_blank" rel="noopener">
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">MIND<span>STEP</span></div>
+      <p class="footer-disclaimer">
+        MindStep es un emprendimiento independiente de reventa de calzado.
+        No está afiliado, patrocinado ni respaldado oficialmente por Nike, Inc.
+        "Nike" y el logo Swoosh son marcas registradas de Nike, Inc.
+      </p>
+      <p class="footer-copy">© <span id="year"></span> MindStep. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" data-whatsapp-generic target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <span data-whatsapp-icon></span>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
