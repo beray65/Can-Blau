@@ -231,45 +231,21 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-.hero-blob {
+.hero-photo {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  animation: heroBlobDrift 16s ease-in-out infinite alternate;
+  inset: 0;
+  background-image: url("../assets/productos/nike-mind-grupo.jpg");
+  background-size: cover;
+  background-position: center 35%;
+  filter: grayscale(0.35) brightness(0.45) contrast(1.1);
 }
 
-.hero-blob-a {
-  width: 42%;
-  height: 60%;
-  left: -8%;
-  top: -10%;
-  background: var(--accent-solid);
-  opacity: 0.5;
-}
-
-.hero-blob-b {
-  width: 34%;
-  height: 50%;
-  right: -6%;
-  top: 8%;
-  background: var(--accent-2);
-  opacity: 0.32;
-  animation-delay: -5s;
-}
-
-.hero-blob-c {
-  width: 46%;
-  height: 46%;
-  left: 22%;
-  bottom: -18%;
-  background: #4338ca;
-  opacity: 0.4;
-  animation-delay: -10s;
-}
-
-@keyframes heroBlobDrift {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(5%, -6%) scale(1.12); }
+.hero-topo-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-overlay { position: absolute; inset: 0; pointer-events: none; }

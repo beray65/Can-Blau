@@ -31,10 +31,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: [
-      "assets/productos/nike-mind-negro-1.jpg",
-      "assets/productos/nike-mind-negro-2.jpg",
-    ],
+    images: [],
     accent: 0,
   },
   {
@@ -44,11 +41,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: [
-      "assets/productos/nike-mind-gris-1.jpg",
-      "assets/productos/nike-mind-gris-2.jpg",
-      "assets/productos/nike-mind-gris-3.jpg",
-    ],
+    images: [],
     accent: 2,
   },
   {
@@ -58,7 +51,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: ["assets/productos/nike-mind-rojo-1.jpg"],
+    images: [],
     accent: 1,
   },
 ];
