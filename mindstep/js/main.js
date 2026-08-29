@@ -141,6 +141,44 @@ function setupMobileNav() {
   });
 }
 
+function setupNavUnderline() {
+  const navLinks = document.getElementById("nav-links");
+  const underline = document.getElementById("nav-underline");
+  if (!navLinks || !underline) return;
+
+  const links = Array.from(navLinks.querySelectorAll("a[data-nav-link]"));
+  if (!links.length) return;
+
+  const path = underline.querySelector("path");
+  let activeLink = links.find((link) => link.classList.contains("is-active")) || links[0];
+
+  function moveUnderlineTo(link) {
+    underline.style.left = `${link.offsetLeft}px`;
+    underline.style.width = `${link.offsetWidth}px`;
+  }
+
+  function replayDraw() {
+    if (!path) return;
+    path.style.animation = "none";
+    void path.getBoundingClientRect();
+    path.style.animation = "";
+  }
+
+  function setActive(link) {
+    links.forEach((l) => l.classList.remove("is-active"));
+    link.classList.add("is-active");
+    activeLink = link;
+    moveUnderlineTo(link);
+    replayDraw();
+  }
+
+  links.forEach((link) => link.addEventListener("click", () => setActive(link)));
+
+  moveUnderlineTo(activeLink);
+  window.addEventListener("load", () => moveUnderlineTo(activeLink));
+  window.addEventListener("resize", () => moveUnderlineTo(activeLink));
+}
+
 function setupStickyHeader() {
   const header = document.querySelector(".site-header");
   if (!header) return;
@@ -163,4 +201,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupWhatsAppIcons();
   setupMobileNav();
   setupStickyHeader();
+  setupNavUnderline();
 });

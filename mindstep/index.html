@@ -21,10 +21,15 @@
       <a href="#inicio" class="logo">MIND<span>STEP</span></a>
 
       <nav id="nav-menu" class="nav-menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
+        <div id="nav-links" class="nav-links">
+          <a href="#inicio" class="is-active" data-nav-link>Inicio</a>
+          <a href="#catalogo" data-nav-link>Catálogo</a>
+          <a href="#nosotros" data-nav-link>Nosotros</a>
+          <a href="#contacto" data-nav-link>Contacto</a>
+          <svg id="nav-underline" class="nav-underline" viewBox="0 0 37 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M1 5.39971C7.48565 -1.08593 6.44837 -0.12827 8.33643 6.47992C8.34809 6.52075 11.6019 2.72875 12.3422 2.33912C13.8991 1.5197 16.6594 2.96924 18.3734 2.96924C21.665 2.96924 23.1972 1.69759 26.745 2.78921C29.7551 3.71539 32.6954 3.7794 35.8368 3.7794" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
         <a class="btn btn-accent nav-cta" data-whatsapp-generic target="_blank" rel="noopener">Escribinos</a>
       </nav>
 
@@ -37,17 +42,49 @@
   <main>
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">Reventa de calzado urbano</p>
-        <h1>CHANCLAS NIKE<br>100% ORIGINALES</h1>
-        <p class="hero-subtitle">
-          Modelos seleccionados, precios claros y atención directa.
-          Consultá stock y talles por WhatsApp en segundos.
-        </p>
-        <div class="hero-actions">
-          <a href="#catalogo" class="btn btn-accent">Ver catálogo</a>
-          <a class="btn btn-outline" data-whatsapp-generic target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <defs>
+          <mask id="heroMask" maskContentUnits="objectBoundingBox">
+            <rect width="1" height="1" fill="black"/>
+            <path
+              d="M0 0.1474 V0.9863 C0 0.9938 0.0038 0.9996 0.0085 0.9996 H0.9912 C0.9958 0.9996 1 0.9863 1 0.9863 V0.0581 C1 0.0506 0.9958 0.0444 0.9912 0.0444 H0.9255 C0.9208 0.0444 0.9165 0.0383 0.9165 0.0307 V0.0149 C0.9165 0.0074 0.9132 0.0013 0.9084 0.0013 L0.2060 0.0000 C0.2012 -0.0000 0.1975 0.0061 0.1975 0.0137 V0.0312 C0.1975 0.0387 0.1936 0.0448 0.1889 0.0448 H0.0915 C0.0868 0.0448 0.0830 0.0510 0.0830 0.0585 V0.1201 C0.0830 0.1276 0.0792 0.1337 0.0745 0.1337 H0.0085 C0.0038 0.1337 0 0.1399 0 0.1474 Z"
+              fill="white"
+            />
+          </mask>
+        </defs>
+      </svg>
+
+      <div class="hero-frame">
+        <div class="hero-masked">
+          <div class="hero-bg">
+            <div class="hero-blob hero-blob-a"></div>
+            <div class="hero-blob hero-blob-b"></div>
+            <div class="hero-blob hero-blob-c"></div>
+          </div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-card-wrap">
+            <div id="hero-card" class="hero-card">
+              <div id="hero-pixel-grid" class="hero-pixel-grid"></div>
+              <p class="eyebrow">Reventa de calzado urbano</p>
+              <h1>CHANCLAS NIKE<br>100% ORIGINALES</h1>
+              <p class="hero-subtitle">
+                Modelos seleccionados, precios claros y atención directa por WhatsApp.
+              </p>
+              <a href="#catalogo" class="hero-card-cta">Ver catálogo</a>
+            </div>
+          </div>
         </div>
+
+        <div class="hero-badge-logo" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="62" rx="36" ry="21" fill="currentColor" opacity="0.95"/>
+            <path d="M50 17 L27 50 M50 17 L73 50" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="50" cy="17" r="6" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <a class="hero-badge-cta" data-whatsapp-generic target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </section>
 
@@ -144,5 +181,6 @@
   <script src="js/config.js"></script>
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
 </body>
 </html>
