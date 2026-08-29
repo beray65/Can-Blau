@@ -236,7 +236,7 @@ h1, h2, h3 {
   background-image: url("../assets/productos/nike-mind-grupo.jpg");
   background-size: cover;
   background-position: center 35%;
-  filter: grayscale(0.35) brightness(0.45) contrast(1.1);
+  filter: grayscale(0.35) brightness(0.36) contrast(1.1);
 }
 
 .hero-topo-canvas {
@@ -615,6 +615,8 @@ h1, h2, h3 {
 
 @media (max-width: 860px) {
   .about-inner { grid-template-columns: 1fr; gap: 30px; }
+
+  .hero-photo { filter: grayscale(0.4) brightness(0.26) contrast(1.1); }
 }
 
 @media (max-width: 720px) {

@@ -65,7 +65,7 @@ function setupTopoField() {
       vec2 gridFract = fract(gridSt);
       float lineThickness = 1.0 / gridSize;
       float gridLines = step(1.0 - lineThickness, gridFract.x) + step(1.0 - lineThickness, gridFract.y);
-      gridLines = clamp(gridLines, 0.0, 1.0) * 0.12;
+      gridLines = clamp(gridLines, 0.0, 1.0) * 0.08;
 
       float noiseScale = 1.4;
       vec2 noisePos = st * noiseScale + vec2(u_time * 0.015, u_time * 0.025);
@@ -73,7 +73,7 @@ function setupTopoField() {
       float numBands = 10.0;
       float bandVal = n * numBands;
       float triangleWave = abs(fract(bandVal) - 0.5) * 2.0;
-      float topoLines = smoothstep(0.02, 0.00, triangleWave) * 0.45;
+      float topoLines = smoothstep(0.02, 0.00, triangleWave) * 0.3;
 
       float alpha = clamp(gridLines + topoLines, 0.0, 1.0);
       gl_FragColor = vec4(1.0, 1.0, 1.0, alpha);
