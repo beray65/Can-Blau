@@ -31,7 +31,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: [],
+    images: ["assets/productos/nike-mind-negro-catalogo.jpg"],
     accent: 0,
   },
   {
@@ -41,7 +41,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: [],
+    images: ["assets/productos/nike-mind-gris-catalogo.jpg"],
     accent: 2,
   },
   {
