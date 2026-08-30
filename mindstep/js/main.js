@@ -71,9 +71,12 @@ function productCardHTML(product) {
         </div>
         <div class="card-footer">
           <span class="price">${formatPrice(product.price)}</span>
-          <a class="btn-whatsapp" target="_blank" rel="noopener" href="${buildWhatsAppLink(productMessage(product))}">
-            Consultar
-          </a>
+          <div class="card-actions">
+            ${product.paymentUrl ? `<a class="btn-pay" target="_blank" rel="noopener" href="${product.paymentUrl}">Pagar online</a>` : ""}
+            <a class="btn-whatsapp" target="_blank" rel="noopener" href="${buildWhatsAppLink(productMessage(product))}">
+              Consultar
+            </a>
+          </div>
         </div>
       </div>
     </article>

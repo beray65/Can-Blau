@@ -364,7 +364,7 @@ h1, h2, h3 {
 .section-heading { margin-bottom: 32px; }
 .section-heading h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 
-.catalog, .about, .reviews, .contact { position: relative; z-index: 1; padding: 90px 0; }
+.catalog, .about, .reviews, .faq, .contact { position: relative; z-index: 1; padding: 90px 0; }
 
 .noise-zone { position: relative; }
 
@@ -395,6 +395,38 @@ h1, h2, h3 {
 
 .promo-banner-text { font-size: 1rem; }
 .promo-banner-text strong { color: var(--accent); }
+
+/* -------------------- SIZE GUIDE -------------------- */
+
+.size-guide {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  overflow: hidden;
+}
+
+.size-guide summary {
+  cursor: pointer;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.size-guide summary::-webkit-details-marker { display: none; }
+.size-guide summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); }
+.size-guide[open] summary::after { content: "−"; }
+
+.size-guide-body { padding: 0 24px 20px; }
+
+.size-guide-note { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 16px; }
+
+.size-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.size-table th, .size-table td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.size-table th { color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
 
 /* -------------------- FILTERS -------------------- */
 
@@ -566,6 +598,8 @@ h1, h2, h3 {
   letter-spacing: 0.02em;
 }
 
+.card-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
 .btn-whatsapp {
   background: var(--accent-solid);
   color: var(--accent-contrast);
@@ -578,6 +612,20 @@ h1, h2, h3 {
   transition: background 0.15s ease;
 }
 .btn-whatsapp:hover { background: var(--accent-solid-hover); }
+
+.btn-pay {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 9px 17px;
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.btn-pay:hover { border-color: var(--accent); color: var(--accent); }
 
 /* -------------------- ABOUT -------------------- */
 
@@ -646,6 +694,33 @@ h1, h2, h3 {
 }
 
 .reviews-empty p { color: var(--text-muted); font-size: 1rem; }
+
+/* -------------------- FAQ -------------------- */
+
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  padding: 4px 24px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 16px 0;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); flex-shrink: 0; }
+.faq-item[open] summary::after { content: "−"; }
+
+.faq-item p { color: var(--text-muted); margin: 0 0 20px; font-size: 0.9rem; line-height: 1.6; }
 
 /* -------------------- CONTACT -------------------- */
 
@@ -743,7 +818,7 @@ h1, h2, h3 {
 
 @media (max-width: 480px) {
   .hero-card { padding: 18px; }
-  .catalog, .about, .reviews, .contact { padding: 60px 0; }
+  .catalog, .about, .reviews, .faq, .contact { padding: 60px 0; }
   .filters { flex-direction: column; }
   .filter-select { width: 100%; }
 }

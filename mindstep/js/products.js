@@ -22,6 +22,15 @@
 //   accent     -> número del 0 al 3, solo cambia el color de
 //                 fondo del ícono de muestra (no importa si
 //                 ya tienes fotos reales cargadas).
+//   paymentUrl -> link de pago online (opcional). Si lo dejas
+//                 vacío ("") no aparece el botón de pago y solo
+//                 se ve "Consultar" por WhatsApp, como ahora.
+//
+//                 Para conseguir el link (gratis, sin programar):
+//                 entra a dashboard.stripe.com (o su equivalente
+//                 de PayPal), creas una cuenta, y en la sección
+//                 "Payment Links" generas un link con el precio
+//                 exacto de este producto. Pega esa URL aquí.
 // ============================================================
 const PRODUCTS = [
   {
@@ -33,6 +42,7 @@ const PRODUCTS = [
     condition: "nuevo",
     images: ["assets/productos/nike-mind-negro-catalogo.jpg"],
     accent: 0,
+    paymentUrl: "",
   },
   {
     id: 2,
@@ -43,6 +53,7 @@ const PRODUCTS = [
     condition: "nuevo",
     images: ["assets/productos/nike-mind-gris-catalogo.jpg"],
     accent: 2,
+    paymentUrl: "",
   },
   {
     id: 3,
@@ -53,5 +64,6 @@ const PRODUCTS = [
     condition: "nuevo",
     images: ["assets/productos/nike-mind-rojo-catalogo.jpg"],
     accent: 1,
+    paymentUrl: "",
   },
 ];
