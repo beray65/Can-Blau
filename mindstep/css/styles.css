@@ -364,7 +364,19 @@ h1, h2, h3 {
 .section-heading { margin-bottom: 32px; }
 .section-heading h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 
-.catalog, .about, .contact { padding: 90px 0; }
+.catalog, .about, .contact { position: relative; z-index: 1; padding: 90px 0; }
+
+.noise-zone { position: relative; }
+
+.noise-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
+}
 
 /* -------------------- FILTERS -------------------- */
 
@@ -550,8 +562,6 @@ h1, h2, h3 {
 .btn-whatsapp:hover { background: var(--accent-solid-hover); }
 
 /* -------------------- ABOUT -------------------- */
-
-.about { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
 .about-inner {
   display: grid;
