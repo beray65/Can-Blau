@@ -13,5 +13,5 @@ const CONFIG = {
   instagramUrl: "",
 
   // Símbolo de moneda para mostrar los precios
-  currencySymbol: "$",
+  currencySymbol: "€",
 };

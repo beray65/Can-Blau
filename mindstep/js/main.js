@@ -19,7 +19,7 @@ const WHATSAPP_ICON = `
 `;
 
 function formatPrice(n) {
-  return `${CONFIG.currencySymbol}${n.toLocaleString("es-AR")}`;
+  return `${n.toLocaleString("es-ES")} ${CONFIG.currencySymbol}`;
 }
 
 function conditionLabel(condition) {

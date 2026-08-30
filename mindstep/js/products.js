@@ -2,8 +2,8 @@
 // CATÁLOGO DE PRODUCTOS
 //
 // Actualizado con tu modelo real: Nike Mind, en 3 colores.
-// Los precios y talles son PLACEHOLDER (marcados abajo) — pasame
-// los reales y los cambio en un toque.
+// Precio real: 55€. Los talles son PLACEHOLDER (marcados abajo) —
+// pasame los reales y los cambio en un toque.
 //
 // Para agregar/editar un producto, copiá un bloque { ... } y
 // completá sus campos:
@@ -28,7 +28,7 @@ const PRODUCTS = [
     id: 1,
     name: "Nike Mind",
     color: "Negro",
-    price: 15000, // TODO: precio real
+    price: 55,
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
     images: ["assets/productos/nike-mind-negro-catalogo.jpg"],
@@ -38,7 +38,7 @@ const PRODUCTS = [
     id: 2,
     name: "Nike Mind",
     color: "Gris",
-    price: 15000, // TODO: precio real
+    price: 55,
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
     images: ["assets/productos/nike-mind-gris-catalogo.jpg"],
@@ -48,7 +48,7 @@ const PRODUCTS = [
     id: 3,
     name: "Nike Mind",
     color: "Rojo",
-    price: 15000, // TODO: precio real
+    price: 55,
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
     images: ["assets/productos/nike-mind-rojo-catalogo.jpg"],
