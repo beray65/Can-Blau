@@ -51,7 +51,7 @@ const PRODUCTS = [
     price: 15000, // TODO: precio real
     sizes: [38, 39, 40, 41, 42, 43, 44, 45], // TODO: talles reales
     condition: "nuevo",
-    images: [],
+    images: ["assets/productos/nike-mind-rojo-catalogo.jpg"],
     accent: 1,
   },
 ];
