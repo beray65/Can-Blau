@@ -378,6 +378,24 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
+/* -------------------- PROMO BANNER -------------------- */
+
+.promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: linear-gradient(90deg, rgba(255, 106, 26, 0.14), rgba(255, 106, 26, 0.03));
+  border: 1px solid rgba(255, 106, 26, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  margin-bottom: 28px;
+}
+
+.promo-banner-text { font-size: 1rem; }
+.promo-banner-text strong { color: var(--accent); }
+
 /* -------------------- FILTERS -------------------- */
 
 .filters {

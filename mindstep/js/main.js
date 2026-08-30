@@ -38,6 +38,10 @@ function genericMessage() {
   return `Hola! Quiero consultar por las chanclas Nike disponibles en ${CONFIG.storeName}.`;
 }
 
+function promoMessage() {
+  return `Hola! Quiero aprovechar la oferta de 2 pares (10% de descuento en el segundo) en ${CONFIG.storeName}.`;
+}
+
 function productImagesHTML(product) {
   const images = product.images || [];
   if (!images.length) {
@@ -130,6 +134,9 @@ function setupFilters() {
 function setupWhatsAppLinks() {
   document.querySelectorAll("[data-whatsapp-generic]").forEach((el) => {
     el.setAttribute("href", buildWhatsAppLink(genericMessage()));
+  });
+  document.querySelectorAll("[data-whatsapp-promo]").forEach((el) => {
+    el.setAttribute("href", buildWhatsAppLink(promoMessage()));
   });
 }
 
