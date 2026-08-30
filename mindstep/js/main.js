@@ -85,7 +85,7 @@ function renderProducts(list) {
   if (!grid) return;
 
   if (!list.length) {
-    grid.innerHTML = `<p class="empty-state">No encontramos chanclas con esos filtros. Probá cambiar la búsqueda.</p>`;
+    grid.innerHTML = `<p class="empty-state">No encontramos chanclas con esos filtros. Prueba cambiar la búsqueda.</p>`;
     return;
   }
   grid.innerHTML = list.map(productCardHTML).join("");

@@ -3,25 +3,25 @@
 //
 // Actualizado con tu modelo real: Nike Mind, en 3 colores.
 // Precio real: 55€. Los talles son PLACEHOLDER (marcados abajo) —
-// pasame los reales y los cambio en un toque.
+// pásame los reales y los cambio en un toque.
 //
-// Para agregar/editar un producto, copiá un bloque { ... } y
-// completá sus campos:
+// Para agregar/editar un producto, copia un bloque { ... } y
+// completa sus campos:
 //
 //   name       -> nombre del modelo, ej: "Nike Mind"
 //   color      -> color / detalle, ej: "Negro"
-//   price      -> precio en números, sin puntos ni "$", ej: 15000
+//   price      -> precio en números, sin puntos ni símbolo, ej: 55
 //   sizes      -> talles disponibles, ej: [38, 39, 40, 41]
 //   condition  -> "nuevo" o "poco-uso"
 //   images     -> lista de rutas a fotos reales, ej:
 //                 ["assets/productos/nike-mind-negro-1.jpg",
 //                  "assets/productos/nike-mind-negro-2.jpg"]
-//                 Podés poner 1 o varias (se muestran puntitos
-//                 para pasar de una a otra). Si dejás [], se
+//                 Puedes poner 1 o varias (se muestran puntitos
+//                 para pasar de una a otra). Si dejas [], se
 //                 muestra un ícono de muestra en su lugar.
 //   accent     -> número del 0 al 3, solo cambia el color de
 //                 fondo del ícono de muestra (no importa si
-//                 ya tenés fotos reales cargadas).
+//                 ya tienes fotos reales cargadas).
 // ============================================================
 const PRODUCTS = [
   {
